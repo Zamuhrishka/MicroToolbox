@@ -25,6 +25,14 @@ Building and running the tests requires the following:
 There are plenty. Report them on GitHub, or - even better - open a pull request.
 Please write unit tests for any new functions you add.
 
+## Contribute
+
+Fresh contributions are always welcome. Simple instructions to proceed::
+
+1. Fork Github repository
+2. Respect [C style & coding rules](https://github.com/Zamuhrishka/c-code-style) used by the library
+3. Create a pull request to develop branch with new features or bug fixes
+
 ## License
 
 This software is provided 'as-is', without any express or implied warranty.
