@@ -30,7 +30,7 @@ static void Test_ConvertHexNumToChar(void **state)
 
 	for(size_t i = 0; i < sizeof(patternNum); i++)
 	{
-		num = Convert_HexNumToChar(patternNum[i]);
+		num = convert_hex_num_to_char(patternNum[i]);
 		assert_int_equal(num, patternChar[i]);
 	}
 }
@@ -52,14 +52,14 @@ static void Test_ConvertHexCharToNum(void **state)
 
 	for(size_t i = 0; i < sizeof(patternNum); i++)
 	{
-		num = Convert_HexCharToNum(patternChar[i]);
+		num = convert_hex_char_to_num(patternChar[i]);
 		assert_int_equal(num, patternNum[i]);
 	}
 
-	num = Convert_HexCharToNum('-');
+	num = convert_hex_char_to_num('-');
 	assert_int_equal(num, -1);
 
-	num = Convert_HexCharToNum('U');
+	num = convert_hex_char_to_num('U');
 	assert_int_equal(num, -1);
 }
 
@@ -67,8 +67,8 @@ static void Test_ConvertStringToMacAddr(void **state)
 {
 	bool result = false;
 
-	MacAddr_t patternMacAddr = {0xAA, 0x13, 0x01, 0x00, 0x55, 0xFE};
-	MacAddr_t mac = {0};
+	mac_t patternMacAddr = {0xAA, 0x13, 0x01, 0x00, 0x55, 0xFE};
+	mac_t mac = {0};
 
 	char patternMacAddrStr1[] = "AA:13:01:00:55:FE\0";
 	char patternMacAddrStr2[] = "AA!13,01600:55:FE\0";
@@ -77,29 +77,29 @@ static void Test_ConvertStringToMacAddr(void **state)
 	char patternMacAddrStr5[] = "AA13010055FE\0";
 	char patternMacAddrStr6[] = "";
 
-	result = Convert_StringToMacAddr(patternMacAddrStr1, &mac);
+	result = convert_string_to_mac_addr(patternMacAddrStr1, &mac);
 	assert_true(result);
 	assert_memory_equal(patternMacAddr.value, mac.value, sizeof(patternMacAddr.value));
 
-	result = Convert_StringToMacAddr(patternMacAddrStr2, &mac);
+	result = convert_string_to_mac_addr(patternMacAddrStr2, &mac);
 	assert_false(result);
 
-	result = Convert_StringToMacAddr(patternMacAddrStr3, &mac);
+	result = convert_string_to_mac_addr(patternMacAddrStr3, &mac);
 	assert_false(result);
 
-	result = Convert_StringToMacAddr(patternMacAddrStr4, &mac);
+	result = convert_string_to_mac_addr(patternMacAddrStr4, &mac);
 	assert_false(result);
 
-	result = Convert_StringToMacAddr(patternMacAddrStr5, &mac);
+	result = convert_string_to_mac_addr(patternMacAddrStr5, &mac);
 	assert_false(result);
 
-	result = Convert_StringToMacAddr(patternMacAddrStr6, &mac);
+	result = convert_string_to_mac_addr(patternMacAddrStr6, &mac);
 	assert_false(result);
 
-	result = Convert_StringToMacAddr(NULL, &mac);
+	result = convert_string_to_mac_addr(NULL, &mac);
 	assert_false(result);
 
-	result = Convert_StringToMacAddr(patternMacAddrStr1, NULL);
+	result = convert_string_to_mac_addr(patternMacAddrStr1, NULL);
 	assert_false(result);
 }
 
@@ -107,11 +107,11 @@ static void Test_ConvertMacAddrToString(void **state)
 {
 	bool result = false;
 
-	MacAddr_t patternMacAddr = {0xAA, 0x13, 0x01, 0x00, 0x55, 0xFE};
+	mac_t patternMacAddr = {0xAA, 0x13, 0x01, 0x00, 0x55, 0xFE};
 	char patternMacAddrStr[] = "AA:13:01:00:55:FE\0";
 	char mac[] = "00:00:00:00:00:00\0";
 
-	result = Convert_MacAddrToString(&patternMacAddr, mac);
+	result = convert_mac_addr_to_string(&patternMacAddr, mac);
 	assert_true(result);
 	assert_string_equal(mac, patternMacAddrStr);
 }
@@ -119,24 +119,24 @@ static void Test_ConvertMacAddrToString(void **state)
 static void Test_ConvertIpv4addrToString(void **state)
 {
 	bool result = false;
-	Ipv4Addr_t ipAddr1 = 0xFA0A0A0A;
-	Ipv4Addr_t ipAddr2 = 0x00;
-	Ipv4Addr_t ipAddr3 = 0xFFFFFFFF;
+	ip4addr_t ipAddr1 = 0xFA0A0A0A;
+	ip4addr_t ipAddr2 = 0x00;
+	ip4addr_t ipAddr3 = 0xFFFFFFFF;
 
 	char patternIpAddrStr1[] = "10.10.10.250\0";
 	char patternIpAddrStr2[] = "0.0.0.0\0";
 	char patternIpAddrStr3[] = "255.255.255.255\0";
 	char ip[] = "000.000.000.000\0";
 
-	result = Convert_Ipv4addrToString(ipAddr1, ip);
+	result = convert_ip4addr_to_string(ipAddr1, ip);
 	assert_true(result);
 	assert_string_equal(ip, patternIpAddrStr1);
 
-	result = Convert_Ipv4addrToString(ipAddr2, ip);
+	result = convert_ip4addr_to_string(ipAddr2, ip);
 	assert_true(result);
 	assert_string_equal(ip, patternIpAddrStr2);
 
-	result = Convert_Ipv4addrToString(ipAddr3, ip);
+	result = convert_ip4addr_to_string(ipAddr3, ip);
 	assert_true(result);
 	assert_string_equal(ip, patternIpAddrStr3);
 }
@@ -144,11 +144,11 @@ static void Test_ConvertIpv4addrToString(void **state)
 static void Test_ConvertStringToIpv4addr(void **state)
 {
 	bool result = false;
-	Ipv4Addr_t ipAddr1 = 0xFA0A0A0A;
-	Ipv4Addr_t ip = 0;
+	ip4addr_t ipAddr1 = 0xFA0A0A0A;
+	ip4addr_t ip = 0;
 	char patternIpAddrStr1[] = "10.10.10.250\0";
 
-	result = Convert_StringToIpv4addr(&ip, patternIpAddrStr1);
+	result = convert_string_to_ip4addr(&ip, patternIpAddrStr1);
 	assert_true(result);
 	assert_int_equal(ip, ipAddr1);
 }
@@ -161,7 +161,7 @@ static void Test_ConvertNumToBcd(void **state)
 
 	for(size_t i = 0; i < sizeof(patternNum)/sizeof(uint32_t); i++)
 	{
-		bcd = Convert_NumToBcd(patternNum[i]);
+		bcd = convert_num_to_bcd(patternNum[i]);
 		assert_int_equal(bcd, patternBCD[i]);
 	}
 }
@@ -174,7 +174,7 @@ static void Test_ConvertBcdToNum(void **state)
 
 	for(size_t i = 0; i < sizeof(patternNum)/sizeof(uint32_t); i++)
 	{
-		dec = Convert_BcdToNum(patternBCD[i]);
+		dec = convert_bcd_to_num(patternBCD[i]);
 		assert_int_equal(dec, patternNum[i]);
 	}
 }
@@ -191,7 +191,7 @@ static void Test_ConvertStringToNum8(void **state)
 		{
 			for(size_t k = 0; k <= 9; k++)
 			{
-				testNum = Convert_StringToUint8(strDigit);
+				testNum = convert_string_to_uint8(strDigit);
 				assert_int_equal(testNum, patternNum);
 				patternNum++;
 				strDigit[2]++;
@@ -221,7 +221,7 @@ static void Test_ConvertStringToNum16(void **state)
 				{
 					for(size_t e = 0; e <= 9; e++)
 					{
-						testNum = Convert_StringToUint16(strDigit);
+						testNum = convert_string_to_uint16(strDigit);
 						assert_int_equal(testNum, patternNum);
 						patternNum++;
 						strDigit[4]++;
@@ -247,7 +247,7 @@ static void Test_ConvertDigToStringUint8(void **state)
 
 	for(size_t i = 0; i < 9; i++)
 	{
-		Convert_DigToStringUint8(strDigit, i);
+		convert_uint8_to_string(strDigit, i);
 		assert_string_equal(digit, strDigit);
 		digit[0]++;
 	}
@@ -258,7 +258,7 @@ static void Test_ConvertDigToStringUint8(void **state)
 	digit[2] = '0';
 	for(size_t i = 10; i < 19; i++)
 	{
-		Convert_DigToStringUint8(strDigit, i);
+		convert_uint8_to_string(strDigit, i);
 		assert_string_equal(digit, strDigit);
 		digit[1]++;
 	}
@@ -270,7 +270,7 @@ static void Test_ConvertDigToStringUint8(void **state)
 	digit[2] = '0';
 	for(size_t i = 100; i < 109; i++)
 	{
-		Convert_DigToStringUint8(strDigit, i);
+		convert_uint8_to_string(strDigit, i);
 		assert_string_equal(digit, strDigit);
 		digit[2]++;
 	}
