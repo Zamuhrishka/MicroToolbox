@@ -1,14 +1,40 @@
 // This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
-/********************************************************************************
-*
-* @file    		convert.c
-* @author  		Kovalchuk Alexander
-* @email  		roux@yandex.ru
-* @brief   		This file contains the prototypes functions for different types
+/**
+* \file    		convert.c
+* \author  		Kovalchuk Alexander(roux@yandex.ru)
+* \brief   		This file contains the prototypes functions for different types
 * 				of transformations.
-*
-********************************************************************************/
+*/
+
+/*
+ * Copyright (c) year Alexander KOVALCHUK
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge,
+ * publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
+ * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * This file is part of library_name.
+ *
+ * Author:          Alexander KOVALCHUK <roux@yandex.ru>
+ */
+
 //_____ I N C L U D E S _______________________________________________________
 #include "convert.h"
 
@@ -21,15 +47,15 @@
 #include <math.h>
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N ___________________________________________________
-//! @brief Size in bits
-//! @{
+//! \brief Size in bits
+//! \{
 enum Constants
 {
 	U8B		=		0,
 	U16B	=		1,
 	U32B	=		2,
 };
-//! @}
+//! \}
 
 //! Max decimal counts in digit
 #define MAX_DECIMAL_COUNT		10
