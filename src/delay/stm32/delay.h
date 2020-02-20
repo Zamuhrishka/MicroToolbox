@@ -46,6 +46,7 @@
 //_____ D E F I N I T I O N ___________________________________________________
 #ifndef SYS_CLOCK
 	#define SYS_CLOCK	16000000UL
+	#warning "Please define SYS_CLOCK with actual value because now used default value!"
 #endif
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E   D E C L A R A T I O N S _____________________________
