@@ -1,3 +1,6 @@
 [submodule "3rdparty/json/jfes"]
 	path = 3rdparty/json/jfes
 	url = https://github.com/dmitrii-eremin/jfes
+[submodule "3rdparty/json/jsmn"]
+	path = 3rdparty/json/jsmn
+	url = https://github.com/zserge/jsmn
