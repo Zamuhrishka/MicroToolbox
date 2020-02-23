@@ -1,0 +1,3 @@
+[submodule "3rdparty/json/jfes"]
+	path = 3rdparty/json/jfes
+	url = https://github.com/dmitrii-eremin/jfes
