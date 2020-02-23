@@ -7,3 +7,6 @@
 [submodule "3rdparty/regexp/slre"]
 	path = 3rdparty/regexp/slre
 	url = https://github.com/cesanta/slre
+[submodule "3rdparty/unit_tests/cmockery"]
+	path = 3rdparty/unit_tests/cmockery
+	url = https://github.com/google/cmockery
