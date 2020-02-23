@@ -10,3 +10,6 @@
 [submodule "3rdparty/unit_tests/cmockery"]
 	path = 3rdparty/unit_tests/cmockery
 	url = https://github.com/google/cmockery
+[submodule "3rdparty/xprintf"]
+	path = 3rdparty/xprintf
+	url = https://github.com/tmk/elm-chan_xprintf
