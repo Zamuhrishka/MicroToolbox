@@ -39,6 +39,7 @@
 	extern "C" {
 #endif
 //_____ I N C L U D E S _______________________________________________________
+#include <stdint.h>
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N ___________________________________________________
 //_____ M A C R O S ___________________________________________________________
@@ -138,6 +139,22 @@
 #define ARIPH_MEAN(a, b)		(((a) + (b)) >> 1u)
 //_____ V A R I A B L E   D E C L A R A T I O N S _____________________________
 //_____ I N L I N E   F U N C T I O N   D E F I N I T I O N   _________________
+/** Function to reverse the individual bits in a byte - i.e. bit 7 is moved to bit 0, bit 6 to bit 1,
+ *  etc.
+ *
+ *  \param[in] Byte  Byte of data whose bits are to be reversed.
+ *
+ *  \return Input data with the individual bits reversed (mirrored).
+ */
+static inline uint8_t BitReverse(uint8_t Byte);
+static inline uint8_t BitReverse(uint8_t Byte)
+{
+	Byte = (((Byte & 0xF0) >> 4) | ((Byte & 0x0F) << 4));
+	Byte = (((Byte & 0xCC) >> 2) | ((Byte & 0x33) << 2));
+	Byte = (((Byte & 0xAA) >> 1) | ((Byte & 0x55) << 1));
+
+	return Byte;
+}
 //_____ S T A T I C  F U N C T I O N   D E F I N I T I O N   __________________
 //_____ F U N C T I O N   D E C L A R A T I O N S _____________________________
 
