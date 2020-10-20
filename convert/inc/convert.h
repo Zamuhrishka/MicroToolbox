@@ -194,6 +194,21 @@ void convert_uint16_to_string(char *str, uint16_t dig);
 **/
 void convert_uint32_to_string(char *str, uint32_t dig);
 
+/**
+ * \brief		This function used to convert the variable from one range to another.
+ *
+ * \param[out] 	x: variable which need to transform.
+ * \param[in] 	in_min: min value of input range.
+ * \param[in] 	in_max: max value of input range.
+ * \param[in] 	out_min: min value of output range.
+ * \param[in] 	out_max: max value of output range.
+ *
+ * \return 		transformet variable.
+**/
+int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max);
+
+
+
 float Utils_Round(float val, float rval);
 /* C++ detection */
 #ifdef __cplusplus
