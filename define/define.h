@@ -15,63 +15,63 @@
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N ___________________________________________________
 #ifndef TRUE
-	#define			TRUE                           	1							
+	#define			TRUE                           	1
 #endif
 
 #ifndef FALSE
-	#define			FALSE                         	0                           
+	#define			FALSE                         	0
 #endif
 
 #ifndef NULL
-	#define			NULL                         	0                           
+	#define			NULL                         	0
 #endif
 
 #ifndef PRESS
-	#define			PRESS                           0							
+	#define			PRESS                           0
 #endif
 
 #ifndef RELEASE
-	#define			RELEASE                         1                           
+	#define			RELEASE                         1
 #endif
 
 #ifndef PASS
-	#define			PASS			                1							
+	#define			PASS			                1
 #endif
 
 #ifndef FAULT
-	#define			FAULT                           0							
+	#define			FAULT                           0
 #endif
 
 #ifndef OFF
-	#define			OFF     		                0							
+	#define			OFF     		                0
 #endif
 
 #ifndef ON
-	#define			ON      		                1							
+	#define			ON      		                1
 #endif
 
 #ifndef ENABLE
-	#define			ENABLE   		                1							
+	#define			ENABLE   		                1
 #endif
 
 #ifndef DISABLE
-	#define			DISABLE  		                0							
+	#define			DISABLE  		                0
 #endif
 
 #ifndef SET
-	#define			SET     	                	1							
+	#define			SET     	                	1
 #endif
 
 #ifndef CLEAR
-	#define			CLEAR     	                	0							
+	#define			CLEAR     	                	0
 #endif
 
 #ifndef LOW
-	#define			LOW								0							
+	#define			LOW								0
 #endif
 
 #ifndef HIGH
-	#define			HIGH							1							
+	#define			HIGH							1
 #endif
 
 #define 			KBYTE							1024
