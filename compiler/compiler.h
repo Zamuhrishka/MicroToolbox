@@ -77,6 +77,10 @@
 
 #define unlikely(x) 				__builtin_expect(!!(x), 0)
 
+#define align(A)                    __attribute__((aligned (A)))
+
+#define section(A)                  __attribute__((__section__ (A)))
+
 #ifndef ARCH_HAS_PREFETCH
 #define prefetch(x) 				__builtin_prefetch(x)
 #endif
