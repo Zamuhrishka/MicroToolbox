@@ -172,28 +172,6 @@
  * \hideinitializer
  */
 #define ARIPH_MEAN(a, b)		(((a) + (b)) >> 1u)
-
-/*
- * Stringigy helpers.  https://stackoverflow.com/questions/1597007/creating-c-macro-with-and-line-token-concatenation-with-positioning-macr
- */
-#define STRCONCAT(x, y) x ## y
-#define STRCONCATHELPER(x, y) STRCONCAT(x, y)
-
-/** Gets the number of elements in an array. */
-#ifndef ARRAY_OF
-#define ARRAY_OF(st_) (sizeof(st_)/sizeof(st_[0]))
-#endif
-
-#define is_aligned(POINTER, BYTE_COUNT) \
-(((uint32_t)(const void *)(POINTER)) % (BYTE_COUNT) == 0)
-
-/**
- * Use this macro to define a field in a register which spans multiple bits.
- * For example, if a field occupies fields lsb 16 to msb 23, then use this
- * macro as follows: #define BIT_MASK_XXX_FIELD     BITFIELD(23,16)
- * So the value of BIT_MASK_XXX_FIELD = 0x00FF0000
- */
-#define BITFIELD(msb, lsb)   ((BIT32((msb) - (lsb) + 1) - 1) << (lsb))
 //_____ V A R I A B L E   D E C L A R A T I O N S _____________________________
 //_____ I N L I N E   F U N C T I O N   D E F I N I T I O N   _________________
 /** Function to reverse the individual bits in a byte - i.e. bit 7 is moved to bit 0, bit 6 to bit 1,
