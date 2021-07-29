@@ -1,25 +1,23 @@
-/********************************************************************************
-*
-* @file    		arm_atomic.h
-* @author  		Kovalchuk Alexander aka Zamuhrishka
-* @email  		roux@yandex.ru
-* @version 		0.1
-* @created 		02.11.2017
-* @brief   		This file contains the functions and macros for atomic operations
-*
-********************************************************************************/
+/**
+* \file         arm_atomic.h
+* \author       Kovalchuk Alexander (roux@yandex.ru)
+* \brief        This file contains the functions and macros for atomic operations.
+*/
+
 #pragma once
+
+/* C++ detection */
 #ifdef __cplusplus
-extern "C" {
+    extern "C" {
 #endif
-//_____ C O N F I G S  ________________________________________________________________________
-//_____ I N C L U D E S _______________________________________________________________________
+//_____ I N C L U D E S _______________________________________________________
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
+
 #include "stm32f4xx_hal.h"
-//_____ � O N F I G S__________________________________________________________________________
-//_____ D E F I N I T I O N ___________________________________________________________________
+//_____ C O N F I G S  ________________________________________________________
+//_____ D E F I N I T I O N S _________________________________________________
 #define MASK_TO_BIT31(A)        				(A==0x80000000)? 31 : 0
 #define MASK_TO_BIT30(A)        				(A==0x40000000)? 30 : MASK_TO_BIT31(A)
 #define MASK_TO_BIT29(A)        				(A==0x20000000)? 29 : MASK_TO_BIT30(A)
@@ -52,8 +50,7 @@ extern "C" {
 #define MASK_TO_BIT02(A)        				(A==0x00000004)? 2  : MASK_TO_BIT03(A)
 #define MASK_TO_BIT01(A)        				(A==0x00000002)? 1  : MASK_TO_BIT02(A)
 #define MASK_TO_BIT(A)          				(A==0x00000001)? 0  : MASK_TO_BIT01(A)
-
-//_____ M A C R O S ___________________________________________________________________________
+//_____ M A C R O S ___________________________________________________________
 inline static int _irqDis(void)
 {
     __ASM volatile ("cpsid i" : : : "memory");
@@ -70,8 +67,6 @@ inline static int _irqEn(void)
     for(int flag = _irqDis();\
         flag;\
         flag = _irqEn())
-
-
 
 inline static int _iDisGetPrimask(void)
 {
@@ -91,9 +86,6 @@ inline static int _iSetPrimask(int priMask)
      for(int mask = _iDisGetPrimask(), flag = 1;\
          flag;\
          flag = _iSetPrimask(mask))
-
-
-
 
 //! This macros set bit in register using bit-banding mechanism
 //!
@@ -187,8 +179,8 @@ inline static int _iSetPrimask(int priMask)
 //! @return none.
 //!
 #define CriticalBlockEnd()							(__enable_irq())
-//_____ V A R I A B L E   D E C L A R A T I O N S _____________________________________________
-//_____ I N L I N E   F U N C T I O N S _______________________________________________________
+//_____ V A R I A B L E S _____________________________________________________
+//_____ P U B L I C  F U N C T I O N S_________________________________________
 /**
 * @brief 	The classic atomic Compare And Swap (CAS) operation.
 *
@@ -541,7 +533,7 @@ static inline uint32_t AtomicReadWord(volatile uint32_t *addr)
 	return result;
 }
 
-//_____ F U N C T I O N   D E C L A R A T I O N S _____________________________________________
+/* C++ detection */
 #ifdef __cplusplus
 }
 #endif

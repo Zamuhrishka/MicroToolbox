@@ -1,38 +1,30 @@
-/********************************************************************************
-*
-* @file    		sfloat.h
-* @author  		Kosma Moczek
-* @email  		<kosma@cloudyourcar.com>
-* @version 		0.1
-* @created 		02.11.2017
-* @brief   		This file contains the Structure for store floatting data.
-*
-* @disclamer    This program is free software. It comes without any
-*               warranty, to the extent permitted by applicable law.
-*               You can redistribute it and/or modify it under
-*               the terms of the Do What The Fuck You Want To Public
-*               License, Version 2, as published by Sam Hocevar.
-*               See the COPYING file for more details.
-********************************************************************************/
+/**
+* \file         sfloat.h
+* \author       Kosma Moczek <kosma@cloudyourcar.com>
+* \brief        This file contains the prototypes functions which use for...
+*/
+
 #pragma once
 
+/* C++ detection */
 #ifdef __cplusplus
-extern "C" {
+    extern "C" {
 #endif
-//_____ C O N F I G S  ________________________________________________________________________
-//_____ I N C L U D E S _______________________________________________________________________
-#include <stdio.h>
+//_____ I N C L U D E S _______________________________________________________
 #include <stdint.h>
 #include <stdbool.h>
 #include <math.h>
-//_____ M A C R O S ___________________________________________________________________________
-//_____ D E F I N I T I O N ___________________________________________________________________
+
+#include "constants.h"
+//_____ C O N F I G S  ________________________________________________________
+//_____ D E F I N I T I O N S _________________________________________________
 typedef struct {
     int_least32_t value;
     int_least32_t scale;
 }	sfloat_t;
-//_____ V A R I A B L E   D E C L A R A T I O N S _____________________________________________
-//_____ I N L I N E   F U N C T I O N S _______________________________________________________
+//_____ M A C R O S ___________________________________________________________
+//_____ V A R I A B L E S _____________________________________________________
+//_____ P U B L I C  F U N C T I O N S_________________________________________
 /**
 * @brief 	Rescale a fixed-point value to a different scale. Rounds towards zero.
 *
@@ -120,7 +112,8 @@ static inline sfloat_t float_to_sfloat(float fnum)
 
 	return sf;
 }
-//_____ F U N C T I O N   D E C L A R A T I O N S _____________________________________________
+
+/* C++ detection */
 #ifdef __cplusplus
 }
 #endif

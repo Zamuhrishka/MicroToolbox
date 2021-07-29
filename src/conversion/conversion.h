@@ -1,66 +1,25 @@
 /**
-* \file    		convert.h
-* \author  		Kovalchuk Alexander(roux@yandex.ru)
-* \brief   		This file contains the prototypes functions for different types
+* \file         conversion.h
+* \author       Kovalchuk Alexander (roux@yandex.ru)
+* \brief        This file contains the prototypes functions which use for...
 */
-
-/*
- * Copyright (c) year Alexander KOVALCHUK
- *
- * Permission is hereby granted, free of charge, to any person
- * obtaining a copy of this software and associated documentation
- * files (the "Software"), to deal in the Software without restriction,
- * including without limitation the rights to use, copy, modify, merge,
- * publish, distribute, sublicense, and/or sell copies of the Software,
- * and to permit persons to whom the Software is furnished to do so,
- * subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
- * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
- * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- * OTHER DEALINGS IN THE SOFTWARE.
- *
- * This file is part of library_name.
- *
- * Author:          Alexander KOVALCHUK <roux@yandex.ru>
- */
 
 #pragma once
 
 /* C++ detection */
 #ifdef __cplusplus
-	extern "C" {
+    extern "C" {
 #endif
 //_____ I N C L U D E S _______________________________________________________
 #include <stdint.h>
 #include <stdbool.h>
+
+#include "types.h"
 //_____ C O N F I G S  ________________________________________________________
-//_____ D E F I N I T I O N ___________________________________________________
-//! \brief MAC address
-//! \{
-typedef struct
-{
-	uint8_t value[6];
-} 	mac_t;
-//! \}
-
-//! Ip address (version 4)
-typedef uint32_t ip4addr_t;
-
-//! BCD typedef
-typedef uint32_t bcd_t;
+//_____ D E F I N I T I O N S _________________________________________________
 //_____ M A C R O S ___________________________________________________________
-//_____ V A R I A B L E _______________________________________________________
-//_____ I N L I N E   F U N C T I O N _________________________________________
-//_____ S T A T I C  F U N C T I O N  _________________________________________
-//_____ F U N C T I O N   D E C L A R A T I O N S _____________________________
+//_____ V A R I A B L E S _____________________________________________________
+//_____ P U B L I C  F U N C T I O N S_________________________________________
 /**
  * \brief		This function convert hex char to digit.
  *
@@ -207,9 +166,8 @@ void convert_uint32_to_string(char *str, uint32_t dig);
 **/
 int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max);
 
-
-
 float Utils_Round(float val, float rval);
+
 /* C++ detection */
 #ifdef __cplusplus
 }

@@ -1,46 +1,17 @@
 /**
-* @file    		crc.c
-* @author  		Kovalchuk Alexander
-* @email  		roux@yandex.ru
-* @brief   		This file contains files for calculate crc8/16/32.
+* \file         crc.c
+* \author       Kovalchuk Alexander (roux@yandex.ru)
+* \brief        This file contains files for calculate crc8/16/32.
 */
-
-/*
- * Copyright (c) year Alexander KOVALCHUK
- *
- * Permission is hereby granted, free of charge, to any person
- * obtaining a copy of this software and associated documentation
- * files (the "Software"), to deal in the Software without restriction,
- * including without limitation the rights to use, copy, modify, merge,
- * publish, distribute, sublicense, and/or sell copies of the Software,
- * and to permit persons to whom the Software is furnished to do so,
- * subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
- * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE
- * AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- * OTHER DEALINGS IN THE SOFTWARE.
- *
- * This file is part of library_name.
- *
- * Author:          Alexander KOVALCHUK <roux@yandex.ru>
- */
-
 //_____ I N C L U D E S _______________________________________________________
-#include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
-//_____ D E F I N I T I O N ___________________________________________________
+//_____ C O N F I G S  ________________________________________________________
+//_____ D E F I N I T I O N S _________________________________________________
 //_____ M A C R O S ___________________________________________________________
-//_____ V A R I A B L E   D E C L A R A T I O N S _____________________________
+//_____ V A R I A B L E S _____________________________________________________
+#if defined(CRC8_TABLE)
 //! \brief Checksum CRC8 Table
 //! Used polynomial: x^8 + x^5 + x^4 + 1 (0x31).
 //! Init  : 0xFF
@@ -84,7 +55,9 @@ const uint8_t Crc8Table[] =
     0x3B, 0x0A, 0x59, 0x68, 0xFF, 0xCE, 0x9D, 0xAC
 };
 //! @}
+#endif
 
+#if defined(CRC16_TABLE)
 //! @brief Checksum CRC16 Table
 //! Used polynomial: x^16 + x^12 + x^5 + 1 (0x1021).
 //! Init  : 0xFFFF
@@ -128,7 +101,9 @@ const uint16_t Crc16Table[] =
     0x6E17, 0x7E36, 0x4E55, 0x5E74, 0x2E93, 0x3EB2, 0x0ED1, 0x1EF0
 };
 //! @}
+#endif
 
+#if defined(CRC32_TABLE)
 //! @brief Checksum CRC32 Table
 //! Used polynomial: x^32 + x^26 + x^23 + x^22 + x^16 + x^12 + x^11
 //! + x^10 + x^8 + x^7 + x^5 + x^4 + x^2 + x + 1 (0x04C11DB7)
@@ -205,9 +180,9 @@ const uint_least32_t Crc32Table[] =
     0xB40BBE37, 0xC30C8EA1, 0x5A05DF1B, 0x2D02EF8D
 };
 //! @}
-//_____ I N L I N E   F U N C T I O N   D E F I N I T I O N   _________________
-//_____ S T A T I C  F U N C T I O N   D E F I N I T I O N   __________________
-//_____ F U N C T I O N   D E F I N I T I O N   _______________________________
+#endif
+//_____ P R I V A T E  F U N C T I O N S_______________________________________
+//_____ P U B L I C  F U N C T I O N S_________________________________________
 /**
 * This function used to calculate checksum crc8.
 *
@@ -231,6 +206,7 @@ uint8_t crc8(const uint8_t *pcBlock, size_t len)
     return crc;
 }
 
+#if defined(CRC8_TABLE)
 /**
 * This function used to calculate crc8 checksum by table method.
 *
@@ -247,7 +223,7 @@ uint8_t crc8_table(const uint8_t *pcBlock, size_t len)
 
     return crc;
 }
-
+#endif
 /**
 * This function used to calculate checksum crc16.
 *
@@ -271,6 +247,7 @@ uint16_t crc16(const uint8_t *pcBlock, size_t len)
     return crc;
 }
 
+#if defined(CRC16_TABLE)
 /**
 * This function used to calculate crc16 checksum by table method.
 *
@@ -287,6 +264,7 @@ uint16_t crc16_table(const uint8_t *pcBlock, size_t len)
 
     return crc;
 }
+#endif
 
 /**
 * This function used to calculate checksum crc32.
@@ -319,6 +297,7 @@ uint_least32_t crc32(const uint8_t *buf, size_t len)
     return crc ^ 0xFFFFFFFFUL;
 }
 
+#if defined(CRC32_TABLE)
 /**
 * This function used to calculate crc32 checksum by table method..
 *
@@ -335,3 +314,4 @@ uint_least32_t crc32_table(const uint8_t *buf, size_t len)
 
     return crc ^ 0xFFFFFFFF;
 }
+#endif
