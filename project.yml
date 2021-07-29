@@ -1,0 +1,280 @@
+---
+:project:
+  :use_exceptions: TRUE
+  :use_mocks: TRUE
+  :use_test_preprocessor: TRUE
+  :use_preprocessor_directives: FALSE
+  :use_auxiliary_dependencies: TRUE
+  :auto_link_deep_dependencies: TRUE
+  :build_root: build
+  :release_build: TRUE
+  :test_file_prefix: test_
+  :which_ceedling: vendor/ceedling
+  :ceedling_version: 0.30.0
+  :options_paths:
+    - options/
+  :default_tasks:
+    - test:all
+
+:test_build:
+  :use_assembly: FALSE
+
+:release_build:
+  :output: pku.elf
+  :use_assembly: TRUE
+  # :artifacts:
+  #   - pku.map
+  #   - pku.elf
+
+:environment:
+  - :mcu:  32MX795F512L
+  - :freq: 40000000UL
+
+:extension:
+  :executable: .elf
+  :assembly: .S
+
+:paths:
+  :test:
+    - +:test/**
+    - -:test/support
+  :source:
+    - src/kernel/*
+    - src/kernel/portable/mplab/pic32mx/*
+    - src/user/app/**
+    - src/user/app/cmd_handler/*
+    - src/user/bsp/**
+    - src/user/drivers/**
+    # - src/user/utils/bringup/*
+    - src/user/utils/crc/*
+    - src/user/middle/serialization/**
+    - src/user/utils/convert/src/*
+    - src/user/middle/managers/**
+    - src/user/middle/motion/*
+    - src/user/middle/protocols/**
+    - src/user/middle/settings/**
+    - src/user/middle/position/**
+    - +:src/user/middle/debug/debug.c
+  :include:
+    - src/kernel/
+    - src/kernel/include/
+    - src/kernel/portable/mplab/pic32mx/
+    - src/kernel/portable/common/
+    - src/user/app/cmd_handler/
+    - src/user/middle/network/
+    - src/user/middle/network/port/CycloneTCP/common/
+    - src/user/middle/network/port/CycloneTCP/port/
+    - src/user/middle/network/port/CycloneTCP/stack/
+    - src/user/config/
+    - src/user/
+    - src/user/drivers/motor/bus/CANopenNode/
+    - src/user/middle/
+    - src/
+    - src/user/middle/serialization/cbor/inc/
+    - src/user/middle/serialization/cbor/src/
+    - src/user/middle/debug/
+    - src/user/middle/settings/
+    - src/user/middle/position/
+    # - src/user/utils/bringup/
+    - src/user/middle/network/port/CycloneTCP/
+    - src/user/common/
+    - src/user/common/types/
+    - src/user/utils/
+    - src/user/utils/crc/
+    - src/user/utils/convert/inc/
+    # - -:src/user/utils/containers/
+    # - -:src/user/utils/bringup/
+  :support:
+    - test/support
+  :libraries: []
+
+:files:
+  :test:
+    - -:test/test_queue.c
+  :assembly:
+    - +:src/kernel/portable/mplab/pic32mx/port_asm.S
+    - +:src/user/middle/network/port/CycloneTCP/port/eth_irq_wrapper.S
+  :source:
+    # - -:src/user/utils/containers/zqueue.c
+    # - -:src/user/utils/bringup/bringup.c
+    - -:src/user/drivers/motor/bus/CANopenNode/eeprom.c
+    - -:src/user/drivers/motor/bus/CANopenNode/eeprom.h
+    - +:src/main.c
+    - -:src/kernel/printf-stdarg.c
+    - +:src/kernel/portable/memmang/heap_4.c
+    - -:src/user/drivers/motor/port/MCDC3002P/mcdc3002p.c
+    - +:src/user/drivers/motor/port/BG45X30/bg45x30.c
+    - +:src/user/middle/network/port/CycloneTCP/common/cpu_endian.c
+    - +:src/user/middle/network/port/CycloneTCP/common/date_time.c
+    - +:src/user/middle/network/port/CycloneTCP/common/str.c
+    - +:src/user/middle/network/port/CycloneTCP/common/debug.c
+    - +:src/user/middle/network/port/CycloneTCP/port/os_port_freertos.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/ethernet.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/ip.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/net.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/net_mem.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/nic.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/ping.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/raw_socket.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/socket.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/tcp.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/tcp_fsm.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/tcp_timer.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/tcp_misc.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/core/udp.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/dhcp/dhcp_client.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/dhcp/dhcp_common.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/dhcp/dhcp_debug.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/dhcp/dhcp_server.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/dns/dns_cache.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/dns/dns_client.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/dns/dns_common.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/dns/dns_debug.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/drivers/mac/pic32mx_eth_driver.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/drivers/phy/dp83848_driver.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/ipv4/arp.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/ipv4/auto_ip.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/ipv4/icmp.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/ipv4/igmp.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/ipv4/ipv4.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/ipv4/ipv4_frag.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/netbios/nbns_client.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/netbios/nbns_common.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/netbios/nbns_responder.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/std_services/chargen.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/std_services/daytime.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/std_services/discard.c
+    - +:src/user/middle/network/port/CycloneTCP/stack/std_services/echo.c
+    - +:src/user/middle/network/port/network.c
+
+:defines:
+  # in order to add common defines:
+  #  1) remove the trailing [] from the :common: section
+  #  2) add entries to the :common: section (e.g. :test: has TEST defined)
+  # :common: &common_defines []
+  :common: &common_defines
+  :test:
+    - *common_defines
+    - TEST
+    - GPL_LICENSE_TERMS_ACCEPTED
+    - MOTOR_TYPE_BG45X30C
+  :test_preprocess:
+    - *common_defines
+    - TEST
+  :release:
+    - PBCLK=40000000ul
+    - UAV_POS_SOURCE_UART
+    # - MOTOR_TYPE_MCDC3002P
+    - MOTOR_TYPE_BG45X30C
+    - CRC32_TABLE
+    - CO_FSYS=80000
+    - CO_USE_GLOBALS
+    - CO_PBCLK=40000
+    - QCBOR_DISABLE_FLOAT_HW_USE
+    - TEL_SER_CBOR
+    - NO_CAN_RXF
+    - GPL_LICENSE_TERMS_ACCEPTED
+    - SUA_BOARD
+    - DNS_CLIENT_SUPPORT=0
+    - NBNS_CLIENT_SUPPORT=0
+    - USE_FULL_DEBUG
+    - DBG_OUTPUT_UART
+    # - DBG_OUTPUT_ETH
+    - DEBUG_COLOR_SUPPORT
+    # - COMPASS_DEBUG_ENABLE
+    # - GSP_DEBUG_ENABLE
+    # - MODEM_DEBUG_ENABLE
+    # - NET_DEBUG_ENABLE
+    # - MOTION_DEBUG_ENABLE
+    # - CMAN_DEBUG_ENABLE
+    - SUAP_DEBUG_ENABLE
+    - CMD_HANDLER_DEBUG_ENABLE
+    - CMD_HANDLER_TEST
+    - TEL_TEST_MODE
+    # - MOTION_TEST_ENANLE
+    # - TARGETING_TOUR_ENANLE
+
+:cmock:
+  :mock_prefix: mock_
+  :when_no_prototypes: :warn
+  :enforce_strict_ordering: TRUE
+  :plugins:
+    - :ignore
+    - :callback
+  :treat_as:
+    uint8:    HEX8
+    uint16:   HEX16
+    uint32:   UINT32
+    int8:     INT8
+    bool:     UINT8
+
+:gcov:
+  :reports:
+    - HtmlDetailed
+  :gcovr:
+    :html_medium_threshold: 75
+    :html_high_threshold: 90
+
+:tools:
+  :release_assembler:
+    :executable: xc32-gcc
+    :name: 'release assembler'
+    :arguments:
+      - -c ${1}                       
+      - -mprocessor=#{ENV['MCU']}
+      - -D$: COLLECTION_DEFINES_RELEASE_AND_VENDOR
+      - -I$: COLLECTION_PATHS_SOURCE_INCLUDE_VENDOR
+      - -I$: COLLECTION_PATHS_RELEASE_TOOLCHAIN_INCLUDE
+      - -o ${2} 
+      - -MMD
+  :release_compiler:
+    :executable: xc32-gcc
+    :name: 'release compiler'
+    :arguments:
+      - -g
+      - -x c
+      - -c ${1} 
+      - -mprocessor=#{ENV['MCU']}
+      - -D$: COLLECTION_DEFINES_RELEASE_AND_VENDOR
+      - -I$: COLLECTION_PATHS_SOURCE_INCLUDE_VENDOR
+      - -I$: COLLECTION_PATHS_RELEASE_TOOLCHAIN_INCLUDE
+      - -o ${2} 
+      - -MMD
+      # - -std=c99
+  :release_linker:
+    :executable: xc32-gcc
+    :name: 'release linker'
+    :arguments:
+      - -mprocessor=#{ENV['MCU']}
+      - -o ${2}
+      - ${1}
+      # - -Wl,--defsym=__MPLAB_BUILD=1,--script="src\elf32pic32mx.x",--defsym=_min_heap_size=2000,--defsym=_min_stack_size=2000,-Map="build/release/pku.map" --report-mem
+      - -Wl,--defsym=__MPLAB_BUILD=1,--defsym=_min_heap_size=2000,--defsym=_min_stack_size=2000,-Map="build/release/pku.map" --report-mem
+  :post_link_execute:
+    :executable: xc32-bin2hex
+    :arguments:
+      - ${1}
+      # - ./build/release/pku.elf
+
+# LIBRARIES
+# These libraries are automatically injected into the build process. Those specified as
+# common will be used in all types of builds. Otherwise, libraries can be injected in just
+# tests or releases. These options are MERGED with the options in supplemental yaml files.
+:libraries:
+  :placement: :end
+  :flag: "-l${1}"
+  :path_flag: "-L ${1}"
+  :system: []    
+  :test: []
+  :release: []
+
+:plugins:
+  :load_paths:
+    - vendor/ceedling/plugins
+  :enabled:
+    - stdout_pretty_tests_report
+    - module_generator
+    - raw_output_report
+    - xml_tests_report
+    - command_hooks
+...
