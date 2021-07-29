@@ -1,15 +1,12 @@
-[submodule "3rdparty/json/jfes"]
-	path = 3rdparty/json/jfes
+[submodule "src/3rdparty/json/jfes"]
+	path = src/3rdparty/json/jfes
 	url = https://github.com/dmitrii-eremin/jfes
-[submodule "3rdparty/json/jsmn"]
-	path = 3rdparty/json/jsmn
+[submodule "src/3rdparty/json/jsmn"]
+	path = src/3rdparty/json/jsmn
 	url = https://github.com/zserge/jsmn
-[submodule "3rdparty/regexp/slre"]
-	path = 3rdparty/regexp/slre
+[submodule "src/3rdparty/regexp/slre"]
+	path = src/3rdparty/regexp/slre
 	url = https://github.com/cesanta/slre
-[submodule "3rdparty/unit_tests/cmockery"]
-	path = 3rdparty/unit_tests/cmockery
-	url = https://github.com/google/cmockery
-[submodule "3rdparty/xprintf"]
-	path = 3rdparty/xprintf
+[submodule "src/3rdparty/xprintf"]
+	path = src/3rdparty/xprintf
 	url = https://github.com/tmk/elm-chan_xprintf
