@@ -82,7 +82,7 @@ static inline sfloat_t float_to_sfloat(float fnum)
 	float cpart, dpart;
 	uint8_t i = 0, j = 0, k = 0;
 	int8_t sign = 1;
-	sfloat_t sf = {0,0};
+	sfloat_t sf = {0,1};
 
 	if(fnum == 0.0f) {
 		return sf;
