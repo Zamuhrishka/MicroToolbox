@@ -228,5 +228,97 @@ void test_MinMax(void)
 
 void test_Bits(void)
 {
-	TEST_IGNORE();
+	uint8_t test8 = 0;
+	uint16_t test16 = 0;
+	uint32_t test32 = 0;
+
+	for (size_t i = 0; i < 8; i++)
+	{
+		SET_BIT(test8, i);
+		TEST_ASSERT_BIT_HIGH(i, test8);
+
+		CLEAR_BIT(test8, i);
+		TEST_ASSERT_BIT_LOW(i, test8);
+
+		TOGGLE_BIT(test8, i);
+		TEST_ASSERT_BIT_HIGH(i, test8);
+
+		TOGGLE_BIT(test8, i);
+		TEST_ASSERT_BIT_LOW(i, test8);
+
+		
+		TEST_ASSERT_TRUE(TEST_BIT(test8, i));
+		SET_BIT(test8, i);
+		TEST_ASSERT_FALSE(TEST_BIT(test8, i));
+	}
+
+	for (size_t i = 0; i < 16; i++)
+	{
+		SET_BIT(test16, i);
+		TEST_ASSERT_BIT_HIGH(i, test16);
+
+		CLEAR_BIT(test16, i);
+		TEST_ASSERT_BIT_LOW(i, test16);
+
+		TOGGLE_BIT(test16, i);
+		TEST_ASSERT_BIT_HIGH(i, test16);
+
+		TOGGLE_BIT(test16, i);
+		TEST_ASSERT_BIT_LOW(i, test16);
+
+		
+		TEST_ASSERT_TRUE(TEST_BIT(test16, i));
+		SET_BIT(test16, i);
+		TEST_ASSERT_FALSE(TEST_BIT(test16, i));
+	}
+
+	for (size_t i = 0; i < 32; i++)
+	{
+		SET_BIT(test32, i);
+		TEST_ASSERT_BIT_HIGH(i, test32);
+
+		CLEAR_BIT(test32, i);
+		TEST_ASSERT_BIT_LOW(i, test32);
+
+		TOGGLE_BIT(test32, i);
+		TEST_ASSERT_BIT_HIGH(i, test32);
+
+		TOGGLE_BIT(test32, i);
+		TEST_ASSERT_BIT_LOW(i, test32);
+
+		
+		TEST_ASSERT_TRUE(TEST_BIT(test32, i));
+		SET_BIT(test32, i);
+		TEST_ASSERT_FALSE(TEST_BIT(test32, i));
+	}	
+}
+
+void test_Bitfield(void)
+{
+	TEST_ASSERT_EQUAL_UINT(0x00FF0000, MAKE_BITFIELD(23,16));
+	TEST_ASSERT_EQUAL_UINT(0xFFFF0000, MAKE_BITFIELD(31,16));
+	TEST_ASSERT_EQUAL_UINT(0x0000000F, MAKE_BITFIELD(3,0));
+}
+
+void test_ArrayOf(void)
+{
+	uint8_t array8[16] = {0};
+	uint16_t array16[32] = {0};
+	uint32_t array32[64] = {0};
+
+	TEST_ASSERT_EQUAL_UINT(16, ARRAY_OF(array8));
+	TEST_ASSERT_EQUAL_UINT(32, ARRAY_OF(array16));
+	TEST_ASSERT_EQUAL_UINT(64, ARRAY_OF(array32));
+}
+
+void test_IsAligned(void)
+{
+	const void *ptr1 = (const void *)(0x2000);
+	const void *ptr2 = (const void *)(0x2001);
+
+	TEST_ASSERT_TRUE(IS_ALIGNED(ptr1, 4));
+	TEST_ASSERT_FALSE(IS_ALIGNED(ptr2, 4));
+
+	TEST_ASSERT_TRUE(IS_ALIGNED(ptr1, 2));
+	TEST_ASSERT_FALSE(IS_ALIGNED(ptr2, 2));
 }

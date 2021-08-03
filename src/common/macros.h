@@ -12,20 +12,10 @@
 #endif
 //_____ I N C L U D E S _______________________________________________________
 #include <stdint.h>
-
 #include "constants.h"
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
 //_____ M A C R O S ___________________________________________________________
-/**
- * \brief           Clear bit in register
- * \param[in]       reg: register address
- * \param[in]       bit: bit number
- * \return          none
- * \hideinitializer
- */
-#define CLEAR_BIT(reg, bit)		(reg &= (~(1<<(bit))))
-
 /**
  * \brief           Set bit in register
  * \param[in]       reg: register address
@@ -33,7 +23,16 @@
  * \return          none
  * \hideinitializer
  */
-#define SET_BIT(reg, bit)		(reg |= (1<<(bit)))
+#define SET_BIT(reg, bit)			(reg |= (1<<(bit)))
+
+/**
+ * \brief           Clear bit in register
+ * \param[in]       reg: register address
+ * \param[in]       bit: bit number
+ * \return          none
+ * \hideinitializer
+ */
+#define CLEAR_BIT(reg, bit)			(reg &= (~(1<<(bit))))
 
 /**
  * \brief           Invert bit in register
@@ -42,7 +41,7 @@
  * \return          none
  * \hideinitializer
  */
-#define TOGGLE_BIT(reg, bit)	(reg ^= (1<<(bit)))
+#define TOGGLE_BIT(reg, bit)		(reg ^= (1<<(bit)))
 
 /**
  * \brief           Test bit in register for clear state
@@ -51,7 +50,25 @@
  * \return          true - if clear
  * \hideinitializer
  */
-#define TEST_BIT(reg, bit)		((reg & (1<<(bit))) == 0)
+#define TEST_BIT(reg, bit)			((reg & (1<<(bit))) == 0)
+
+/**
+ * \brief           Make uint32_t number with bit setup
+ * \param[in]       bit: bit number which need to be set up
+ * \return          uint32_t number
+ * \hideinitializer
+ */
+#define MAKE_BIT32(bit)				((uint32_t)(1<<(uint32_t)(bit)))
+
+/**
+ * \brief           Use this macro to define a field in a register which 
+ * 					spans multiple bits.
+ * \param[in]       msb: most significant bit
+ * \param[in]       lsb: least significant bit
+ * \return          bitfield
+ * \hideinitializer
+ */
+#define MAKE_BITFIELD(msb, lsb)   	((MAKE_BIT32((msb) - (lsb) + 1) - 1) << (lsb))
 
 /**
  * \brief           This macros take the max between a and b.
@@ -60,7 +77,7 @@
  * \return          the max between a and b.
  * \hideinitializer
  */
-#define MAX(a, b)            	(((a) > (b)) ? (a) : (b))
+#define MAX(a, b)            		(((a) > (b)) ? (a) : (b))
 
 /**
  * \brief           This macros take the min between a and b.
@@ -69,7 +86,7 @@
  * \return          the min between a and b.
  * \hideinitializer
  */
-#define MIN(a, b)            	(((a) < (b)) ? (a) : (b))
+#define MIN(a, b)            		(((a) < (b)) ? (a) : (b))
 
 /**
  * \brief           This macros test two values for equal.
@@ -78,7 +95,7 @@
  * \return          true if equal.
  * \hideinitializer
  */
-#define IS_EQUAL(a, b)			(((a) ^ (b)) == 0)
+#define IS_EQUAL(a, b)				(((a) ^ (b)) == 0)
 
 /**
  * \brief           This macros test number for even.
@@ -86,7 +103,7 @@
  * \return          true if number is even.
  * \hideinitializer
  */
-#define IS_EVEN(num)			(((num) & 1) == 1)
+#define IS_EVEN(num)				(((num) & 1) == 1)
 
 /**
  * \brief           This macros test number for odd.
@@ -94,7 +111,7 @@
  * \return          true if number is odd.
  * \hideinitializer
  */
-#define IS_ODD(num)				(!(((num) & 1) == 1))
+#define IS_ODD(num)					(!(((num) & 1) == 1))
 
 /**
  * \brief           This macros change the number sigh.
@@ -102,7 +119,7 @@
  * \return          number with changed sigh.
  * \hideinitializer
  */
-#define SIGH_CHANGE(a)			((~(a)) + 1u)
+#define SIGH_CHANGE(a)				((~(a)) + 1u)
 
 /**
  * \brief           This macros change the number sigh.
@@ -110,28 +127,24 @@
  * \return          number with changed sigh.
  * \hideinitializer
  */
-#define ARIPH_MEAN(a, b)		(((a) + (b)) >> 1u)
+#define ARIPH_MEAN(a, b)			(((a) + (b)) >> 1u)
 
-/*
- * Stringigy helpers.  https://stackoverflow.com/questions/1597007/creating-c-macro-with-and-line-token-concatenation-with-positioning-macr
- */
-#define STRCONCAT(x, y) 		((x) ## (y))
-#define STRCONCATHELPER(x, y) 	STRCONCAT(x, y)
-
-/** Gets the number of elements in an array. */
-#ifndef ARRAY_OF
-#define ARRAY_OF(st_) 			(sizeof(st_)/sizeof(st_[0]))
-#endif
-
-#define is_aligned(POINTER, BYTE_COUNT) \
-								(((uint32_t)(const void *)(POINTER)) % (BYTE_COUNT) == 0)
 /**
- * Use this macro to define a field in a register which spans multiple bits.
- * For example, if a field occupies fields lsb 16 to msb 23, then use this
- * macro as follows: #define BIT_MASK_XXX_FIELD     BITFIELD(23,16)
- * So the value of BIT_MASK_XXX_FIELD = 0x00FF0000
+ * \brief           Gets the number of elements in an array.
+ * \param[in]       array: pointer to array
+ * \return          number of elements.
+ * \hideinitializer
  */
-#define BITFIELD(msb, lsb)   	((BIT32((msb) - (lsb) + 1) - 1) << (lsb))
+#define ARRAY_OF(array) 			(sizeof(array)/sizeof(array[0]))
+
+/**
+ * \brief           Check if pointer is alignment by byte_counter.
+ * \param[in]       pointer: pointer
+ * \param[in]       byte_counter: alignment byte counter 
+ * \return          number of elements.
+ * \hideinitializer
+ */
+#define IS_ALIGNED(pointer, byte_counter) (((uint32_t)(const void *)(pointer)) % (byte_counter) == 0)
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
 /** Function to reverse the individual bits in a byte - i.e. bit 7 is moved to bit 0, bit 6 to bit 1,
