@@ -15,18 +15,18 @@
 #include <stdbool.h>
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
-//! \brief MAC address
-//! \{
+//< \brief MAC address
+//< \{
 typedef struct
 {
 	uint8_t value[6];
 } 	mac_t;
-//! \}
+//< \}
 
-//! Ip address (version 4)
+//< Ip address (version 4)
 typedef uint32_t ip4addr_t;
 
-//! BCD typedef
+//< BCD typedef
 typedef uint32_t bcd_t;
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
