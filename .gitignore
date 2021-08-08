@@ -33,11 +33,26 @@
 # Debug files
 *.dSYM/
 
+# Temporary files
+*.tmp
+
 # Folders
 /.vscode
 /build
-/tools
 /docs
+/options
+/tools
+/vendor
+/src/3rdparty/instr/asan/readme
 
-# Temporary files
-*.tmp
+# Files
+ceedling.*
+Doxygen.conf
+project.yml
+pvs-studio.bat
+.clang-format
+PVS-Studio.cfg
+rakefile.rb
+*.yml
+
+
