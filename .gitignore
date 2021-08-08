@@ -55,4 +55,6 @@ PVS-Studio.cfg
 rakefile.rb
 *.yml
 
+/test/support/assert_test_helpers.h
+
 
