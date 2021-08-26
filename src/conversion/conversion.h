@@ -166,6 +166,72 @@ void convert_uint32_to_string(char *str, uint32_t dig);
 **/
 int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max);
 
+/**
+ * \brief		Store `16-bit` value to bytes array in little-endian format.
+ *
+ * \param[in]   val: Value to write to output array
+ * \param[out]  ptr: Minimum `2-bytes` long output array to write value to
+ *
+ * \return 		void.
+**/
+void convert_u16_to_array_le(uint16_t val, void* ptr);
+
+/**
+ * \brief           Store `32-bit` value to bytes array in little-endian format
+ * 
+ * \param[in]       val: Value to write to output array
+ * \param[out]      ptr: Minimum `4-bytes` long output array to write value to
+ */
+void convert_u32_to_array_le(uint32_t val, void* ptr);
+
+/**
+ * \brief           Load `16-bit` value from bytes array in little-endian format
+ * 
+ * \param[in]       ptr: Minimum `2-bytes` long input array to extract bytes from
+ * \return          `16-bit` value extracted from input array
+ */
+uint16_t convert_array_to_u16_le(const void* ptr);
+
+/**
+ * \brief           Load `32-bit` value from bytes array in little-endian format
+ * 
+ * \param[in]       ptr: Minimum `2-bytes` long input array to extract bytes from
+ * \return          `32-bit` value extracted from input array
+ */
+uint32_t convert_array_to_u32_le(const void* ptr);
+
+/**
+ * \brief           Store `16-bit` value to bytes array in big-endian format
+ * 
+ * \param[in]       val: Value to write to output array
+ * \param[out]      ptr: Minimum `2-bytes` long output array to write value to
+ */
+void convert_u16_to_array_be(uint16_t val, void* ptr);
+
+/**
+ * \brief           Store `32-bit` value to bytes array in big-endian format
+ * 
+ * \param[in]       val: Value to write to output array
+ * \param[out]      ptr: Minimum `4-bytes` long output array to write value to
+ */
+void convert_u32_to_array_be(uint32_t val, void* ptr);
+
+/**
+ * \brief           Load `16-bit` value from bytes array in big-endian format
+ * 
+ * \param[in]       ptr: Minimum `2-bytes` long input array to extract bytes from
+ * \return          `16-bit` value extracted from input array
+ */
+uint16_t convert_array_to_u16_be(const void* ptr);
+
+/**
+ * \brief           Load `32-bit` value from bytes array in big-endian format
+ * 
+ * \param[in]       ptr: Minimum `4-bytes` long input array to extract bytes from
+ * \return          `32-bit` value extracted from input array
+ */
+uint32_t convert_array_to_u32_be(const void* ptr);
+
 float Utils_Round(float val, float rval);
 
 /* C++ detection */

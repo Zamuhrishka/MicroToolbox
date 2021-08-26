@@ -613,6 +613,106 @@ int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t 
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
+/**
+* Store `16-bit` value to bytes array in little-endian format.
+*
+* Public function defined in convert.h
+*/
+void convert_u16_to_array_le(uint16_t val, void* ptr) 
+{
+    uint8_t* p = ptr;
+
+    p[0] = (uint8_t)((val >> 0) & 0xFF);
+    p[1] = (uint8_t)((val >> 8) & 0xFF);
+}
+
+/**
+* Store `32-bit` value to bytes array in little-endian format.
+*
+* Public function defined in convert.h
+*/
+void convert_u32_to_array_le(uint32_t val, void* ptr) 
+{
+    uint8_t* p = ptr;
+
+    p[0] = (uint8_t)((val >> 0) & 0xFF);
+    p[1] = (uint8_t)((val >> 8) & 0xFF);
+    p[2] = (uint8_t)((val >> 16) & 0xFF);
+    p[3] = (uint8_t)((val >> 24) & 0xFF);
+}
+
+/**
+* Load `16-bit` value from bytes array in little-endian format.
+*
+* Public function defined in convert.h
+*/
+uint16_t convert_array_to_u16_le(const void* ptr) 
+{
+    const uint8_t* p = ptr;
+    return p[1] << 8 | p[0];
+}
+
+/**
+* Load `32-bit` value from bytes array in little-endian format.
+*
+* Public function defined in convert.h
+*/
+uint32_t convert_array_to_u32_le(const void* ptr) 
+{
+    const uint8_t* p = ptr;
+    return p[3] << 24 | p[2] << 16 | p[1] << 8 | p[0];
+}
+
+/**
+* Store `16-bit` value to bytes array in big-endian format.
+*
+* Public function defined in convert.h
+*/
+void convert_u16_to_array_be(uint16_t val, void* ptr) 
+{
+    uint8_t* p = ptr;
+
+    p[0] = (uint8_t)((val >> 8) & 0xFF);
+    p[1] = (uint8_t)((val >> 0) & 0xFF);
+}
+
+/**
+* Store `32-bit` value to bytes array in big-endian format.
+*
+* Public function defined in convert.h
+*/
+void convert_u32_to_array_be(uint32_t val, void* ptr) 
+{
+    uint8_t* p = ptr;
+
+    p[0] = (uint8_t)((val >> 24) & 0xFF);
+    p[1] = (uint8_t)((val >> 16) & 0xFF);
+    p[2] = (uint8_t)((val >> 8) & 0xFF);
+    p[3] = (uint8_t)((val >> 0) & 0xFF);
+}
+
+/**
+* Load `16-bit` value from bytes array in big-endian format.
+*
+* Public function defined in convert.h
+*/
+uint16_t convert_array_to_u16_be(const void* ptr) 
+{
+    const uint8_t* p = ptr;
+    return p[0] << 8 | p[1];
+}
+
+/**
+* Load `32-bit` value from bytes array in big-endian format.
+*
+* Public function defined in convert.h
+*/
+uint32_t convert_array_to_u32_be(const void* ptr) 
+{
+    const uint8_t* p = ptr;
+    return p[0] << 24 | p[1] << 16 | p[2] << 8 | p[3];
+}
+
 float Utils_Round(float val, float rval)
 {
     val /= rval;
