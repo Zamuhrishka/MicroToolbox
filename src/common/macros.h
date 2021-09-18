@@ -114,6 +114,14 @@
 #define IS_ODD(num)					(!(((num) & 1) == 1))
 
 /**
+ * \brief           This macros test number for power of 2.
+ * \param[in]       num: number
+ * \return          true if number is power of 2.
+ * \hideinitializer
+ */
+#define IS_POWER_2(num) 			(num && !(num & (num - 1)))
+
+/**
  * \brief           This macros change the number sigh.
  * \param[in]       num: number
  * \return          number with changed sigh.
@@ -135,7 +143,7 @@
  * \return          number of elements.
  * \hideinitializer
  */
-#define ARRAY_OF(array) 			(sizeof(array)/sizeof(array[0]))
+#define ARRAY_SIZE(array) 			(sizeof(array)/sizeof((array)[0]))
 
 /**
  * \brief           Check if pointer is alignment by byte_counter.

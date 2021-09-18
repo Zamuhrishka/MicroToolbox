@@ -306,9 +306,9 @@ void test_ArrayOf(void)
 	uint16_t array16[32] = {0};
 	uint32_t array32[64] = {0};
 
-	TEST_ASSERT_EQUAL_UINT(16, ARRAY_OF(array8));
-	TEST_ASSERT_EQUAL_UINT(32, ARRAY_OF(array16));
-	TEST_ASSERT_EQUAL_UINT(64, ARRAY_OF(array32));
+	TEST_ASSERT_EQUAL_UINT(16, ARRAY_SIZE(array8));
+	TEST_ASSERT_EQUAL_UINT(32, ARRAY_SIZE(array16));
+	TEST_ASSERT_EQUAL_UINT(64, ARRAY_SIZE(array32));
 }
 
 void test_IsAligned(void)
