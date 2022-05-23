@@ -22,7 +22,7 @@
 *.dylib
 
 # Executables
-*.exe
+#*.exe
 *.out
 *.app
 *.i*86
@@ -33,28 +33,25 @@
 # Debug files
 *.dSYM/
 
-# Temporary files
-*.tmp
-
 # Folders
-/.vscode
 /build
-/docs
-/options
-/tools
-/vendor
-/src/3rdparty/instr/asan/readme
-
-# Files
-ceedling.*
-Doxygen.conf
-project.yml
-pvs-studio.bat
-.clang-format
-PVS-Studio.cfg
-rakefile.rb
+/vendor/
+/tools/
+/.vscode/
+/options/
+/linker/
 *.yml
 
-/test/support/assert_test_helpers.h
+
+# Temporary files
+*.tmp
+.clang-format
+ceedling.cmd
+Doxygen.conf
+pvs-studio.bat
+PVS-Studio.cfg
+rakefile.rb
+
+
 
 
