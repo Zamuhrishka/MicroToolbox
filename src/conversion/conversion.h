@@ -232,7 +232,29 @@ uint16_t convert_array_to_u16_be(const void* ptr);
  */
 uint32_t convert_array_to_u32_be(const void* ptr);
 
-float Utils_Round(float val, float rval);
+/**
+ * @brief Convert uint8_t number into binary string
+ * 
+ * @param[in] num: number
+ * @return bin8string_t 
+ */
+bin8string_t convert_u8_to_bin_string(uint8_t num);
+
+/**
+ * @brief Convert uint16_t number into binary string
+ * 
+ * @param[in] num: number
+ * @return bin16string_t 
+ */
+bin16string_t convert_u16_to_bin_string(uint16_t num);
+
+/**
+ * @brief Convert uint32_t number into binary string.
+ * 
+ * @param[in] num: number 
+ * @return bin32string_t 
+ */
+bin32string_t convert_u32_to_bin_string(uint32_t num);
 
 /* C++ detection */
 #ifdef __cplusplus

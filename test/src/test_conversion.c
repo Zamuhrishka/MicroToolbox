@@ -6,12 +6,13 @@
 //_____ I N C L U D E S _______________________________________________________
 #include "unity.h"
 
-#include "conversion.h"
-
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "conversion.h"
+#include "types.h"
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
 //_____ M A C R O S ___________________________________________________________
@@ -287,5 +288,204 @@ void test_ConvertDigToStringUint8(void)
 		TEST_ASSERT_EQUAL_STRING(digit, strDigit);
 		digit[2]++;
 	}
+}
 
+void test_ConvertU8ToBinString(void)
+{
+	bin8string_t binary = {};
+
+	binary = convert_u8_to_bin_string(0x00);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[0]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[1]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[2]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[3]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[4]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[5]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[6]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[7]);
+
+    binary = convert_u8_to_bin_string(0x55);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[0]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[1]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[2]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[3]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[4]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[5]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[6]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[7]);
+
+    binary = convert_u8_to_bin_string(0xFF);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[0]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[1]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[2]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[3]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[4]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[5]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[6]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[7]);
+}
+
+void test_ConvertU16ToBinString(void)
+{
+	bin16string_t binary = {};
+
+	binary = convert_u16_to_bin_string(0x0000);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[0]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[1]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[2]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[3]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[4]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[5]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[6]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[7]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[8]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[9]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[10]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[11]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[12]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[13]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[14]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[15]);
+
+    binary = convert_u16_to_bin_string(0x5555);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[0]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[1]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[2]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[3]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[4]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[5]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[6]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[7]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[8]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[9]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[10]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[11]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[12]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[13]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[14]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[15]);
+
+    binary = convert_u16_to_bin_string(0xFFFF);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[0]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[1]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[2]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[3]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[4]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[5]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[6]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[7]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[8]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[9]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[10]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[11]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[12]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[13]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[14]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[15]);
+}
+
+void test_ConvertU3ToBinString(void)
+{
+	bin32string_t binary = {};
+
+	binary = convert_u32_to_bin_string(0x00000000);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[0]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[1]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[2]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[3]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[4]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[5]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[6]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[7]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[8]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[9]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[10]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[11]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[12]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[13]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[14]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[15]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[16]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[17]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[18]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[19]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[20]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[21]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[22]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[23]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[24]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[25]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[26]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[27]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[28]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[29]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[30]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[31]);
+
+    binary = convert_u32_to_bin_string(0x55555555);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[0]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[1]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[2]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[3]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[4]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[5]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[6]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[7]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[8]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[9]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[10]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[11]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[12]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[13]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[14]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[15]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[16]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[17]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[18]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[19]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[20]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[21]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[22]);
+	TEST_ASSERT_EQUAL_INT('0', binary.bit[23]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[24]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[25]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[26]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[27]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[28]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[29]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[30]);
+    TEST_ASSERT_EQUAL_INT('0', binary.bit[31]);
+
+    binary = convert_u32_to_bin_string(0xFFFFFFFF);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[0]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[1]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[2]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[3]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[4]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[5]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[6]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[7]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[8]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[9]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[10]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[11]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[12]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[13]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[14]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[15]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[17]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[18]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[19]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[20]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[21]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[22]);
+	TEST_ASSERT_EQUAL_INT('1', binary.bit[23]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[24]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[25]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[26]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[27]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[28]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[29]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[30]);
+    TEST_ASSERT_EQUAL_INT('1', binary.bit[31]);
 }

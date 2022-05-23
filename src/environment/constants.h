@@ -65,10 +65,10 @@
 #define 			KBYTE							1024
 #define 			MBYTE							(KBYTE * KBYTE)
 
-#define 			INVALID8						((uint8_t) -1)
-#define 			INVALID16						((uint16_t) -1)
-#define 			INVALID32						((uint32_t) -1)
-#define 			INVALID64						((uint64_t) -1)
+#define 			INVALID8						((uint8_t)-1)
+#define 			INVALID16						((uint16_t)-1)
+#define 			INVALID32						((uint32_t)-1)
+#define 			INVALID64						((uint64_t)-1)
 
 #define 			BIT0  							0x01
 #define 			BIT1  							0x02

@@ -713,18 +713,56 @@ uint32_t convert_array_to_u32_be(const void* ptr)
     return p[0] << 24 | p[1] << 16 | p[2] << 8 | p[3];
 }
 
-float Utils_Round(float val, float rval)
+/**
+* Convert uint8_t number into binary string.
+*
+* Public function defined in convert.h
+*/
+bin8string_t convert_u8_to_bin_string(uint8_t num) 
 {
-    val /= rval;
-    if (val <0 )
-    {
-        val -= 0.5;
-        val = ceil(val);
-    }
-    else
-    {
-        val += 0.5;
-        val = floor(val);
-    }
-    return (val*rval);
+	bin8string_t str = {};
+
+	for (uint8_t i = 0; i < 8; i++) 
+	{
+		str.bit[i] = (num & 1) ? '1' : '0';
+		num >>= 1;
+	}
+
+	return str;
+}
+
+/**
+* Convert uint16_t number into binary string.
+*
+* Public function defined in convert.h
+*/
+bin16string_t convert_u16_to_bin_string(uint16_t num) 
+{
+	bin16string_t str = {};
+
+	for (uint8_t i = 0; i < 16; i++) 
+	{
+		str.bit[i] = (num & 1) ? '1' : '0';
+		num >>= 1;
+	}
+
+	return str;
+}
+
+/**
+* Convert uint32_t number into binary string.
+*
+* Public function defined in convert.h
+*/
+bin32string_t convert_u32_to_bin_string(uint32_t num) 
+{
+	bin32string_t str = {};
+
+	for (uint8_t i = 0; i < 32; i++) 
+	{
+		str.bit[i] = (num & 1) ? '1' : '0';
+		num >>= 1;
+	}
+
+	return str;
 }
