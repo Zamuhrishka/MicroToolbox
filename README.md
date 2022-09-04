@@ -1,12 +1,10 @@
 ![alt text](docs/pics/header.png "Project name")
 
-### Description
----
+## Description
 
 Sets of various small helper functions useful when developing firmware.
 
-### Repository structure
----
+## Repository structure
 
 Structure of repository:
 
@@ -34,26 +32,22 @@ Structure of repository:
   - [utils.h](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/macros/utils.h) - other types of macros.
 - [types](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/types) - specific and useful types and functions for work with it.
 
-### Installation
----
+## Installation
 
 For installation you need to do 2 simply steps:
 
 - Copy necessary ``c`` and ``h`` to your project
 - Add ``#include "xxx.h"`` into your source code.
 
-### Running unit tests
----
+## Running unit tests
 
 ![alt text](docs/pics/under_construction.png "under constraction")
 
-### Contributing
----
+## Contributing
 
 Bug reports and/or pull requests are welcome.
 
-### License
----
+## License
 
 This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
 
