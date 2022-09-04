@@ -1,11 +1,11 @@
 ![alt text](docs/pics/header.png "Project name")
 
-## Description
+### Description
 ---
 
 Sets of various small helper functions useful when developing firmware.
 
-## Repository structure
+### Repository structure
 ---
 
 Structure of repository:
