@@ -10,65 +10,53 @@ Sets of various small helper functions useful when developing firmware for micro
 
 Folder structure of repository:
 
-```bash
-├── README.md
-├── src
-│   ├── 3rdparty
-|   |   ├── json
-|   |   |   ├── jfes
-|   |   |   ├── jsmn
-|   |   ├── regexp
-|   |   |   ├── slre
-|   |   ├── xprintf
-│   ├── atomic
-|   |   ├── atomic.h
-│   ├── conversion
-|   |   ├── conversion.c
-|   |   ├── conversion.h
-│   ├── crc
-|   |   ├── crc.c
-|   |   ├── crc.h
-│   ├── delay
-|   |   ├── delay.h
-│   ├── environment
-|   |   ├── compiler.h
-|   |   ├── constants.h
-|   |   ├── host.h
-│   ├── macros
-|   |   ├── align.h
-|   |   ├── arithmetics.h
-|   |   ├── bits.h
-|   |   ├── cast.h
-|   |   ├── guard.h
-|   |   ├── utils.h
-│   ├── profiler
-|   |   ├── profiler.h
-└── test
-    ├── macros
-    |   ├── test_align.h
-    |   ├── test_arithmetics.h
-    |   ├── test_bits.h
-    |   ├── test_utils.h
-    ├── test_conversion.c
-    └── test_crc.c
-    └── test_sfloat.c
-```
+- **3rdparty** - useful 3rdparty libraries
+  - **json** - 3rdparty libraries for work with json
+    - [jfes](https://github.com/dmitrii-eremin/jfes)
+    - [jsmn](https://github.com/zserge/jsmn)
+  - **regexp** - 3rdparty libraries for regular expration
+    - [slre](https://github.com/cesanta/slre)
+- **atomic** - functions and macros for atomic operations.
+- **conversion** - functions different conversion string into num, num into string, bcd into num etc.
+- **crc** - functions for calculate CRC
+- **dalay** - functions for time delays.
+- **environment** - .
+  - **compiler.h** - compiler specific function, macros.
+  - **constants.h** - common constants.
+  - **host.h** - host specific function, macros.
+- **macros** - .
+  - **align.h** - macros for align.
+  - **arithmetics.h** - macros for ariphmetic operations.
+  - **bits.h** - bits operation macros.
+  - **cast.h** - macros for different types of cast.
+  - **guards.h** - guards macros.
+  - **utils.h** - other types of macros.
+- **types** - specific and useful types and functions for work with it.
+
+
+
 
 ### Installation
 ---
 
-Simply add necessary ``c`` and ``h`` to your project, ``#include "xxx.h"``.
+For installation you need to do 2 simply steps:
+
+- Copy necessary ``c`` and ``h`` to your project
+- Add ``#include "xxx.h"`` into your source code.
 
 ### Running unit tests
 ---
 
-TBD
+![alt text](docs/pics/under_construction.png "under constraction")
+
+### Contributing
+---
+
+Bug reports and/or pull requests are welcome.
 
 ### License
+---
 
-This software is provided 'as-is', without any express or implied warranty.
-In no event will the authors be held liable for any damages arising from the
-use of this software.
+This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
 
-Permission is granted to anyone to use this software for any purpose, including
-commercial applications.
+Permission is granted to anyone to use this software for any purpose, including commercial applications.
