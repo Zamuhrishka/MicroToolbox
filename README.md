@@ -1,23 +1,70 @@
-# fwToolbox
-> Firmware Toolbox
+![alt text](docs/pics/header.png "Project name")
 
-This project contains various small helper functions useful when developing
-firmware for microcontrollers.
+## Description
+---
 
-# Project content
-- delay.[ch] - functions for different types of string transformations
-into another data types.
+Sets of various small helper functions useful when developing firmware for microcontrollers.
 
+## Repository structure
+---
 
-## Installing
+Folder structure of repository:
+
+```bash
+├── README.md
+├── src
+│   ├── 3rdparty
+|   |   ├── json
+|   |   |   ├── jfes
+|   |   |   ├── jsmn
+|   |   ├── regexp
+|   |   |   ├── slre
+|   |   ├── xprintf
+│   ├── atomic
+|   |   ├── atomic.h
+│   ├── conversion
+|   |   ├── conversion.c
+|   |   ├── conversion.h
+│   ├── crc
+|   |   ├── crc.c
+|   |   ├── crc.h
+│   ├── delay
+|   |   ├── delay.h
+│   ├── environment
+|   |   ├── compiler.h
+|   |   ├── constants.h
+|   |   ├── host.h
+│   ├── macros
+|   |   ├── align.h
+|   |   ├── arithmetics.h
+|   |   ├── bits.h
+|   |   ├── cast.h
+|   |   ├── guard.h
+|   |   ├── utils.h
+│   ├── profiler
+|   |   ├── profiler.h
+└── test
+    ├── macros
+    |   ├── test_align.h
+    |   ├── test_arithmetics.h
+    |   ├── test_bits.h
+    |   ├── test_utils.h
+    ├── test_conversion.c
+    └── test_crc.c
+    └── test_sfloat.c
+```
+
+### Installation
+---
 
 Simply add necessary ``c`` and ``h`` to your project, ``#include "xxx.h"``.
 
-## Running unit tests
+### Running unit tests
+---
 
 TBD
 
-## License
+### License
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the
