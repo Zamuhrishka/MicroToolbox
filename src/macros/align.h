@@ -35,6 +35,30 @@ extern "C" {
         (((uint32_t)(const void *)(addr)) % (align) == 0)
 
 /**
+ * \brief           Align number by selected order
+ * \param[in]       x: number
+ * \param[in]       align: alignment in bytes 
+ * \return          Aligned number
+ * \hideinitializer
+ */
+uint32_t ALIGN_DOWN(uint32_t x, uint32_t align)
+{
+	return (x & ~(align - 1));
+}
+
+/**
+ * \brief           Align number by selected order
+ * \param[in]       x: number
+ * \param[in]       align: alignment in bytes 
+ * \return          Aligned number
+ * \hideinitializer
+ */
+uint32_t ALIGN_UP(uint32_t x, uint32_t align)
+{
+	return (x & (align - 1)) ? ALIGN_DOWN(x, align) + align : x;
+}
+
+/**
  * Wrap the given structure into a padded, aligned structure and instantiate a static copy of it.
  * This should be used when the variables are only required to be accessed in a single file.  It
  * has two parameters, T is the type of structure to be wrapped and N is instantiation name
