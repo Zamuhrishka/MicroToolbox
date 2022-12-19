@@ -1,7 +1,7 @@
 /**
 * \file         types.h
 * \author       Kovalchuk Alexander (roux@yandex.ru)
-* \brief        This file contains the prototypes functions which use for...
+* \brief        This file contains several useful custom data types.
 */
 
 #pragma once
@@ -28,8 +28,10 @@ typedef enum EndianOrder_tag
 	LITTLE_ENDIAN_ORDER		=	LITTLE_ENDIAN,
 	BIG_ENDIAN_ORDER		=	BIG_ENDIAN,
 }	endian_e;
+
+/// \brief MAC address data type
 ///{
-typedef struct
+typedef struct Mac_tag
 {
 	uint8_t value[6];
 } 	mac_t;
@@ -62,13 +64,15 @@ typedef struct	bin32_tag
 //< Ip address (version 4)
 typedef uint32_t ip4addr_t;
 
-//< BCD typedef
+//< BCD data type
 typedef uint32_t bcd_t;
 
+//< Null pointer data type
 #define nullptr ((void*)0)
 
+//< NULL constant
 #if !defined(NULL)
-#define NULL ((void *)0)
+#define NULL nullptr
 #endif
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
