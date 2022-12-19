@@ -23,28 +23,28 @@ typedef struct
 } 	mac_t;
 ///}
 
-/// \brief 
+/// \brief Binary string representation of uint8_t type
 ///{
-typedef struct
+typedef struct bin8_tag
 {
-	char bit[8];
-} 	bin8string_t;
+	char bit[9];
+} 	bin8_t;
 ///}
 
-/// \brief 
+/// \brief Binary string representation of uint16_t type
 ///{
-typedef struct
+typedef struct	bin16_tag
 {
-	char bit[16];
-} 	bin16string_t;
+	char bit[17];
+} 	bin16_t;
 ///}
 
-/// \brief 
+/// \brief Binary string representation of uint32_t type
 ///{
-typedef struct
+typedef struct	bin32_tag
 {
-	char bit[32];
-} 	bin32string_t;
+	char bit[33];
+} 	bin32_t;
 ///}
 
 //< Ip address (version 4)
