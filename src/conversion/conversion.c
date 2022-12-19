@@ -604,7 +604,7 @@ void convert_uint32_to_string(char *str, uint32_t dig)
 }
 
 /**
-* This function used to convert the variable from one range to another.
+* This function used to map a value from one range to another.
 *
 * Public function defined in convert.h
 */
