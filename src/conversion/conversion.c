@@ -614,155 +614,69 @@ int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t 
 }
 
 /**
-* Store `16-bit` value to bytes array in little-endian format.
+* Convert uint8_t number into bin8_t type.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
-void convert_u16_to_array_le(uint16_t val, void* ptr) 
+bin8_t convert_u8_to_bin8(uint8_t num, endian_e endian)
 {
-    uint8_t* p = ptr;
+	bin8_t bin = {};
+	uint8_t base = (endian == LITTLE_ENDIAN_ORDER) ? 7 : 0;
+	int8_t k = (endian == LITTLE_ENDIAN_ORDER) ? 1 : -1;
 
-    p[0] = (uint8_t)((val >> 0) & 0xFF);
-    p[1] = (uint8_t)((val >> 8) & 0xFF);
-}
-
-/**
-* Store `32-bit` value to bytes array in little-endian format.
-*
-* Public function defined in convert.h
-*/
-void convert_u32_to_array_le(uint32_t val, void* ptr) 
-{
-    uint8_t* p = ptr;
-
-    p[0] = (uint8_t)((val >> 0) & 0xFF);
-    p[1] = (uint8_t)((val >> 8) & 0xFF);
-    p[2] = (uint8_t)((val >> 16) & 0xFF);
-    p[3] = (uint8_t)((val >> 24) & 0xFF);
-}
-
-/**
-* Load `16-bit` value from bytes array in little-endian format.
-*
-* Public function defined in convert.h
-*/
-uint16_t convert_array_to_u16_le(const void* ptr) 
-{
-    const uint8_t* p = ptr;
-    return p[1] << 8 | p[0];
-}
-
-/**
-* Load `32-bit` value from bytes array in little-endian format.
-*
-* Public function defined in convert.h
-*/
-uint32_t convert_array_to_u32_le(const void* ptr) 
-{
-    const uint8_t* p = ptr;
-    return p[3] << 24 | p[2] << 16 | p[1] << 8 | p[0];
-}
-
-/**
-* Store `16-bit` value to bytes array in big-endian format.
-*
-* Public function defined in convert.h
-*/
-void convert_u16_to_array_be(uint16_t val, void* ptr) 
-{
-    uint8_t* p = ptr;
-
-    p[0] = (uint8_t)((val >> 8) & 0xFF);
-    p[1] = (uint8_t)((val >> 0) & 0xFF);
-}
-
-/**
-* Store `32-bit` value to bytes array in big-endian format.
-*
-* Public function defined in convert.h
-*/
-void convert_u32_to_array_be(uint32_t val, void* ptr) 
-{
-    uint8_t* p = ptr;
-
-    p[0] = (uint8_t)((val >> 24) & 0xFF);
-    p[1] = (uint8_t)((val >> 16) & 0xFF);
-    p[2] = (uint8_t)((val >> 8) & 0xFF);
-    p[3] = (uint8_t)((val >> 0) & 0xFF);
-}
-
-/**
-* Load `16-bit` value from bytes array in big-endian format.
-*
-* Public function defined in convert.h
-*/
-uint16_t convert_array_to_u16_be(const void* ptr) 
-{
-    const uint8_t* p = ptr;
-    return p[0] << 8 | p[1];
-}
-
-/**
-* Load `32-bit` value from bytes array in big-endian format.
-*
-* Public function defined in convert.h
-*/
-uint32_t convert_array_to_u32_be(const void* ptr) 
-{
-    const uint8_t* p = ptr;
-    return p[0] << 24 | p[1] << 16 | p[2] << 8 | p[3];
-}
-
-/**
-* Convert uint8_t number into binary string.
-*
-* Public function defined in convert.h
-*/
-bin8string_t convert_u8_to_bin_string(uint8_t num) 
-{
-	bin8string_t str = {};
-
-	for (uint8_t i = 0; i < 8; i++) 
+	for (uint8_t i = 0; i < 8; i++)
 	{
-		str.bit[i] = (num & 1) ? '1' : '0';
+		bin.bit[base - (i * k)] = (num & 1) ? '1' : '0';
 		num >>= 1;
 	}
 
-	return str;
+	bin.bit[8] = '\0';
+
+	return bin;
 }
 
 /**
-* Convert uint16_t number into binary string.
+* Convert uint16_t number into bin16_t type.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
-bin16string_t convert_u16_to_bin_string(uint16_t num) 
+// bin16string_t convert_u16_to_bin_string(uint16_t num) 
+bin16_t convert_u16_to_bin16(uint16_t num, endian_e endian) 
 {
-	bin16string_t str = {};
+	bin16_t bin = {};
 
-	for (uint8_t i = 0; i < 16; i++) 
+	uint8_t base = (endian == LITTLE_ENDIAN_ORDER) ? 15 : 0;
+	int8_t k = (endian == LITTLE_ENDIAN_ORDER) ? 1 : -1;
+
+	for (uint8_t i = 0; i < 16; i++)
 	{
-		str.bit[i] = (num & 1) ? '1' : '0';
+		bin.bit[base - (i * k)] = (num & 1) ? '1' : '0';
 		num >>= 1;
 	}
 
-	return str;
+	bin.bit[16] = '\0';
+
+	return bin;
 }
 
 /**
-* Convert uint32_t number into binary string.
+* Convert uint32_t number into bin32_t type.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
-bin32string_t convert_u32_to_bin_string(uint32_t num) 
+bin32_t convert_u32_to_bin32(uint32_t num, endian_e endian) 
 {
-	bin32string_t str = {};
+	bin32_t bin = {};
+	uint8_t base = (endian == LITTLE_ENDIAN_ORDER) ? 31 : 0;
+	int8_t k = (endian == LITTLE_ENDIAN_ORDER) ? 1 : -1;
 
-	for (uint8_t i = 0; i < 32; i++) 
+	for (uint8_t i = 0; i < 32; i++)
 	{
-		str.bit[i] = (num & 1) ? '1' : '0';
+		bin.bit[base - (i * k)] = (num & 1) ? '1' : '0';
 		num >>= 1;
 	}
 
-	return str;
+	bin.bit[32] = '\0';
+
+	return bin;
 }

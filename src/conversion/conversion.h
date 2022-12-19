@@ -167,94 +167,31 @@ void convert_uint32_to_string(char *str, uint32_t dig);
 int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max);
 
 /**
- * \brief		Store `16-bit` value to bytes array in little-endian format.
- *
- * \param[in]   val: Value to write to output array
- * \param[out]  ptr: Minimum `2-bytes` long output array to write value to
- *
- * \return 		void.
-**/
-void convert_u16_to_array_le(uint16_t val, void* ptr);
-
-/**
- * \brief           Store `32-bit` value to bytes array in little-endian format
- * 
- * \param[in]       val: Value to write to output array
- * \param[out]      ptr: Minimum `4-bytes` long output array to write value to
- */
-void convert_u32_to_array_le(uint32_t val, void* ptr);
-
-/**
- * \brief           Load `16-bit` value from bytes array in little-endian format
- * 
- * \param[in]       ptr: Minimum `2-bytes` long input array to extract bytes from
- * \return          `16-bit` value extracted from input array
- */
-uint16_t convert_array_to_u16_le(const void* ptr);
-
-/**
- * \brief           Load `32-bit` value from bytes array in little-endian format
- * 
- * \param[in]       ptr: Minimum `2-bytes` long input array to extract bytes from
- * \return          `32-bit` value extracted from input array
- */
-uint32_t convert_array_to_u32_le(const void* ptr);
-
-/**
- * \brief           Store `16-bit` value to bytes array in big-endian format
- * 
- * \param[in]       val: Value to write to output array
- * \param[out]      ptr: Minimum `2-bytes` long output array to write value to
- */
-void convert_u16_to_array_be(uint16_t val, void* ptr);
-
-/**
- * \brief           Store `32-bit` value to bytes array in big-endian format
- * 
- * \param[in]       val: Value to write to output array
- * \param[out]      ptr: Minimum `4-bytes` long output array to write value to
- */
-void convert_u32_to_array_be(uint32_t val, void* ptr);
-
-/**
- * \brief           Load `16-bit` value from bytes array in big-endian format
- * 
- * \param[in]       ptr: Minimum `2-bytes` long input array to extract bytes from
- * \return          `16-bit` value extracted from input array
- */
-uint16_t convert_array_to_u16_be(const void* ptr);
-
-/**
- * \brief           Load `32-bit` value from bytes array in big-endian format
- * 
- * \param[in]       ptr: Minimum `4-bytes` long input array to extract bytes from
- * \return          `32-bit` value extracted from input array
- */
-uint32_t convert_array_to_u32_be(const void* ptr);
-
-/**
- * @brief Convert uint8_t number into binary string
+ * @brief Convert uint8_t number into bin8_t type (see types.h).
  * 
  * @param[in] num: number
- * @return bin8string_t 
+ * @param[in] endian: current endian order (see @endian_e) 
+ * @return bin8_t 
  */
-bin8string_t convert_u8_to_bin_string(uint8_t num);
+bin8_t convert_u8_to_bin8(uint8_t num, endian_e endian);
 
 /**
- * @brief Convert uint16_t number into binary string
+ * @brief Convert uint16_t number into bin16_t type (see types.h).
  * 
  * @param[in] num: number
- * @return bin16string_t 
+ * @param[in] endian: current endian order (see @endian_e) 
+ * @return bin16_t 
  */
-bin16string_t convert_u16_to_bin_string(uint16_t num);
+bin16_t convert_u16_to_bin16(uint16_t num, endian_e endian);
 
 /**
- * @brief Convert uint32_t number into binary string.
+ * @brief Convert uint32_t number into bin32_t type (see types.h).
  * 
  * @param[in] num: number 
- * @return bin32string_t 
+ * @param[in] endian: current endian order (see @endian_e) 
+ * @return bin32_t 
  */
-bin32string_t convert_u32_to_bin_string(uint32_t num);
+bin32_t convert_u32_to_bin32(uint32_t num, endian_e endian);
 
 /* C++ detection */
 #ifdef __cplusplus
