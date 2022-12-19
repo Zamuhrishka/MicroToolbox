@@ -289,4 +289,3 @@ void test_ConvertDigToStringUint8(void)
 		digit[2]++;
 	}
 }
-
