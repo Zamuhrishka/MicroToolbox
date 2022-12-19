@@ -15,7 +15,19 @@
 #include <stdbool.h>
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
-/// \brief MAC address
+///Byte order constant definition
+#ifndef LITTLE_ENDIAN
+	#define	LITTLE_ENDIAN						4321
+#endif
+
+#ifndef BIG_ENDIAN
+	#define	BIG_ENDIAN							1234
+#endif
+typedef enum EndianOrder_tag
+{
+	LITTLE_ENDIAN_ORDER		=	LITTLE_ENDIAN,
+	BIG_ENDIAN_ORDER		=	BIG_ENDIAN,
+}	endian_e;
 ///{
 typedef struct
 {
