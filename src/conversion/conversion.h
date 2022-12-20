@@ -126,32 +126,74 @@ uint32_t convert_string_to_uint32(const char *str);
 /**
  * \brief		This function convert uint8_t number to string.
  *
- * \param[out] 	str: string that corresponds to number.
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. @warning length must be equal 
+ *                   or greater then 4 chars.
  * \param[in] 	dig: number.
  *
  * \return 		void.
 **/
-void convert_uint8_to_string(char *str, uint8_t dig);
+void convert_u8_to_str(char *str, uint8_t dig);
+
+/**
+ * \brief		This function convert int8_t number to string.
+ *
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. @warning length must be equal 
+ *                   or greater then 5 chars. 
+ * \param[in] 	dig: number.
+ *
+ * \return 		void.
+**/
+void convert_i8_to_str(char *str, int8_t dig);
 
 /**
  * \brief		This function convert uint16_t number to string.
  *
- * \param[out] 	str: string that corresponds to number.
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. @warning length must be equal 
+ *                   or greater then 6 chars. 
  * \param[in] 	dig: number.
  *
  * \return 		void.
 **/
-void convert_uint16_to_string(char *str, uint16_t dig);
+void convert_u16_to_str(char *str, uint16_t dig);
+
+/**
+ * \brief		This function convert int16_t number to string.
+ *
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. @warning length must be equal 
+ *                   or greater then 7 chars. 
+ * \param[in] 	dig: number.
+ *
+ * \return 		void.
+**/
+void convert_i16_to_str(char *str, int16_t dig);
 
 /**
  * \brief		This function convert uint32_t number to string.
  *
- * \param[out] 	str: string that corresponds to number.
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. @warning length must be equal 
+ *                   or greater then 11 chars. 
  * \param[in] 	dig: number.
  *
  * \return 		void.
 **/
-void convert_uint32_to_string(char *str, uint32_t dig);
+void convert_u32_to_str(char *str, uint32_t dig);
+
+/**
+ * \brief		This function convert int32_t number to string.
+ *
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. @warning length must be equal 
+ *                   or greater then 12 chars. 
+ * \param[in] 	dig: number.
+ *
+ * \return 		void.
+**/
+void convert_i32_to_str(char *str, int32_t dig);
 
 /**
  * \brief		This function used to map a value from one range to another.

@@ -444,162 +444,228 @@ uint32_t convert_string_to_uint32(const char *str)
 }
 
 /**
-* This function used to convert uint8_t number to string.
+* This function convert uint8_t number to string.
 *
 * Public function defined in convert.h
 */
-void convert_uint8_to_string(char *str, uint8_t dig)
+void convert_u8_to_str(char *str, uint8_t dig)
 {
-	uint8_t num = 0;
-
-	num = count_num(dig, U8B);
-
-	switch(num)
+	if(NULL != str)
 	{
-		case 1:
-			str[0] = (dig % 10) + '0';
-			break;
-		case 2:
-			str[0] = ((dig % 100) / 10) + '0';
-			str[1] = (dig % 10) + '0';
-			break;
-		case 3:
-			str[0] = ((dig % 1000) / 100) + '0';
-			str[1] = ((dig % 100) / 10) + '0';
-			str[2] = (dig % 10) + '0';
-			break;
+		uint8_t num = count_num(dig, U8B);
+		switch(num)
+		{
+			case 1:
+				str[0] = (dig % 10) + '0';
+				break;
+			case 2:
+				str[0] = ((dig % 100) / 10) + '0';
+				str[1] = (dig % 10) + '0';
+				break;
+			case 3:
+				str[0] = ((dig % 1000) / 100) + '0';
+				str[1] = ((dig % 100) / 10) + '0';
+				str[2] = (dig % 10) + '0';
+				break;
+		}
+	}	
+}
+
+/**
+* This function convert int8_t number to string.
+*
+* Public function defined in convert.h
+*/
+void convert_i8_to_str(char *str, int8_t dig)
+{
+	if(NULL != str) 
+	{
+		char* pointer =  &str[0];
+
+		if (dig < 0)
+		{
+			str[0] = '-';
+			dig *= (-1);
+			pointer = &str[1];	
+		}
+
+		convert_u8_to_str(pointer, dig);
 	}
 }
 
 /**
-* This function used to convert uint16_t number to string.
+* This function convert uint16_t number to string.
 *
 * Public function defined in convert.h
 */
-void convert_uint16_to_string(char *str, uint16_t dig)
+void convert_u16_to_str(char *str, uint16_t dig)
 {
-	uint8_t num = 0;
-
-	num = count_num(dig, U16B);
-
-	switch(num)
+	if(NULL != str) 
 	{
-		case 1:
-			str[0] = (dig % 10) + '0';
-			break;
-		case 2:
-			str[0] = ((dig % 100) / 10) + '0';
-			str[1] = (dig % 10) + '0';
-			break;
-		case 3:
-			str[0] = ((dig % 1000) / 100) + '0';
-			str[1] = ((dig % 100) / 10) + '0';
-			str[2] = (dig % 10) + '0';
-			break;
-		case 4:
-			str[0] = ((dig % 10000) / 1000) + '0';
-			str[1] = ((dig % 1000) / 100) + '0';
-			str[2] = ((dig % 100) / 10) + '0';
-			str[3] = (dig % 10) + '0';
-			break;
-		case 5:
-			str[0] = ((dig % 100000) / 10000) + '0';
-			str[1] = ((dig % 10000) / 1000) + '0';
-			str[2] = ((dig % 1000) / 100) + '0';
-			str[3] = ((dig % 100) / 10) + '0';
-			str[4] = (dig % 10) + '0';
-			break;
+		uint8_t num = count_num(dig, U16B);
+		switch(num)
+		{
+			case 1:
+				str[0] = (dig % 10) + '0';
+				break;
+			case 2:
+				str[0] = ((dig % 100) / 10) + '0';
+				str[1] = (dig % 10) + '0';
+				break;
+			case 3:
+				str[0] = ((dig % 1000) / 100) + '0';
+				str[1] = ((dig % 100) / 10) + '0';
+				str[2] = (dig % 10) + '0';
+				break;
+			case 4:
+				str[0] = ((dig % 10000) / 1000) + '0';
+				str[1] = ((dig % 1000) / 100) + '0';
+				str[2] = ((dig % 100) / 10) + '0';
+				str[3] = (dig % 10) + '0';
+				break;
+			case 5:
+				str[0] = ((dig % 100000) / 10000) + '0';
+				str[1] = ((dig % 10000) / 1000) + '0';
+				str[2] = ((dig % 1000) / 100) + '0';
+				str[3] = ((dig % 100) / 10) + '0';
+				str[4] = (dig % 10) + '0';
+				break;
+		}
+	}	
+}
+
+/**
+* This function convert int16_t number to string.
+*
+* Public function defined in convert.h
+*/
+void convert_i16_to_str(char *str, int16_t dig)
+{
+	if(NULL != str) 
+	{
+		char* pointer =  &str[0];
+
+		if (dig < 0)
+		{
+			str[0] = '-';
+			dig *= (-1);
+			pointer = &str[1];	
+		}
+
+		convert_u16_to_str(pointer, dig);
 	}
 }
 
 /**
-* This function used to convert uint32_t number to string.
+* This function convert uint32_t number to string.
 *
 * Public function defined in convert.h
 */
-void convert_uint32_to_string(char *str, uint32_t dig)
+void convert_u32_to_str(char *str, uint32_t dig)
 {
-	uint8_t num = 0;
-
-	num = count_num(dig, U32B);
-
-	switch(num)
+	if(NULL != str) 
 	{
-		case 1:
-			str[0] = (dig % 10) + '0';
-			break;
-		case 2:
-			str[0] = ((dig % 100) / 10) + '0';
-			str[1] = (dig % 10) + '0';
-			break;
-		case 3:
-			str[0] = ((dig % 1000) / 100) + '0';
-			str[1] = ((dig % 100) / 10) + '0';
-			str[2] = (dig % 10) + '0';
-			break;
-		case 4:
-			str[0] = ((dig % 10000) / 1000) + '0';
-			str[1] = ((dig % 1000) / 100) + '0';
-			str[2] = ((dig % 100) / 10) + '0';
-			str[3] = (dig % 10) + '0';
-			break;
-		case 5:
-			str[0] = ((dig % 100000) / 10000) + '0';
-			str[1] = ((dig % 10000) / 1000) + '0';
-			str[2] = ((dig % 1000) / 100) + '0';
-			str[3] = ((dig % 100) / 10) + '0';
-			str[4] = (dig % 10) + '0';
-			break;
-		case 6:
-			str[0] = ((dig % 1000000) / 100000) + '0';
-			str[1] = ((dig % 100000) / 10000) + '0';
-			str[2] = ((dig % 10000) / 1000) + '0';
-			str[3] = ((dig % 1000) / 100) + '0';
-			str[4] = ((dig % 100) / 10) + '0';
-			str[5] = (dig % 10) + '0';
-			break;
-		case 7:
-			str[0] = ((dig % 10000000) / 1000000) + '0';
-			str[1] = ((dig % 1000000) / 100000) + '0';
-			str[2] = ((dig % 100000) / 10000) + '0';
-			str[3] = ((dig % 10000) / 1000) + '0';
-			str[4] = ((dig % 1000) / 100) + '0';
-			str[5] = ((dig % 100) / 10) + '0';
-			str[6] = (dig % 10) + '0';
-			break;
-		case 8:
-			str[0] = ((dig % 100000000) / 10000000) + '0';
-			str[1] = ((dig % 10000000) / 1000000) + '0';
-			str[2] = ((dig % 1000000) / 100000) + '0';
-			str[3] = ((dig % 100000) / 10000) + '0';
-			str[4] = ((dig % 10000) / 1000) + '0';
-			str[5] = ((dig % 1000) / 100) + '0';
-			str[6] = ((dig % 100) / 10) + '0';
-			str[7] = (dig % 10) + '0';
-			break;
-		case 9:
-			str[0] = ((dig % 1000000000) / 100000000) + '0';
-			str[1] = ((dig % 100000000) / 10000000) + '0';
-			str[2] = ((dig % 10000000) / 1000000) + '0';
-			str[3] = ((dig % 1000000) / 100000) + '0';
-			str[4] = ((dig % 100000) / 10000) + '0';
-			str[5] = ((dig % 10000) / 1000) + '0';
-			str[6] = ((dig % 1000) / 100) + '0';
-			str[7] = ((dig % 100) / 10) + '0';
-			str[8] = (dig % 10) + '0';
-			break;
-		case 10:
-			str[0] = ((dig % 10000000000) / 1000000000) + '0';
-			str[1] = ((dig % 1000000000) / 100000000) + '0';
-			str[2] = ((dig % 100000000) / 10000000) + '0';
-			str[3] = ((dig % 10000000) / 1000000) + '0';
-			str[4] = ((dig % 1000000) / 100000) + '0';
-			str[5] = ((dig % 100000) / 10000) + '0';
-			str[6] = ((dig % 10000) / 1000) + '0';
-			str[7] = ((dig % 1000) / 100) + '0';
-			str[8] = ((dig % 100) / 10) + '0';
-			str[9] = (dig % 10) + '0';
-			break;
+		uint8_t num = count_num(dig, U32B);
+		switch(num)
+		{
+			case 1:
+				str[0] = (dig % 10) + '0';
+				break;
+			case 2:
+				str[0] = ((dig % 100) / 10) + '0';
+				str[1] = (dig % 10) + '0';
+				break;
+			case 3:
+				str[0] = ((dig % 1000) / 100) + '0';
+				str[1] = ((dig % 100) / 10) + '0';
+				str[2] = (dig % 10) + '0';
+				break;
+			case 4:
+				str[0] = ((dig % 10000) / 1000) + '0';
+				str[1] = ((dig % 1000) / 100) + '0';
+				str[2] = ((dig % 100) / 10) + '0';
+				str[3] = (dig % 10) + '0';
+				break;
+			case 5:
+				str[0] = ((dig % 100000) / 10000) + '0';
+				str[1] = ((dig % 10000) / 1000) + '0';
+				str[2] = ((dig % 1000) / 100) + '0';
+				str[3] = ((dig % 100) / 10) + '0';
+				str[4] = (dig % 10) + '0';
+				break;
+			case 6:
+				str[0] = ((dig % 1000000) / 100000) + '0';
+				str[1] = ((dig % 100000) / 10000) + '0';
+				str[2] = ((dig % 10000) / 1000) + '0';
+				str[3] = ((dig % 1000) / 100) + '0';
+				str[4] = ((dig % 100) / 10) + '0';
+				str[5] = (dig % 10) + '0';
+				break;
+			case 7:
+				str[0] = ((dig % 10000000) / 1000000) + '0';
+				str[1] = ((dig % 1000000) / 100000) + '0';
+				str[2] = ((dig % 100000) / 10000) + '0';
+				str[3] = ((dig % 10000) / 1000) + '0';
+				str[4] = ((dig % 1000) / 100) + '0';
+				str[5] = ((dig % 100) / 10) + '0';
+				str[6] = (dig % 10) + '0';
+				break;
+			case 8:
+				str[0] = ((dig % 100000000) / 10000000) + '0';
+				str[1] = ((dig % 10000000) / 1000000) + '0';
+				str[2] = ((dig % 1000000) / 100000) + '0';
+				str[3] = ((dig % 100000) / 10000) + '0';
+				str[4] = ((dig % 10000) / 1000) + '0';
+				str[5] = ((dig % 1000) / 100) + '0';
+				str[6] = ((dig % 100) / 10) + '0';
+				str[7] = (dig % 10) + '0';
+				break;
+			case 9:
+				str[0] = ((dig % 1000000000) / 100000000) + '0';
+				str[1] = ((dig % 100000000) / 10000000) + '0';
+				str[2] = ((dig % 10000000) / 1000000) + '0';
+				str[3] = ((dig % 1000000) / 100000) + '0';
+				str[4] = ((dig % 100000) / 10000) + '0';
+				str[5] = ((dig % 10000) / 1000) + '0';
+				str[6] = ((dig % 1000) / 100) + '0';
+				str[7] = ((dig % 100) / 10) + '0';
+				str[8] = (dig % 10) + '0';
+				break;
+			case 10:
+				str[0] = ((dig % 10000000000) / 1000000000) + '0';
+				str[1] = ((dig % 1000000000) / 100000000) + '0';
+				str[2] = ((dig % 100000000) / 10000000) + '0';
+				str[3] = ((dig % 10000000) / 1000000) + '0';
+				str[4] = ((dig % 1000000) / 100000) + '0';
+				str[5] = ((dig % 100000) / 10000) + '0';
+				str[6] = ((dig % 10000) / 1000) + '0';
+				str[7] = ((dig % 1000) / 100) + '0';
+				str[8] = ((dig % 100) / 10) + '0';
+				str[9] = (dig % 10) + '0';
+				break;
+		}
+	}	
+}
+
+/**
+* This function convert int32_t number to string.
+*
+* Public function defined in convert.h
+*/
+void convert_i32_to_str(char *str, int32_t dig)
+{
+	if(NULL != str) 
+	{
+		char* pointer =  &str[0];
+
+		if (dig < 0)
+		{
+			str[0] = '-';
+			dig *= (-1);
+			pointer = &str[1];	
+		}
+
+		convert_u32_to_str(pointer, dig);
 	}
 }
 
