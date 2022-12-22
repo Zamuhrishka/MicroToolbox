@@ -184,71 +184,12 @@ void test_ConvertBcdToNum(void)
 	}
 }
 
-void test_ConvertStringToNum8(void)
-{
-	uint8_t testNum = 0;
-	uint8_t patternNum = 0;
-	char strDigit[] = "000";
-    size_t i = 0;
-    size_t j = 0;
-    size_t k = 0;
-    
-	for(i = 0; i < 3; i++)
-	{
-		for(j = 0; j <= 9; j++)
-		{
-			for(k = 0; k <= 9; k++)
-			{
-				testNum = convert_string_to_uint8(strDigit);
-				TEST_ASSERT_EQUAL_INT(testNum, patternNum);
-				patternNum++;
-				strDigit[2]++;
-			}
-			strDigit[2] = '0';
-			strDigit[1]++;
-		}
 
-		strDigit[0]++;
-		strDigit[1] = '0';
-	}
-}
 
-void test_ConvertStringToNum16(void)
-{
-	uint16_t testNum = 0;
-	uint16_t patternNum = 0;
-	char strDigit[] = "00000";
-    size_t i = 0;
-    size_t j = 0;
-    size_t k = 0;
-    size_t p = 0;
-    size_t e = 0;
-    
-	for(i = 0; i < 9; i++)
-	{
-		for(j = 0; j <= 9; j++)
-		{
-			for(k = 0; k <= 9; k++)
-			{
-				for(p = 0; p <= 9; p++)
-				{
-					for(e = 0; e <= 9; e++)
-					{
-						testNum = convert_string_to_uint16(strDigit);
-						TEST_ASSERT_EQUAL_INT(testNum, patternNum);
-						patternNum++;
-						strDigit[4]++;
-					}
-					strDigit[4] = '0';
-					strDigit[3]++;
-				}
-				strDigit[3] = '0';
-				strDigit[2]++;
-			}
-			strDigit[2] = '0';
-			strDigit[1]++;
-		}
-		strDigit[1] = '0';
-		strDigit[0]++;
-	}
-}
+
+
+
+
+
+
+
