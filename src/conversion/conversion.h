@@ -97,6 +97,30 @@ uint32_t convert_bcd_to_num(uint32_t dec);
 uint32_t convert_num_to_bcd(uint32_t bcd);
 
 /**
+ * @brief Check if this string is a decimal number
+ * 
+ * @param[in] str  pointer to string with string representation 
+ *                 of number.
+ * @param[in] len  length of string
+ * 
+ * @return true 
+ * @return false 
+ */
+bool convert_is_dec_number(const char *str, size_t len);
+
+/**
+ * @brief Check if this string is a hex number
+ * 
+ * @param[in] str  pointer to string with string representation 
+ *                 of number.
+ * @param[in] len  length of string
+ * 
+ * @return true 
+ * @return false 
+ */
+bool convert_is_hex_number(const char *str, size_t len);
+
+/**
  * \brief		This function convert string to uint8_t number.
  *
  * \param[in] 	str: pointer to string with string representation 

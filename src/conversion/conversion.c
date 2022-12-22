@@ -32,12 +32,41 @@ enum Constants
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P R I V A T E  F U N C T I O N S_______________________________________
-static inline bool test_char_digit(const unsigned char c)
+/**
+ * @brief Check if this char is a decimal number
+ * 
+ * @param[in] c given char
+ *  
+ * @return true 
+ * @return false 
+ */
+static inline bool is_dec_digit(const unsigned char c)
 {
-	return ((c & '0') == '0') && (((c & 0x0F) >= 0) && ((c & 0x0F) <= 9));
+	return ((c >= '0') && (c <= '9'));
 }
 
-static inline uint8_t count_num(uint32_t dig, uint8_t f_n_bit)
+/**
+ * @brief Check if this char is a hex number
+ * 
+ * @param[in] c given char
+ *  
+ * @return true 
+ * @return false 
+ */
+static inline bool is_hex_digit(const unsigned char c)
+{
+	return ((is_dec_digit(c)) || ((c >= 'A') && (c <= 'F')) || ((c >= 'a') && (c <= 'f')));
+}
+
+/**
+ * @brief Calculate count of digits in number
+ * 
+ * @param[in] dig  		given number
+ * @param[in] f_n_bit 	size of number
+ * 
+ * @return digits count
+ */
+static uint8_t count_num(uint32_t dig, enum Constants f_n_bit)
 {
 	uint8_t num = 0;
 
@@ -92,16 +121,23 @@ static inline uint8_t count_num(uint32_t dig, uint8_t f_n_bit)
 	return(num);
 }
 
-static inline uint8_t string_digit_num_count(const char* dig)
+/**
+ * @brief Calculate count of digits in string
+ * 
+ * @param[in] dig given string number representation
+ * 
+ * @return digits count 
+ */
+static uint8_t string_digit_num_count(const char* dig)
 {
 	uint8_t num = 0;
 	bool digit = 0;
 
-	digit = test_char_digit(dig[num]);
+	digit = is_dec_digit(dig[num]);
 	while(digit && num < MAX_DECIMAL_COUNT)
 	{
 		num++;
-		digit = test_char_digit(dig[num]);
+		digit = is_dec_digit(dig[num]);
 	}
 
 	return num;
@@ -307,6 +343,50 @@ bcd_t convert_num_to_bcd(uint32_t dec)
 	}
 
 	return bcd;
+}
+
+/**
+* Check if this string is a decimal number.
+*
+* Public function defined in convert.h
+*/
+bool convert_is_dec_number(const char *str, size_t len)
+{
+	if(NULL == str || len == 0) {
+		return false;
+	}
+
+	size_t i = (str[0] == '-' ? 1 : 0);
+
+	for(; i < len; i++) 
+	{
+		if(!is_dec_digit(str[i])) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+/**
+* Check if this string is a hex number.
+*
+* Public function defined in convert.h
+*/
+bool convert_is_hex_number(const char *str, size_t len)
+{
+	if(NULL == str || len == 0) {
+		return false;
+	}
+
+	for(size_t i = 0; i < len; i++) 
+	{
+		if(!is_hex_digit(str[i])) {
+			return false;
+		}
+	}
+
+	return true;
 }
 
 /**
