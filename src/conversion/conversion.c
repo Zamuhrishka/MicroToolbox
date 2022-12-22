@@ -310,7 +310,7 @@ bool convert_string_to_ip4addr(ip4addr_t *ipAddr, const char *ip)
 /**
 * This function used to decode BCD number.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
 uint32_t convert_bcd_to_num(bcd_t bcd)
 {
@@ -326,9 +326,9 @@ uint32_t convert_bcd_to_num(bcd_t bcd)
 }
 
 /**
-* This function used to code BCD number.
+* This function used to encode BCD number.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
 bcd_t convert_num_to_bcd(uint32_t dec)
 {
@@ -348,7 +348,7 @@ bcd_t convert_num_to_bcd(uint32_t dec)
 /**
 * Check if this string is a decimal number.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
 bool convert_is_dec_number(const char *str, size_t len)
 {
@@ -371,7 +371,7 @@ bool convert_is_dec_number(const char *str, size_t len)
 /**
 * Check if this string is a hex number.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
 bool convert_is_hex_number(const char *str, size_t len)
 {

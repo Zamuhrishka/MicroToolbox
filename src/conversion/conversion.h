@@ -85,16 +85,16 @@ bool convert_string_to_ip4addr(ip4addr_t *ipAddr, const char *ip);
  *
  * \return 		decoded number.
 **/
-uint32_t convert_bcd_to_num(uint32_t dec);
+uint32_t convert_bcd_to_num(bcd_t bcd);
 
 /**
- * \brief		This function code BCD number.
+ * \brief		This function encode to BCD number.
  *
- * \param[in] 	dec: number.
+ * \param[in] 	num: number.
  *
  * \return 		BCD number.
 **/
-uint32_t convert_num_to_bcd(uint32_t bcd);
+bcd_t convert_num_to_bcd(uint32_t num);
 
 /**
  * @brief Check if this string is a decimal number
