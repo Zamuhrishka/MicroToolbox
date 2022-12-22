@@ -99,29 +99,63 @@ uint32_t convert_num_to_bcd(uint32_t bcd);
 /**
  * \brief		This function convert string to uint8_t number.
  *
- * \param[in] 	str: string that corresponds to number.
+ * \param[in] 	str: pointer to string with string representation 
+ *                   of number.
  *
  * \return 		number.
 **/
-uint8_t convert_string_to_uint8(const char *str);
+uint8_t convert_str_to_u8(const char *str);
+
+/**
+ * \brief		This function convert string to int8_t number.
+ *
+ * \param[in] 	str: pointer to string with string representation 
+ *                   of number.
+ *
+ * \return 		number.
+**/
+int8_t convert_str_to_i8(const char *str);
 
 /**
  * \brief		This function convert string to uint16_t number.
  *
- * \param[in] 	str: string that corresponds to number.
+ * \param[in] 	str: pointer to string with string representation 
+ *                   of number.
  *
  * \return 		number.
 **/
-uint16_t convert_string_to_uint16(const char *str);
+uint16_t convert_str_to_u16(const char *str);
+
+/**
+ * \brief		This function convert string to int16_t number.
+ *
+ * \param[in] 	str: pointer to string with string representation 
+ *                   of number.
+ *
+ * \return 		number.
+**/
+int16_t convert_str_to_i16(const char *str);
+
 
 /**
  * \brief		This function convert string to uint32_t number.
  *
- * \param[in] 	str: string that corresponds to number.
+ * \param[in] 	str: pointer to string with string representation 
+ *                   of number.
  *
  * \return 		number.
 **/
-uint32_t convert_string_to_uint32(const char *str);
+uint32_t convert_str_to_u32(const char *str);
+
+/**
+ * \brief		This function convert string to int32_t number.
+ *
+ * \param[in] 	str: pointer to string with string representation 
+ *                   of number.
+ *
+ * \return 		number.
+**/
+int32_t convert_str_to_i32(const char *str);
 
 /**
  * \brief		This function convert uint8_t number to string.

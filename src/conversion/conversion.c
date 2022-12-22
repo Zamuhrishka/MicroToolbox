@@ -310,20 +310,19 @@ bcd_t convert_num_to_bcd(uint32_t dec)
 }
 
 /**
-* This function used to convert string to uint8_t number.
+* This function convert string to uint8_t number.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
-uint8_t convert_string_to_uint8(const char *str)
+uint8_t convert_str_to_u8(const char *str)
 {
-	uint8_t dig;
-	uint8_t num = 0;
+	uint8_t dig = 0;
 
 	if(str == NULL) {
 		return 0;
 	}
 
-	num = string_digit_num_count(str);
+	uint8_t num = string_digit_num_count(str);
 
 	switch(num)
 	{
@@ -337,18 +336,43 @@ uint8_t convert_string_to_uint8(const char *str)
 			dig = (str[0] - '0') * 100 + (str[1] - '0') * 10 + (str[2] - '0');
 			break;
 		default:
-			dig = (-1);
+			dig = 0;
 			break;
 	}
-	return(dig);
+
+	return dig;
 }
 
 /**
-* This function used to convert string to uint16_t number.
+* This function convert string to int8_t number.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
-uint16_t convert_string_to_uint16(const char *str)
+int8_t convert_str_to_i8(const char *str)
+{
+	int8_t dig = 1;
+
+	if(str == NULL) {
+		return 0;
+	}
+
+	char* pointer =  &str[0];
+
+	if (str[0] == '-')
+	{
+		dig = (-1);
+		pointer = &str[1];	
+	}
+
+	return (dig * convert_str_to_u8(pointer));
+}
+
+/**
+* This function convert string to uint16_t number.
+*
+* Public function defined in conversion.h
+*/
+uint16_t convert_str_to_u16(const char *str)
 {
 	uint16_t dig;
 	uint8_t num = 0;
@@ -384,11 +408,35 @@ uint16_t convert_string_to_uint16(const char *str)
 }
 
 /**
-* This function used to convert string to uint32_t number.
+* This function convert string to int16_t number.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
-uint32_t convert_string_to_uint32(const char *str)
+int16_t convert_str_to_i16(const char *str)
+{
+	int16_t dig = 1;
+
+	if(str == NULL) {
+		return 0;
+	}
+
+	char* pointer =  &str[0];
+
+	if (str[0] == '-')
+	{
+		dig = (-1);
+		pointer = &str[1];	
+	}
+
+	return (dig * convert_str_to_u16(pointer));
+}
+
+/**
+* This function convert string to uint32_t number.
+*
+* Public function defined in conversion.h
+*/
+uint32_t convert_str_to_u32(const char *str)
 {
 	uint32_t dig;
 	uint8_t num = 0;
@@ -444,9 +492,33 @@ uint32_t convert_string_to_uint32(const char *str)
 }
 
 /**
+* This function convert string to int32_t number.
+*
+* Public function defined in conversion.h
+*/
+int32_t convert_str_to_i32(const char *str)
+{
+	int32_t dig = 1;
+
+	if(str == NULL) {
+		return 0;
+	}
+
+	char* pointer =  &str[0];
+
+	if (str[0] == '-')
+	{
+		dig = (-1);
+		pointer = &str[1];	
+	}
+
+	return (dig * convert_str_to_u32(pointer));
+}
+
+/**
 * This function convert uint8_t number to string.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
 void convert_u8_to_str(char *str, uint8_t dig)
 {
@@ -474,7 +546,7 @@ void convert_u8_to_str(char *str, uint8_t dig)
 /**
 * This function convert int8_t number to string.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
 void convert_i8_to_str(char *str, int8_t dig)
 {
@@ -496,7 +568,7 @@ void convert_i8_to_str(char *str, int8_t dig)
 /**
 * This function convert uint16_t number to string.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
 void convert_u16_to_str(char *str, uint16_t dig)
 {
@@ -537,7 +609,7 @@ void convert_u16_to_str(char *str, uint16_t dig)
 /**
 * This function convert int16_t number to string.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
 void convert_i16_to_str(char *str, int16_t dig)
 {
@@ -559,7 +631,7 @@ void convert_i16_to_str(char *str, int16_t dig)
 /**
 * This function convert uint32_t number to string.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
 void convert_u32_to_str(char *str, uint32_t dig)
 {
@@ -650,7 +722,7 @@ void convert_u32_to_str(char *str, uint32_t dig)
 /**
 * This function convert int32_t number to string.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
 void convert_i32_to_str(char *str, int32_t dig)
 {
@@ -672,7 +744,7 @@ void convert_i32_to_str(char *str, int32_t dig)
 /**
 * This function used to map a value from one range to another.
 *
-* Public function defined in convert.h
+* Public function defined in conversion.h
 */
 int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)
 {
