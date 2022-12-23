@@ -26,15 +26,17 @@
  * \param[in] 	c: hex char.
  *
  * \return 		the number that corresponds to hex char.
+ *              or 0xFF if error.
 **/
-int8_t convert_hex_char_to_num(char c);
+uint8_t convert_hex_char_to_num(char c);
 
 /**
- * \brief		This function convert digit to hex char.
+ * \brief		This function convert hex digit to hex char.
  *
- * \param[in] 	num: digit.
+ * \param[in] 	num: hex digit.
  *
  * \return 		the char that corresponds to digit.
+ *              or ' ' if error.
 **/
 char convert_hex_num_to_char(uint8_t num);
 

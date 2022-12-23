@@ -148,18 +148,21 @@ static uint8_t string_digit_num_count(const char* dig)
 *
 * Public function defined in convert.h
 */
-int8_t convert_hex_char_to_num(char c)
+uint8_t convert_hex_char_to_num(char c)
 {
-	if(c >= '0' && c <= '9')
+	if(c >= '0' && c <= '9') {
 		return (c - '0');
+	}
 
-	if(c >= 'A' && c <= 'F')
+	if(c >= 'A' && c <= 'F') {
 		return (10 + c - 'A');
+	}
 
-	if(c >= 'a' && c <= 'f')
+	if(c >= 'a' && c <= 'f') {
 		return (10 + c - 'a');
+	}
 
-	return (-1);
+	return (0xFF);
 }
 
 /**
@@ -169,13 +172,15 @@ int8_t convert_hex_char_to_num(char c)
 */
 char convert_hex_num_to_char(uint8_t num)
 {
-	if(num >= 0 && num <= 9)
+	if(num >= 0 && num <= 9) {
 		return (num + '0');
+	}
 
-	if(num >= 0x0A && num <= 0x0F)
+	if(num >= 0x0A && num <= 0x0F) {
 		return (num - 10 + 'A');
+	}
 
-	return (-1);
+	return (' ');
 }
 
 /**
