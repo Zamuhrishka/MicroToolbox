@@ -3,7 +3,8 @@
 /**
 * \file         conversion.c
 * \author       Kovalchuk Alexander (roux@yandex.ru)
-* \brief        This file contains the prototypes functions which use for...
+* \brief        This file contains the prototypes functions which use for
+*               conversion different data type to each other.  
 */
 //_____ I N C L U D E S _______________________________________________________
 #include "conversion.h"

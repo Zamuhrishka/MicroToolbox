@@ -1,7 +1,8 @@
 /**
 * \file         conversion.h
 * \author       Kovalchuk Alexander (roux@yandex.ru)
-* \brief        This file contains the prototypes functions which use for...
+* \brief        This file contains the prototypes functions which use for 
+*               conversion different data type to each other.   
 */
 
 #pragma once
