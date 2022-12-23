@@ -1,6 +1,6 @@
 /**
 * \file         crc.c
-* \author       Kovalchuk Alexander (roux@yandex.ru)
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
 * \brief        This file contains files for calculate crc8/16/32.
 */
 //_____ I N C L U D E S _______________________________________________________

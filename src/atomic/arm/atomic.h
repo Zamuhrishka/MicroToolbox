@@ -1,6 +1,6 @@
 /**
 * \file         arm_atomic.h
-* \author       Kovalchuk Alexander (roux@yandex.ru)
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
 * \brief        This file contains the functions and macros for atomic operations.
 */
 

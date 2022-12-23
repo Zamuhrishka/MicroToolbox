@@ -1,6 +1,6 @@
 /**
  * @file    test_convert_is_number.c
- * @author  Aleksander Kovalchuk (roux@yandex.ru)
+ * @author  Aleksander Kovalchuk (aliaksander.kavalchuk@gmail.com)
  * @brief   This file contains unit tests for checking number functions
  *          from @conversion.c file
  */

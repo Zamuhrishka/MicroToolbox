@@ -1,6 +1,6 @@
 /**
 * \file         conversion.h
-* \author       Kovalchuk Alexander (roux@yandex.ru)
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
 * \brief        This file contains the prototypes functions which use for 
 *               conversion different data type to each other.   
 */

@@ -1,6 +1,6 @@
 /**
 * \file         test_convert_to_bin.c
-* \author       Kovalchuk Alexander (roux@yandex.ru)
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
 * \brief        This file contains unit tests for convert_u8_to_bin8(), 
 *               convert_u16_to_bin16(), convert_u32_to_bin32() functions
 *               from @conversion.c file

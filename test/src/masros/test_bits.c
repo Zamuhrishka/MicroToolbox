@@ -1,6 +1,6 @@
 /**
  * @file test_bits_macros.c
- * @author Aleksander Kovalchuk (roux@yandex.ru)
+ * @author Aleksander Kovalchuk (aliaksander.kavalchuk@gmail.com)
  * @brief 
  * @date 2022-05-20
  */

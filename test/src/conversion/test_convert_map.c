@@ -1,6 +1,6 @@
 /**
 * \file         test_map.c
-* \author       Kovalchuk Alexander (roux@yandex.ru)
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
 * \brief        This file contains unit tests for map() function
 *               from @conversion.c file
 */

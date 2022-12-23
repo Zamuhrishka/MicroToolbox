@@ -1,6 +1,6 @@
 /**
 * \file         types.h
-* \author       Kovalchuk Alexander (roux@yandex.ru)
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
 * \brief        This file contains several useful custom data types.
 */
 

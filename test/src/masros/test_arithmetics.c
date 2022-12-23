@@ -1,6 +1,6 @@
 /**
 * \file         template.c
-* \author       Kovalchuk Alexander (roux@yandex.ru)
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
 * \brief        This file contains the prototypes functions which use for...
 */
 //_____ I N C L U D E S _______________________________________________________

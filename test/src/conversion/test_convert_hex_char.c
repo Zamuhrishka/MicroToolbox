@@ -1,6 +1,6 @@
 /**
  * @file    test_convert_hex_char.c
- * @author  Aleksander Kovalchuk (roux@yandex.ru)
+ * @author  Aleksander Kovalchuk (aliaksander.kavalchuk@gmail.com)
  * @brief   This file contains unit tests for convert HEX number to char and 
  *          vice versa functions from @conversion.c file
  */
