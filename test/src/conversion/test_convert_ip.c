@@ -41,7 +41,7 @@ void test_ConvertIpv4AddrToString_Valid(void)
 /**
  * @brief Unit test for convert invalid ip address string to ip address struct
  */
-void test_ConvertStringToIpv4addr(void)
+void test_ConvertStringToIpv4addr_Valid(void)
 {
     ip4addr_t expected[] = {0xFA0A0A0A, 0x00, 0xFFFFFFFF};
     char* current[] = {"10.10.10.250", "0.0.0.0", "255.255.255.255"};
