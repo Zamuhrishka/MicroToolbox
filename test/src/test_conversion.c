@@ -19,52 +19,7 @@
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P R I V A T E  F U N C T I O N S_______________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
-void test_ConvertHexNumToChar(void)
-{
-	char patternChar[] = {'0','1','2','3','4','5','6',\
-						 '7','8','9',\
-						 'A','B','C','D','E','F'};
 
-	char patternNum[] = {0x00,0x01,0x02,0x03,0x04,0x05,\
-						0x06,0x07,0x08,0x09,\
-						0x0A,0x0B,0x0C,0x0D,0x0E,0x0F};
-	char num = -1;
-
-    size_t i = 0;
-	for(i = 0; i < sizeof(patternNum); i++)
-	{
-		num = convert_hex_num_to_char(patternNum[i]);
-		TEST_ASSERT_EQUAL_INT(num, patternChar[i]);
-	}
-}
-
-
-void test_ConvertHexCharToNum(void)
-{
-	char patternChar[] = {'0','1','2','3','4','5','6',\
-						 '7','8','9',\
-						 'A','B','C','D','E','F',\
-						 'a','b','c','d','e','f',};
-
-	char patternNum[] = {0x00,0x01,0x02,0x03,0x04,0x05,\
-						0x06,0x07,0x08,0x09,\
-						0x0A,0x0B,0x0C,0x0D,0x0E,0x0F,\
-						0x0A,0x0B,0x0C,0x0D,0x0E,0x0F};
-	int8_t num = -1;
-
-    size_t i = 0;
-	for(i = 0; i < sizeof(patternNum); i++)
-	{
-		num = convert_hex_char_to_num(patternChar[i]);
-		TEST_ASSERT_EQUAL_INT(num, patternNum[i]);
-	}
-
-	num = convert_hex_char_to_num('-');
-	TEST_ASSERT_EQUAL_INT(num, -1);
-
-	num = convert_hex_char_to_num('U');
-	TEST_ASSERT_EQUAL_INT(num, -1);
-}
 
 void test_ConvertStringToMacAddr(void)
 {
