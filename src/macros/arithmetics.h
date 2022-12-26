@@ -1,7 +1,7 @@
 /**
-* \file         macros.h
+* \file         arithmetics.h
 * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
-* \brief        This file contains the prototypes functions which use for...
+* \brief        Macros for arithmetics operation.   
 */
 
 #pragma once
@@ -25,20 +25,21 @@
  * \return          the min between a and b.
  * \hideinitializer
  */
-#define MIN(a, b)            		        (((a) < (b)) ? (a) : (b))
+#define MIN(a, b)            		 (((a) < (b)) ? (a) : (b))
 
 /**
  * \brief           This macros take the min between a and b without branch
  * 
- * \warning This optimization works well on some machines, but on modern machines using clang -O3
- * thr branchless version is usually slower than the branching version. Modern compilers can perfom
- * this optimization better than you can! 
+ * \warning This optimization works well on some machines, but on modern 
+ * machines using -O3 the branchless version is usually slower than the 
+ * branching version. Modern compilers can perform this optimization better 
+ * than you can! 
  * 
  * \param[in]       a: first value
  * \param[in]       b: second value
  * \return          the min between a and b.
  */
-#define MIN_BRANCHLESS(a, b)   		        ((b) ^ (((a) ^ (b)) & -((a) < (b))))
+#define MIN_BRANCHLESS(a, b)   		  ((b) ^ (((a) ^ (b)) & -((a) < (b))))
 
 /**
  * \brief           This macros take the max between a and b.
@@ -47,20 +48,21 @@
  * \return          the max between a and b.
  * \hideinitializer
  */
-#define MAX(a, b)            		        (((a) > (b)) ? (a) : (b))
+#define MAX(a, b)            		  (((a) > (b)) ? (a) : (b))
 
 /**
  * \brief           This macros take the max between a and b without branch
  * 
- * \warning This optimization works well on some machines, but on modern machines using clang -O3
- * thr branchless version is usually slower than the branching version. Modern compilers can perfom
- * this optimization better than you can! 
+ * \warning This optimization works well on some machines, but on modern 
+ * machines using -O3 the branchless version is usually slower than the 
+ * branching version. Modern compilers can perform this optimization better 
+ * than you can! 
  * 
  * \param[in]       a: first value
  * \param[in]       b: second value
  * \return          the max between a and b.
  */
-#define MAX_BRANCHLESS(a, b)                ((b) & (((a)-(b)) >> 31) | (a) & (~((a)-(b)) >> 31))
+#define MAX_BRANCHLESS(a, b)          ((b) & (((a)-(b)) >> 31) | (a) & (~((a)-(b)) >> 31))
 
 /**
  * \brief           This macros test two values for equal.
@@ -69,7 +71,7 @@
  * \return          true if equal.
  * \hideinitializer
  */
-#define IS_EQUAL(a, b)				        (((a) ^ (b)) == 0)
+#define IS_EQUAL(a, b)				  (((a) ^ (b)) == 0)
 
 /**
  * \brief           This macros test number for even.
@@ -77,7 +79,7 @@
  * \return          true if number is even.
  * \hideinitializer
  */
-#define IS_EVEN(num)				        (((num) & 1) == 1)
+#define IS_EVEN(num)				  (((num) & 1) == 1)
 
 /**
  * \brief           This macros test number for odd.
@@ -85,7 +87,7 @@
  * \return          true if number is odd.
  * \hideinitializer
  */
-#define IS_ODD(num)					        (!(((num) & 1) == 1))
+#define IS_ODD(num)					  (!(((num) & 1) == 1))
 
 /**
  * \brief           This macros change the number sigh.
@@ -93,20 +95,34 @@
  * \return          number with changed sigh.
  * \hideinitializer
  */
-#define INVERT_SIGH(a)				        ((~(a)) + 1u)
-
-//Detect if two integers have opposite signs
-#define IS_SIGH_EQUAL(a, b) 			    (((a) ^ (b)) >= 0)
+#define INVERT_SIGH(a)				  ((~(a)) + 1)
 
 /**
- * \brief           This macros change the number sigh.
- * \param[in]       num: number
+ * \brief           Detect if two integers have opposite signs.
+ * \param[in]       a: first value
+ * \param[in]       b: second value
  * \return          number with changed sigh.
  * \hideinitializer
  */
-#define ARIPH_MEAN(a, b)			        (((a) + (b)) >> 1u)
+#define IS_SIGH_EQUAL(a, b) 		   (((a) ^ (b)) >= 0)
 
-#define SWAP(a, b) 			                ((a) = (a) ^ (b) ^ ((b) = (a)))
+/**
+ * \brief           Takes arithmetical mean between a and b.
+ * \param[in]       a: first value
+ * \param[in]       b: second value
+ * \return          arithmetical mean.
+ * \hideinitializer
+ */
+#define ARITHMETICAL_MEAN(a, b)			(((a) + (b)) >> 1u)
+
+/**
+ * \brief           Swap a and b.
+ * \param[in]       a: first value
+ * \param[in]       b: second value
+ * \return          none
+ * \hideinitializer
+ */
+#define SWAP(a, b) 			           ((a) = (a) ^ (b) ^ ((b) = (a)))
 
 /**
  * \brief           This macros test number for power of 2.
@@ -114,31 +130,37 @@
  * \return          true if number is power of 2.
  * \hideinitializer
  */
-#define IS_POWER_2(num) 			        (num && !(num & (num - 1)))
+#define IS_POWER_2(num) 			   (num && !(num & (num - 1)))
 
-/*
- * This macro will round a value up to the next 'base'.
- * Find nearest number (from _x) which would be devided on _b
- * 
+/**
+ * \brief           This macro will round a value up to the next 'base'.
  * \example 
- * ROUND_UP(115, 3) = 117
- * 115/3 = 38.3(3)
- * 117/3 = 39
+ *                  ROUND_UP(115, 3) = 117
+ *                  115/3 = 38.3(3)
+ *                  117/3 = 39
+ *
+ * \param[in]       x: base
+ * \param[in]       b: divider
+ * \return          nearest number (from x) which would be divided on b.
+ * \hideinitializer
  */
-#define ROUND_UP(_x, _b)                     ((((_x) + ((_b) - 1)) / (_b)) * (_b))
+#define ROUND_UP(x, b)                ((((x) + ((b) - 1)) / (b)) * (b))
 
-/*
- * These macros work together to progressively set each bit below the MSb
- * set in a 32-bit value. By cascading the macros, we can round any value
- * up to the nearest power-of-2 at compile time.
+/**
+ * \brief           These macros work together to progressively set each 
+ *                  bit below the MSb. set in a 32-bit value. By cascading 
+ *                  the macros, we can round any value up to the nearest 
+ *                  power-of-2 at compile time.
+ * \param[in]       x: number
+ * \return          nearest to x the power-of-2 number.
+ * \hideinitializer
  */
-#define _OR2(_x)                ((_x) | ((_x) >> 1))
-#define _OR4(_x)                (_OR2(_x) | (_OR2(_x) >> 2))
-#define _OR8(_x)                (_OR4(_x) | (_OR4(_x) >> 4))
-#define _OR16(_x)               (_OR8(_x) | (_OR8(_x) >> 8))
-#define _OR32(_x)               (_OR16(_x) | (_OR16(_x) >> 16))
-
-#define ROUND_UP_POW_2(_x)      ((_OR32((_x) - 1)) + 1)
+#define _OR2(x)                     ((x) | ((x) >> 1))
+#define _OR4(x)                     (_OR2(x) | (_OR2(x) >> 2))
+#define _OR8(x)                     (_OR4(x) | (_OR4(x) >> 4))
+#define _OR16(x)                    (_OR8(x) | (_OR8(x) >> 8))
+#define _OR32(x)                    (_OR16(x) | (_OR16(x) >> 16))
+#define ROUND_UP_POW_2(x)           ((_OR32((x) - 1)) + 1)
 
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
