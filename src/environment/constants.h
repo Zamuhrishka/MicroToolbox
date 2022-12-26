@@ -1,7 +1,7 @@
 /**
 * \file         constants.h
 * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
-* \brief        This file contains the prototypes functions which use for...
+* \brief        Common constants  
 */
 
 #pragma once
@@ -14,62 +14,77 @@
 #include <stdint.h>
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
+//< Constant for pressed button state
 #ifndef PRESS
 	#define			PRESS                           0
 #endif
 
+//< Constant for released button state
 #ifndef RELEASE
 	#define			RELEASE                         1
 #endif
 
+//< Constant for pass state
 #ifndef PASS
 	#define			PASS			                1
 #endif
 
+//< Constant for fault state
 #ifndef FAULT
 	#define			FAULT                           0
 #endif
 
+//< Constant for off state
 #ifndef OFF
 	#define			OFF     		                0
 #endif
 
+//< Constant for on state
 #ifndef ON
 	#define			ON      		                1
 #endif
 
+//< Constant for enable state
 #ifndef ENABLE
 	#define			ENABLE   		                1
 #endif
 
+//< Constant for disable state
 #ifndef DISABLE
 	#define			DISABLE  		                0
 #endif
 
+//< Constant for set state
 #ifndef SET
 	#define			SET     	                	1
 #endif
 
+//< Constant for clear state
 #ifndef CLEAR
 	#define			CLEAR     	                	0
 #endif
 
+//< Constant for low state
 #ifndef LOW
 	#define			LOW								0
 #endif
 
+//< Constant for high state
 #ifndef HIGH
 	#define			HIGH							1
 #endif
 
+//< Constants for capacity of data
 #define 			KBYTE							1024
 #define 			MBYTE							(KBYTE * KBYTE)
 
+//< Invalid values for different data types
 #define 			INVALID8						((uint8_t)-1)
 #define 			INVALID16						((uint16_t)-1)
 #define 			INVALID32						((uint32_t)-1)
 #define 			INVALID64						((uint64_t)-1)
 
+//< Constants for bits position
 #define 			BIT0  							0x01
 #define 			BIT1  							0x02
 #define 			BIT2  							0x04
