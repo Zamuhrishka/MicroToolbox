@@ -1,9 +1,8 @@
 /**
- * @file guards.h
- * @author Aleksander Kovalchuk (aliaksander.kavalchuk@gmail.com)
- * @brief 
- * @date 2022-05-20
- */
+* \file         guard.h
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+* \brief        Guard macros.   
+*/
 
 #pragma once
 
@@ -13,16 +12,16 @@ extern "C" {
 #endif
 
 //_____ I N C L U D E S _______________________________________________________
-
+#include "misc.h"
 //_____ C O N F I G S  ________________________________________________________
 
 //_____ D E F I N I T I O N S _________________________________________________
 
 //_____ M A C R O S ___________________________________________________________
 /**
- * @brief Static assert
+ * @brief       Static assert
  * 
- * @param[in] COND 	- bool expration
+ * @param[in] COND 	- bool expresion
  * @param[in] MSG 	- fail message
  * 
  */
@@ -50,7 +49,7 @@ extern "C" {
  * @brief 	Check that size of struct is divide on sz
  * 
  * @param[in] st 	- struct type
- * @param[in] sz 	- value on which the size of struct must devided
+ * @param[in] sz 	- value on which the size of struct must divided
  * @example 
  * 	typedef struct {
  *   		uint8_t     id;
@@ -65,10 +64,10 @@ extern "C" {
         typedef uint8_t GuardStructSizeMultiple##st##_header[((sizeof( st) % (sz)) == 0) ? 1:-1]
 
 /**
- * @brief 	Check that offset of struct memeber equel @os_
+ * @brief 	Check that offset of struct member equal @os_
  * 
  * @param[in] st 	- struct type
- * @param[in] mb 	- name of struct memeber
+ * @param[in] mb 	- name of struct member
  * @param[in] os 	- expected offset
  * @example 
  * 	typedef struct {
