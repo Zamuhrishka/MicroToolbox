@@ -1,9 +1,8 @@
 /**
- * @file preproc.h
- * @author Aleksander Kovalchuk (aliaksander.kavalchuk@gmail.com)
- * @brief 
- * @date 2022-05-22
- */
+* \file         misc.h
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+* \brief        Various useful macros.  
+*/
 
 #pragma once
 
@@ -53,10 +52,10 @@ extern "C" {
  */
 #ifndef container_of
 #define container_of(_p, _t, _m) \
-    ({                                                                      \
-         const __typeof__(((_t *) 0)->_m) * __mptr = (_p);                  \
-         (_t *) ((char *) __mptr - offsetof(_t, _m));                       \
-     })
+                                        ({                                                   \
+                                            const __typeof__(((_t *) 0)->_m) * __mptr = (_p);\
+                                            (_t *) ((char *) __mptr - offsetof(_t, _m));     \
+                                        })
 #endif
 
    
@@ -69,12 +68,13 @@ extern "C" {
  * \return          
  * \hideinitializer
  */
-#define PASTE2(_x, _y)                          _x ## _y
-#define PASTE(_x, _y)                           PASTE2(_x, _y)
+#define PASTE2(_x, _y)                   _x ## _y
+#define PASTE(_x, _y)                    PASTE2(_x, _y)
 
 /**
- * \brief           Define name of current source file
- *  
+ * \brief           Return name of current source file
+ * \param[in]       s: path to the source file (__FILE__)
+ * \return          name of single source file without path to it.
  */
 #ifdef strrchr
 #define __FILENAME__ (strrchr(__FILE__, FILE_SPLITTER) ? strrchr(__FILE__, FILE_SPLITTER) + 1 : __FILE__)
