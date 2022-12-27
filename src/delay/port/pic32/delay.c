@@ -1,8 +1,11 @@
 /**
 * \file         delay.c
 * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
-* \brief        This file contains the prototypes functions which use for...
+* \brief        Time delay functions for PIC32 microcontrollers.
+*
+* \warning		Work of this functions need to be checked!
 */
+
 //_____ I N C L U D E S _______________________________________________________
 #include "delay.h"
 
@@ -10,11 +13,12 @@
 #include <stdbool.h>
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
-#if !defined(PCLK_MHZ)
-	#error "Constant PCLK_MHZ undefined. Please define peripherals bus clock (MHz)"
+#if !defined(PCLK_HZ)
+	#error "Constant PCLK_HZ undefined. Please define peripherals bus clock in Hz\
+			Example: #define PCLK_HZ 8000000"
 #endif
 
-#define COUNT_PER_USEC                  ((PCLK_MHZ/1000000)/2)
+#define COUNT_PER_USEC                  ((PCLK_HZ/1000000)/2)
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P R I V A T E  F U N C T I O N S_______________________________________

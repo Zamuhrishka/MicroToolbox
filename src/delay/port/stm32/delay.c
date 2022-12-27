@@ -1,8 +1,9 @@
 /**
 * \file         delay.c
 * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
-* \brief        This file contains the prototypes functions which use for...
+* \brief        Time delay functions for STM32 microcontrollers.
 */
+
 //_____ I N C L U D E S _______________________________________________________
 #include "delay.h"
 
@@ -10,19 +11,24 @@
 #include <stdbool.h>
 //_____ C O N F I G S  ________________________________________________________
 #if !defined(SYS_CLOCK)
-	#error "Constant SYS_CLOCK undefined. Please define system bus clock (MHz)"
+	#error "Constant SYS_CLOCK undefined. Please define system bus clock in Hz.\
+			Example: #define SYS_CLOCK 8000000"
 #endif
 //_____ D E F I N I T I O N S _________________________________________________
+///< DWT Control register
+#define DWT_CONTROL_REG             	(*((volatile uint32_t*)0xE0001000))		
 
-#define DWT_CONTROL_REG             	(*((volatile uint32_t*)0xE0001000))		///< DWT Control register
+///< CYCCNTENA bit in DWT_CONTROL register
+#define DWT_CYCCNTENA_BIT       		(1UL<<0)								
 
-#define DWT_CYCCNTENA_BIT       		(1UL<<0)								///< CYCCNTENA bit in DWT_CONTROL register
+///< DWT Cycle Counter register
+#define DWT_CYCCNT_REG              	(*((volatile uint32_t*)0xE0001004))		
 
-#define DWT_CYCCNT_REG              	(*((volatile uint32_t*)0xE0001004))		///< DWT Cycle Counter register
+///< DEMCR: Debug Exception and Monitor Control Register
+#define DWT_DEMCR_REG                 	(*((volatile uint32_t*)0xE000EDFC))		
 
-#define DWT_DEMCR_REG                 	(*((volatile uint32_t*)0xE000EDFC))		///< DEMCR: Debug Exception and Monitor Control Register
-
-#define DWT_TRCENA_BIT              	(1 << 24)								///< Trace enable bit in DEMCR register
+///< Trace enable bit in DEMCR register
+#define DWT_TRCENA_BIT              	(1 << 24)								
 //_____ M A C R O S ___________________________________________________________
 /**
  * \brief           Enable trace and debug block DEMCR
