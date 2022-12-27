@@ -1,7 +1,9 @@
 /**
 * \file         profiler.c
 * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
-* \brief        This file contains the prototypes functions which use for...
+* \brief        
+*
+* \warning		Work of this functions need to be checked!
 */
 //_____ I N C L U D E S _______________________________________________________
 #include "profiler.h"
@@ -10,7 +12,8 @@
 #include <stdbool.h>
 //_____ C O N F I G S  ________________________________________________________
 #if !defined(SYS_CLOCK)
-	#error "Constant SYS_CLOCK undefined. Please define system bus clock (MHz)"
+	#error "Constant SYS_CLOCK undefined. Please define system bus clock in Hz.\
+			Example: #define SYS_CLOCK 8000000"
 #endif
 //_____ D E F I N I T I O N S _________________________________________________
 //DWT Control register
@@ -47,11 +50,11 @@ static ticks_t ticks = 0;
 //_____ P R I V A T E  F U N C T I O N S_______________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
 /**
-* This function start time profiler.
+* Start timer for time profiler.
 *
 * Public function defined in profiler.h
 */
-void profiler_start(void)
+void profiler_timer_start(void)
 {
 	ticks = 0;
 	DWT_InitCycleCounter(); 									/* enable DWT hardware */
@@ -60,11 +63,11 @@ void profiler_start(void)
 }
 
 /**
-* This function stop time profiler.
+* Stop timer for time profiler.
 *
 * Public function defined in profiler.h
 */
-ticks_t profiler_stop(void)
+ticks_t profiler_timer_stop(void)
 {
 	ticks = DWT_GetCycleCounter(); 								/* get cycle counter */
 	DWT_DisableCycleCounter(); 									/* disable counting if not used any more */
@@ -80,10 +83,7 @@ float profiler_ticks_to_time(ticks_t ticks)
 {
 	float time = 0.0f;
 
-	if(SYS_CLOCK != 0)
-	{
-		time = ticks/SYS_CLOCK;
-	}
+	time = ticks/SYS_CLOCK;
 
 	return time;
 }
