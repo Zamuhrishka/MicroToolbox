@@ -1,5 +1,5 @@
 /**
-* \file         bits.h
+* \file         
 * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
 * \brief        This file contains macros for bits manipulations.   
 */
@@ -12,6 +12,8 @@ extern "C" {
 #endif
 
 //_____ I N C L U D E S _______________________________________________________
+#include <stdint.h>
+
 #include "compiler.h"
 //_____ C O N F I G S  ________________________________________________________
 
@@ -20,87 +22,93 @@ extern "C" {
 //_____ M A C R O S ___________________________________________________________
 /**
  * \brief           Set bit
+ * 
  * \param[in]       var: variable in which need set bit
  * \param[in]       bit: number of bit which need to set
+ * 
  * \return          none
- * \hideinitializer
  */
 #define SET_BIT(var, bit)			            ((var) |= (1<<(bit)))
 
 /**
  * \brief           Clear bit
+ * 
  * \param[in]       var: variable in which need clear bit
  * \param[in]       bit: number of bit which need to clear
+ * 
  * \return          none
- * \hideinitializer
  */
 #define CLEAR_BIT(var, bit)			            ((var) &= (~(1<<(bit))))
 
 /**
  * \brief           Invert bit
+ * 
  * \param[in]       var: variable in which need toggle bit
  * \param[in]       bit: number of bit which need to toggle
+ * 
  * \return          none
- * \hideinitializer
  */
 #define TOGGLE_BIT(var, bit)		            ((var) ^= (1<<(bit)))
 
 /**
  * \brief           Test bit in variable for set state
+ * 
  * \param[in]       var: variable in which need test bit
  * \param[in]       bit: bit number
+ * 
  * \return          none
- * \hideinitializer
  */
 #define TEST_BIT(var, bit)			            (((var) & (1<<(bit))) != 0)
 
 /**
  * \brief           This macro creates a mask that will isolate the bits from
- *                  l (lower) to u (upper).  The 'u' value must be the larger
- *                  value if 'u' and 'l' aren't equal.
+ *                  `l` (lower) to `u` (upper).  The `u` value must be the larger
+ *                  value if `u` and `l` aren't equal.
+ * 
  * \param[in]       msb: most significant bit
  * \param[in]       lsb: least significant bit
+ * 
  * \return          bitfield
- * \hideinitializer
  */
 #define MAKE_BITFIELD(u, l)                    ((((1ul << (u)) - 1ul) | (1ul << (u))) & ~((1ul << (l)) - 1ul))
 
 /**
- * \brief           Define number of bits in с type
+ * \brief           Define number of bits in `с` type
  * 
- * \param[in]       type: с type (char, int, uint8_t, etc)
- * \return          number of bits in c type
+ * \param[in]       type: с type (`char`, `int`, `uint8_t`, etc)
+ * 
+ * \return          number of bits in `c` type
  */
 #define NUM_BITS(type)                          (sizeof(type) * 8u)
 
 /**
- * \brief Isolate the rightmost 1-bit
+ * \brief 			Isolate the rightmost 1-bit
  * 
- * \warning Undefined behavior for x=0 value
+ * \warning 		Undefined behavior for x=0 value
  * 
  */
 #define LSO(x)                                  ((x) & (-(x)))
 
 /**
- * \brief Isolate the rightmost 0-bit
+ * \brief 			Isolate the rightmost 0-bit
  * 
- * \warning Undefined behavior for x=(~x) value
+ * \warning			Undefined behavior for x=(~x) value
  *
  */
 #define LCO(x) 			                        (~(x) & ((x)+1))
 
 /**
- * @brief Turn on the rightmost 0-bit
+ * \brief 			Turn on the rightmost 0-bit
  * 
- * \warning Undefined behavior for x=(~x) value
+ * \warning 		Undefined behavior for x=(~x) value
  * 
  */
 #define SLSB(x) 			                    ((x) | ((x)+1))
 
 /**
- * @brief Turn off the rightmost 1-bit
+ * \brief 			Turn off the rightmost 1-bit
  * 
- * \warning Undefined behavior for x=0 value
+ * \warning 		Undefined behavior for x=0 value
  * 
  */
 #define CLSB(x) 			                    ((x) & ((x)-1))
@@ -108,7 +116,7 @@ extern "C" {
 //_____ V A R I A B L E S _____________________________________________________
 
 //_____ P U B L I C  F U N C T I O N S_________________________________________
-/** \brief      Function to reverse the individual bits in a uint8_t - i.e. bit 7 
+/** \brief      Function to reverse the individual bits in a `uint8_t` - i.e. bit 7 
  *              is moved to bit 0, bit 6 to bit 1, etc.
  *
  *  \param[in]  byte  byte of data whose bits are to be reversed.
@@ -124,10 +132,10 @@ static __inline__ uint8_t bits_mirror_u8(uint8_t byte)
 	return byte;
 }
 
-/** \brief      Function to reverse the individual bits in a uint16_t - i.e. bit 15 
+/** \brief      Function to reverse the individual bits in a `uint16_t` - i.e. bit 15 
  *              is moved to bit 0, bit 14 to bit 1, etc.
  *
- *  \param[in]  half  uint16_t of data whose bits are to be reversed.
+ *  \param[in]  half  `uint16_t` of data whose bits are to be reversed.
  *
  *  \return     Input data with the individual bits reversed (mirrored).
  */
@@ -141,10 +149,10 @@ static __inline__ uint16_t bits_mirror_u16(uint16_t half)
 	return half;
 }
 
-/** \brief      Function to reverse the individual bits in a uint32_t - i.e. bit 31 
+/** \brief      Function to reverse the individual bits in a `uint32_t` - i.e. bit 31 
  *              is moved to bit 0, bit 30 to bit 1, etc.
  *
- *  \param[in]  word  uint32_t of data whose bits are to be reversed.
+ *  \param[in]  word  `uint32_t` of data whose bits are to be reversed.
  *
  *  \return     Input data with the individual bits reversed (mirrored).
  */

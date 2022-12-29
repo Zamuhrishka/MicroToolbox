@@ -66,9 +66,9 @@ uint64_t byte_order_swap64(uint64_t num)
 *
 * Public function defined in byte_order.h
 */
-void byte_order_u16_to_array_le(uint16_t val, void* ptr) 
+void byte_order_u16_to_array_le(uint16_t val, void* array) 
 {
-    uint8_t* p = ptr;
+    uint8_t* p = array;
 
     p[0] = (uint8_t)((val >> 0) & 0xFF);
     p[1] = (uint8_t)((val >> 8) & 0xFF);
@@ -79,9 +79,9 @@ void byte_order_u16_to_array_le(uint16_t val, void* ptr)
 *
 * Public function defined in byte_order.h
 */
-void byte_order_u32_to_array_le(uint32_t val, void* ptr) 
+void byte_order_u32_to_array_le(uint32_t val, void* array) 
 {
-    uint8_t* p = ptr;
+    uint8_t* p = array;
 
     p[0] = (uint8_t)((val >> 0) & 0xFF);
     p[1] = (uint8_t)((val >> 8) & 0xFF);
@@ -94,9 +94,9 @@ void byte_order_u32_to_array_le(uint32_t val, void* ptr)
 *
 * Public function defined in byte_order.h
 */
-uint16_t byte_order_array_to_u16_le(const void* ptr) 
+uint16_t byte_order_array_to_u16_le(const void* array) 
 {
-    const uint8_t* p = ptr;
+    const uint8_t* p = array;
     return p[1] << 8 | p[0];
 }
 
@@ -105,9 +105,9 @@ uint16_t byte_order_array_to_u16_le(const void* ptr)
 *
 * Public function defined in byte_order.h
 */
-uint32_t byte_order_array_to_u32_le(const void* ptr) 
+uint32_t byte_order_array_to_u32_le(const void* array) 
 {
-    const uint8_t* p = ptr;
+    const uint8_t* p = array;
     return p[3] << 24 | p[2] << 16 | p[1] << 8 | p[0];
 }
 
@@ -116,9 +116,9 @@ uint32_t byte_order_array_to_u32_le(const void* ptr)
 *
 * Public function defined in byte_order.h
 */
-void byte_order_u16_to_array_be(uint16_t val, void* ptr) 
+void byte_order_u16_to_array_be(uint16_t val, void* array) 
 {
-    uint8_t* p = ptr;
+    uint8_t* p = array;
 
     p[0] = (uint8_t)((val >> 8) & 0xFF);
     p[1] = (uint8_t)((val >> 0) & 0xFF);
@@ -129,9 +129,9 @@ void byte_order_u16_to_array_be(uint16_t val, void* ptr)
 *
 * Public function defined in byte_order.h
 */
-void byte_order_u32_to_array_be(uint32_t val, void* ptr) 
+void byte_order_u32_to_array_be(uint32_t val, void* array) 
 {
-    uint8_t* p = ptr;
+    uint8_t* p = array;
 
     p[0] = (uint8_t)((val >> 24) & 0xFF);
     p[1] = (uint8_t)((val >> 16) & 0xFF);
@@ -144,9 +144,9 @@ void byte_order_u32_to_array_be(uint32_t val, void* ptr)
 *
 * Public function defined in byte_order.h
 */
-uint16_t byte_order_array_to_u16_be(const void* ptr) 
+uint16_t byte_order_array_to_u16_be(const void* array) 
 {
-    const uint8_t* p = ptr;
+    const uint8_t* p = array;
     return p[0] << 8 | p[1];
 }
 
@@ -155,8 +155,8 @@ uint16_t byte_order_array_to_u16_be(const void* ptr)
 *
 * Public function defined in byte_order.h
 */
-uint32_t byte_order_array_to_u32_be(const void* ptr) 
+uint32_t byte_order_array_to_u32_be(const void* array) 
 {
-    const uint8_t* p = ptr;
+    const uint8_t* p = array;
     return p[0] << 24 | p[1] << 16 | p[2] << 8 | p[3];
 }

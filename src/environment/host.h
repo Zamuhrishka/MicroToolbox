@@ -1,5 +1,5 @@
 /**
-* \file         host.h
+* \file
 * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
 * \brief        Host depend constants   
 */

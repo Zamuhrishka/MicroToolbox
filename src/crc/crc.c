@@ -1,7 +1,7 @@
 /**
-* \file         crc.c
+* \file
 * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
-* \brief        This file contains files for calculate crc8/16/32.
+* \brief        This file contains functions for calculate crc8/16/32.
 */
 //_____ I N C L U D E S _______________________________________________________
 #include <stdint.h>

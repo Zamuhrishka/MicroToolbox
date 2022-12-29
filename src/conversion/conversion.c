@@ -1,7 +1,7 @@
 // This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 /**
-* \file         conversion.c
+* \file         
 * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
 * \brief        This file contains the prototypes functions which use for
 *               conversion different data type to each other.  
@@ -18,28 +18,27 @@
 #include <math.h>
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
-//! \brief Size in bits
-//! \{
+/**
+@brief Enum for data types
+*/
 enum Constants
 {
-	U8B		=		0,
-	U16B	=		1,
-	U32B	=		2,
+	U8B		=		0,			/**< uint8_t data type */
+	U16B	=		1,			/**< uint16_t data type */
+	U32B	=		2,			/**< uint32_t data type */
 };
-//! \}
 
-//! Max decimal counts in digit
+/*! Max decimal counts in digit */
 #define MAX_DECIMAL_COUNT		10
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P R I V A T E  F U N C T I O N S_______________________________________
 /**
- * @brief Check if this char is a decimal number
+ * \brief 	Check if this char is a decimal number?
  * 
- * @param[in] c given char
+ * \param[in] c: given char
  *  
- * @return true 
- * @return false 
+ * \return true/false 
  */
 static inline bool is_dec_digit(const unsigned char c)
 {
@@ -47,12 +46,11 @@ static inline bool is_dec_digit(const unsigned char c)
 }
 
 /**
- * @brief Check if this char is a hex number
+ * \brief 	Check if this char is a hex number?
  * 
- * @param[in] c given char
+ * \param[in] c: given char
  *  
- * @return true 
- * @return false 
+ * \return true/false 
  */
 static inline bool is_hex_digit(const unsigned char c)
 {
@@ -60,12 +58,12 @@ static inline bool is_hex_digit(const unsigned char c)
 }
 
 /**
- * @brief Calculate count of digits in number
+ * \brief 	Calculate count of digits in number
  * 
- * @param[in] dig  		given number
- * @param[in] f_n_bit 	size of number
+ * \param[in] dig:  	given number
+ * \param[in] f_n_bit: 	size of number
  * 
- * @return digits count
+ * \return digits count
  */
 static uint8_t count_num(uint32_t dig, enum Constants f_n_bit)
 {
@@ -123,11 +121,11 @@ static uint8_t count_num(uint32_t dig, enum Constants f_n_bit)
 }
 
 /**
- * @brief Calculate count of digits in string
+ * \brief 	Calculate count of digits in string.
  * 
- * @param[in] dig given string number representation
+ * \param[in] dig: given string number representation
  * 
- * @return digits count 
+ * \return digits count 
  */
 static uint8_t string_digit_num_count(const char* dig)
 {
@@ -185,7 +183,8 @@ char convert_hex_num_to_char(uint8_t num)
 }
 
 /**
-* This function used to convert string to MAC address.
+* This function convert string representation of MAC to \ref `mac_t` -
+* special data type for MAC store.
 *
 * Public function defined in convert.h
 */
@@ -226,7 +225,7 @@ bool convert_string_to_mac_addr(const char *str, mac_t *macAddr)
 }
 
 /**
-* This function used to convert MAC address to string.
+* This function convert `mac_t` structure to string.
 *
 * Public function defined in convert.h
 */
@@ -264,39 +263,40 @@ bool convert_mac_addr_to_string(const mac_t *macAddr, char *string)
 }
 
 /**
-* This function used to convert IP address to string.
+* This function convert `ip4addr_t` structure to string.
 *
 * Public function defined in convert.h
 */
-bool convert_ip4addr_to_string(ip4addr_t ipAddr, char *ip)
+bool convert_ip4addr_to_string(ip4addr_t ip, char *string)
 {
 	uint8_t *p;
 
-	if(ip == NULL) {
+	if(string == NULL) {
 		return false;
 	}
 
-   p = (uint8_t *) &ipAddr;
-   sprintf(ip, "%u.%u.%u.%u", p[0], p[1], p[2], p[3]);
+   p = (uint8_t *) &ip;
+   sprintf(string, "%u.%u.%u.%u", p[0], p[1], p[2], p[3]);
 
    return true;
 }
 
 /**
-* This function used to convert string to IP address.
+* This function convert IP string representation to \ref `ip4addr_t` -
+* special data type for IP store.
 *
 * Public function defined in convert.h
 */
-bool convert_string_to_ip4addr(ip4addr_t *ipAddr, const char *ip)
+bool convert_string_to_ip4addr(ip4addr_t *ip, const char *string)
 {
 	int ip1, ip2, ip3, ip4;
 	ip4addr_t _ip = 0;
 
-	if(ip == NULL || ipAddr == NULL) {
+	if(string == NULL || ip == NULL) {
 		return false;
 	}
 
-	if(sscanf(ip, "%d.%d.%d.%d", &ip1, &ip2, &ip3, &ip4) != 4) {
+	if(sscanf(string, "%d.%d.%d.%d", &ip1, &ip2, &ip3, &ip4) != 4) {
 		return false;
 	}
 
@@ -308,7 +308,7 @@ bool convert_string_to_ip4addr(ip4addr_t *ipAddr, const char *ip)
 	_ip <<= 8;
 	_ip |= ip1;
 
-	*ipAddr = _ip;
+	*ip = _ip;
 
 	return true;
 }
@@ -352,7 +352,7 @@ bcd_t convert_num_to_bcd(uint32_t dec)
 }
 
 /**
-* Check if this string is a decimal number.
+* Check if this string is a decimal number?
 *
 * Public function defined in conversion.h
 */
@@ -375,7 +375,7 @@ bool convert_is_dec_number(const char *str, size_t len)
 }
 
 /**
-* Check if this string is a hex number.
+* Check if this string is a hex number?
 *
 * Public function defined in conversion.h
 */
@@ -396,7 +396,7 @@ bool convert_is_hex_number(const char *str, size_t len)
 }
 
 /**
-* This function convert string to uint8_t number.
+* This function convert string to `uint8_t` number.
 *
 * Public function defined in conversion.h
 */
@@ -430,7 +430,7 @@ uint8_t convert_str_to_u8(const char *str)
 }
 
 /**
-* This function convert string to int8_t number.
+* This function convert string to `int8_t` number.
 *
 * Public function defined in conversion.h
 */
@@ -454,7 +454,7 @@ int8_t convert_str_to_i8(const char *str)
 }
 
 /**
-* This function convert string to uint16_t number.
+* This function convert string to `uint16_t` number.
 *
 * Public function defined in conversion.h
 */
@@ -494,7 +494,7 @@ uint16_t convert_str_to_u16(const char *str)
 }
 
 /**
-* This function convert string to int16_t number.
+* This function convert string to `int16_t` number.
 *
 * Public function defined in conversion.h
 */
@@ -518,7 +518,7 @@ int16_t convert_str_to_i16(const char *str)
 }
 
 /**
-* This function convert string to uint32_t number.
+* This function convert string to `uint32_t` number.
 *
 * Public function defined in conversion.h
 */
@@ -578,7 +578,7 @@ uint32_t convert_str_to_u32(const char *str)
 }
 
 /**
-* This function convert string to int32_t number.
+* This function convert string to `int32_t` number.
 *
 * Public function defined in conversion.h
 */
@@ -602,7 +602,7 @@ int32_t convert_str_to_i32(const char *str)
 }
 
 /**
-* This function convert uint8_t number to string.
+* This function convert `uint8_t` number to string.
 *
 * Public function defined in conversion.h
 */
@@ -630,7 +630,7 @@ void convert_u8_to_str(char *str, uint8_t dig)
 }
 
 /**
-* This function convert int8_t number to string.
+* This function convert `int8_t` number to string.
 *
 * Public function defined in conversion.h
 */
@@ -652,7 +652,7 @@ void convert_i8_to_str(char *str, int8_t dig)
 }
 
 /**
-* This function convert uint16_t number to string.
+* This function convert `uint16_t` number to string.
 *
 * Public function defined in conversion.h
 */
@@ -693,7 +693,7 @@ void convert_u16_to_str(char *str, uint16_t dig)
 }
 
 /**
-* This function convert int16_t number to string.
+* This function convert `int16_t` number to string.
 *
 * Public function defined in conversion.h
 */
@@ -715,7 +715,7 @@ void convert_i16_to_str(char *str, int16_t dig)
 }
 
 /**
-* This function convert uint32_t number to string.
+* This function convert `uint32_t` number to string.
 *
 * Public function defined in conversion.h
 */
@@ -806,7 +806,7 @@ void convert_u32_to_str(char *str, uint32_t dig)
 }
 
 /**
-* This function convert int32_t number to string.
+* This function convert `int32_t` number to string.
 *
 * Public function defined in conversion.h
 */
@@ -838,7 +838,7 @@ int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t 
 }
 
 /**
-* Convert uint8_t number into bin8_t type.
+* Convert uint8_t number into `bin8_t` type.
 *
 * Public function defined in conversion.h
 */
@@ -860,7 +860,7 @@ bin8_t convert_u8_to_bin8(uint8_t num, endian_e endian)
 }
 
 /**
-* Convert uint16_t number into bin16_t type.
+* Convert uint16_t number into `bin16_t` type.
 *
 * Public function defined in conversion.h
 */
@@ -884,7 +884,7 @@ bin16_t convert_u16_to_bin16(uint16_t num, endian_e endian)
 }
 
 /**
-* Convert uint32_t number into bin32_t type.
+* Convert uint32_t number into `bin32_t` type.
 *
 * Public function defined in conversion.h
 */

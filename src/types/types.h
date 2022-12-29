@@ -1,5 +1,5 @@
 /**
-* \file         types.h
+* \file
 * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
 * \brief        This file contains several useful custom data types.
 */
@@ -15,62 +15,70 @@
 #include <stdbool.h>
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
-///Byte order constant definition
+/// Constant for Little Endian byte order
 #ifndef LITTLE_ENDIAN
 	#define	LITTLE_ENDIAN						4321
 #endif
 
+/// Constant for Big Endian byte order
 #ifndef BIG_ENDIAN
 	#define	BIG_ENDIAN							1234
 #endif
+
+/**
+ * @brief Constants for byte order definition
+ * 
+ */
 typedef enum EndianOrder_tag
 {
-	LITTLE_ENDIAN_ORDER		=	LITTLE_ENDIAN,
-	BIG_ENDIAN_ORDER		=	BIG_ENDIAN,
+	LITTLE_ENDIAN_ORDER		=	LITTLE_ENDIAN,	/**< little endian byte order */
+	BIG_ENDIAN_ORDER		=	BIG_ENDIAN,		/**< big endian byte order */
 }	endian_e;
 
-/// \brief MAC address data type
-///{
+/**
+ * \brief MAC address data type
+*/
 typedef struct Mac_tag
 {
 	uint8_t value[6];
 } 	mac_t;
-///}
 
-/// \brief Binary string representation of uint8_t type
-///{
+
+/**
+ * \brief Binary string representation of uint8_t type
+*/
 typedef struct bin8_tag
 {
 	char bit[9];
 } 	bin8_t;
-///}
 
-/// \brief Binary string representation of uint16_t type
-///{
+
+/**
+ * \brief Binary string representation of uint16_t type
+*/
 typedef struct	bin16_tag
 {
 	char bit[17];
 } 	bin16_t;
-///}
 
-/// \brief Binary string representation of uint32_t type
-///{
+/**
+ * \brief Binary string representation of uint32_t type
+*/
 typedef struct	bin32_tag
 {
 	char bit[33];
 } 	bin32_t;
-///}
 
-//< Ip address (version 4)
+/// Ip address (version 4)
 typedef uint32_t ip4addr_t;
 
-//< BCD data type
+/// BCD data type
 typedef uint32_t bcd_t;
 
-//< Null pointer data type
+/// Null pointer data type
 #define nullptr ((void*)0)
 
-//< NULL constant
+/// NULL constant
 #if !defined(NULL)
 #define NULL nullptr
 #endif
