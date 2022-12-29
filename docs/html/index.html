@@ -21,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="tool-box-clip-art.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="tool-box-clip-art111.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Firmware Toolbox
    </div>
@@ -64,7 +64,32 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="title">Firmware Toolbox </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This project contains various small helper functions useful when develop firmware for microcontrollers. </p>
+<div class="textblock"><p>Sets of various small helper functions useful when developing firmware.</p>
+<p>I have been collecting this functions during years of work. Some of it I wrote by myself others I found somewhere and added into this repository. Main goal creation of this repository was to make life firmware engineers little bit easier because each firmware engineer know this pain when you need to write some helpful function by your own hand because you did not find or can`t add necessary library.</p>
+<p>So please feel free to use this toolbox and add code to this toolbox if you want.</p>
+<p>Structure:</p>
+<ul>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/align">align</a> - functions and macros which used for data align.</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/atomic">atomic</a> - functions and macros for atomic operations.</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/conversion">conversion</a> - functions which used for conversion different data type to each other.</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/crc">crc</a> - functions for calculate CRC.</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/delay">delay</a> - functions for time delays.</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/endian">endian</a> - functions which use for work with different byte endian order.</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/environment">environment</a><ul>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/blob/develop/src/environment/compiler.h">compiler.h</a> - compiler abstraction layer.</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/blob/develop/src/environment/constants.h">constants.h</a> - common constants.</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/blob/develop/src/environment/host.h">host.h</a> - host specific function and macros.</li>
+</ul>
+</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/macros">macros</a><ul>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/macros/arithmetics.h">arithmetics.h</a> - macros for arithmetics operations.</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/macros/bits.h">bits.h</a> - bits operation macros.</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/macros/guards.h">guards.h</a> - guards macros.</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/macros/misc.h">misc.h</a> - various useful macros.</li>
+</ul>
+</li>
+<li><a href="https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/types">types</a> - specific and useful types and functions for work with it. </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
