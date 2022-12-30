@@ -1,7 +1,8 @@
 /**
-* \file         conversion.h
-* \author       Kovalchuk Alexander (roux@yandex.ru)
-* \brief        This file contains the prototypes functions which use for...
+* \file
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+* \brief        This file contains the prototypes functions which used for 
+*               conversion different data type to each other.   
 */
 
 #pragma once
@@ -25,58 +26,76 @@
  *
  * \param[in] 	c: hex char.
  *
- * \return 		the number that corresponds to hex char.
+ * \return 		the number that corresponds to hex char
+ *              or `0xFF` if error.
 **/
-int8_t convert_hex_char_to_num(char c);
+uint8_t convert_hex_char_to_num(char c);
 
 /**
- * \brief		This function convert digit to hex char.
+ * \brief		This function convert hex digit to hex char.
  *
- * \param[in] 	num: digit.
+ * \param[in] 	num: hex digit.
  *
- * \return 		the char that corresponds to digit.
+ * \return 		the char that corresponds to digit
+ *              or ' ' if error.
 **/
 char convert_hex_num_to_char(uint8_t num);
 
 /**
- * \brief		This function convert string to MAC address.
+ * \brief		This function convert string representation of MAC to \ref `mac_t` -
+ *              special data type for MAC store.
+ * 
+ * \code
+ * bool result = convert_string_to_mac_addr("AA:13:01:00:55:FE", &mac); 
+ * \endcode
  *
- * \param[in] 	str: string that corresponds to MAC.
- * \param[out] 	macAddr: MAC address.
+ * \param[in] 	str: string representation of MAC.
+ * \param[out] 	mac: pointer to `mac_t` structure.
  *
  * \return 		true/false.
+ * 
 **/
 bool convert_string_to_mac_addr(const char *str, mac_t *mac);
 
 /**
- * \brief		This function convert MAC address to string.
+ * \brief		This function convert `mac_t` structure to string.
+ *              \see mac_t
  *
- * \param[in] 	macAddr: MAC address.
- * \param[out] 	string: string that corresponds to MAC.
+ * \code
+ * bool result = convert_mac_addr_to_string(&mac, mac_string);
+ * \endcode
+ * 
+ * \param[in] 	mac: pointer to `mac_t` structure.
+ * \param[out] 	string: pointer to the string in which MAC would be stored.
+ * 
+ * \warning     Length of **string** must be not less then 18 bytes.
  *
  * \return 		true/false.
 **/
 bool convert_mac_addr_to_string(const mac_t *mac, char *string);
 
 /**
- * \brief		This function convert IP address to string.
+ * \brief		This function convert `ip4addr_t` structure to string.
  *
- * \param[in] 	ipAddr: IP address \Ipv4Addr_t.
- * \param[out] 	ip: string that corresponds to IP.
+ * \param[in] 	ip: `ip4addr_t` structure which store IP address \see ip4addr_t.
+ * \param[out] 	string: pointer to the string in which IP would be stored.
+ * 
+ * \warning     Length of **string** must be not less then 16 bytes.
  *
  * \return 		true/false.
 **/
-bool convert_ip4addr_to_string(ip4addr_t ipAddr, char *ip);
+bool convert_ip4addr_to_string(ip4addr_t ip, char *string);
 
 /**
- * \brief		This function convert string to IP address.
- *
- * \param[in] 	ip: string that corresponds to IP.
- * \param[out] 	ipAddr: IP address.
+ * \brief		This function convert IP string representation to \ref `ip4addr_t` -
+ *              special data type for IP store.
+ * 
+ * \param[in] 	string: IP string representation.
+ * \param[out] 	ip: pointer to the `ip4addr_t` structure.
  *
  * \return 		true/false.
 **/
-bool convert_string_to_ip4addr(ip4addr_t *ipAddr, const char *ip);
+bool convert_string_to_ip4addr(ip4addr_t *ip, const char *string);
 
 /**
  * \brief		This function decode BCD number.
@@ -85,76 +104,177 @@ bool convert_string_to_ip4addr(ip4addr_t *ipAddr, const char *ip);
  *
  * \return 		decoded number.
 **/
-uint32_t convert_bcd_to_num(uint32_t dec);
+uint32_t convert_bcd_to_num(bcd_t bcd);
 
 /**
- * \brief		This function code BCD number.
+ * \brief		This function encode to BCD number.
  *
- * \param[in] 	dec: number.
+ * \param[in] 	num: number.
  *
  * \return 		BCD number.
 **/
-uint32_t convert_num_to_bcd(uint32_t bcd);
+bcd_t convert_num_to_bcd(uint32_t num);
 
 /**
- * \brief		This function convert string to uint8_t number.
+ * \brief       Check if this string is a decimal number?
+ * 
+ * \param[in] str  string representation of decimal number.
+ * \param[in] len  length of string
+ * 
+ * \return true/false
+ */
+bool convert_is_dec_number(const char *str, size_t len);
+
+/**
+ * \brief       Check if this string is a hex number?
+ * 
+ * \param[in] str  string representation of hex number.
+ * \param[in] len  length of string
+ * 
+ * \return true/false
+ */
+bool convert_is_hex_number(const char *str, size_t len);
+
+/**
+ * \brief		This function convert string to `uint8_t` number.
  *
- * \param[in] 	str: string that corresponds to number.
+ * \param[in] 	str: string representation of number.
  *
- * \return 		number.
+ * \return 		`uint8_t` number.
 **/
-uint8_t convert_string_to_uint8(const char *str);
+uint8_t convert_str_to_u8(const char *str);
 
 /**
- * \brief		This function convert string to uint16_t number.
+ * \brief		This function convert string to `int8_t` number.
  *
- * \param[in] 	str: string that corresponds to number.
+ * \param[in] 	str: string representation of number.
  *
- * \return 		number.
+ * \return 		`int8_t` number.
 **/
-uint16_t convert_string_to_uint16(const char *str);
+int8_t convert_str_to_i8(const char *str);
 
 /**
- * \brief		This function convert string to uint32_t number.
+ * \brief		This function convert string to `uint16_t` number.
  *
- * \param[in] 	str: string that corresponds to number.
+ * \param[in] 	str: string representation of number.
  *
- * \return 		number.
+ * \return 		`uint16_t` number.
 **/
-uint32_t convert_string_to_uint32(const char *str);
+uint16_t convert_str_to_u16(const char *str);
 
 /**
- * \brief		This function convert uint8_t number to string.
+ * \brief		This function convert string to `int16_t` number.
  *
- * \param[out] 	str: string that corresponds to number.
- * \param[in] 	dig: number.
+ * \param[in] 	str: string representation of number.
  *
- * \return 		void.
+ * \return 		`int16_t` number.
 **/
-void convert_uint8_to_string(char *str, uint8_t dig);
+int16_t convert_str_to_i16(const char *str);
 
 /**
- * \brief		This function convert uint16_t number to string.
+ * \brief		This function convert string to `uint32_t` number.
  *
- * \param[out] 	str: string that corresponds to number.
- * \param[in] 	dig: number.
+ * \param[in] 	str: string representation of number.
  *
- * \return 		void.
+ * \return 		`uint32_t` number.
 **/
-void convert_uint16_to_string(char *str, uint16_t dig);
+uint32_t convert_str_to_u32(const char *str);
 
 /**
- * \brief		This function convert uint32_t number to string.
+ * \brief		This function convert string to `int32_t` number.
  *
- * \param[out] 	str: string that corresponds to number.
- * \param[in] 	dig: number.
+ * \param[in] 	str: string representation of number.
  *
- * \return 		void.
+ * \return 		`int32_t` number.
 **/
-void convert_uint32_to_string(char *str, uint32_t dig);
+int32_t convert_str_to_i32(const char *str);
 
 /**
- * \brief		This function used to convert the variable from one range to another.
+ * \brief		This function convert `uint8_t` number to string.
+ *
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. 
+ * 
+ * \warning     length must be equal or greater then 4 chars.
+ * 
+ * \param[in] 	dig: `uint8_t number.
+ *
+ * \return 		none.
+**/
+void convert_u8_to_str(char *str, uint8_t dig);
+
+/**
+ * \brief		This function convert `int8_t` number to string.
+ *
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. 
+ * 
+ * \warning     length must be equal or greater then 5 chars. 
+ * 
+ * \param[in] 	dig: `int8_t number.
+ *
+ * \return 		none.
+**/
+void convert_i8_to_str(char *str, int8_t dig);
+
+/**
+ * \brief		This function convert `uint16_t` number to string.
+ *
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. 
+ * 
+ * \warning length must be equal or greater then 6 chars. 
+ * 
+ * \param[in] 	dig: `uint16_t` number.
+ *
+ * \return 		none.
+**/
+void convert_u16_to_str(char *str, uint16_t dig);
+
+/**
+ * \brief		This function convert `int16_t` number to string.
+ *
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. 
+ * 
+ * \warning length must be equal or greater then 7 chars. 
+ * 
+ * \param[in] 	dig: `int16_t` number.
+ *
+ * \return 		none.
+**/
+void convert_i16_to_str(char *str, int16_t dig);
+
+/**
+ * \brief		This function convert `uint32_t` number to string.
+ *
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. 
+ * 
+ * \warning length must be equal or greater then 11 chars. 
+ * 
+ * \param[in] 	dig: `uint32_t` number.
+ *
+ * \return 		none.
+**/
+void convert_u32_to_str(char *str, uint32_t dig);
+
+/**
+ * \brief		This function convert `int32_t` number to string.
+ *
+ * \param[out] 	str: pointer to string in which the string representation 
+ *                   of number would be stored. 
+ * 
+ * \warning length must be equal or greater then 12 chars. 
+ * 
+ * \param[in] 	dig: `int32_t` number.
+ *
+ * \return 		none.
+**/
+void convert_i32_to_str(char *str, int32_t dig);
+
+/**
+ * \brief		This function used to map a value from one range to another.
  *
  * \param[out] 	x: variable which need to transform.
  * \param[in] 	in_min: min value of input range.
@@ -162,99 +282,36 @@ void convert_uint32_to_string(char *str, uint32_t dig);
  * \param[in] 	out_min: min value of output range.
  * \param[in] 	out_max: max value of output range.
  *
- * \return 		transformet variable.
+ * \return 		transformed variable.
 **/
 int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max);
 
 /**
- * \brief		Store `16-bit` value to bytes array in little-endian format.
- *
- * \param[in]   val: Value to write to output array
- * \param[out]  ptr: Minimum `2-bytes` long output array to write value to
- *
- * \return 		void.
-**/
-void convert_u16_to_array_le(uint16_t val, void* ptr);
-
-/**
- * \brief           Store `32-bit` value to bytes array in little-endian format
- * 
- * \param[in]       val: Value to write to output array
- * \param[out]      ptr: Minimum `4-bytes` long output array to write value to
- */
-void convert_u32_to_array_le(uint32_t val, void* ptr);
-
-/**
- * \brief           Load `16-bit` value from bytes array in little-endian format
- * 
- * \param[in]       ptr: Minimum `2-bytes` long input array to extract bytes from
- * \return          `16-bit` value extracted from input array
- */
-uint16_t convert_array_to_u16_le(const void* ptr);
-
-/**
- * \brief           Load `32-bit` value from bytes array in little-endian format
- * 
- * \param[in]       ptr: Minimum `2-bytes` long input array to extract bytes from
- * \return          `32-bit` value extracted from input array
- */
-uint32_t convert_array_to_u32_le(const void* ptr);
-
-/**
- * \brief           Store `16-bit` value to bytes array in big-endian format
- * 
- * \param[in]       val: Value to write to output array
- * \param[out]      ptr: Minimum `2-bytes` long output array to write value to
- */
-void convert_u16_to_array_be(uint16_t val, void* ptr);
-
-/**
- * \brief           Store `32-bit` value to bytes array in big-endian format
- * 
- * \param[in]       val: Value to write to output array
- * \param[out]      ptr: Minimum `4-bytes` long output array to write value to
- */
-void convert_u32_to_array_be(uint32_t val, void* ptr);
-
-/**
- * \brief           Load `16-bit` value from bytes array in big-endian format
- * 
- * \param[in]       ptr: Minimum `2-bytes` long input array to extract bytes from
- * \return          `16-bit` value extracted from input array
- */
-uint16_t convert_array_to_u16_be(const void* ptr);
-
-/**
- * \brief           Load `32-bit` value from bytes array in big-endian format
- * 
- * \param[in]       ptr: Minimum `4-bytes` long input array to extract bytes from
- * \return          `32-bit` value extracted from input array
- */
-uint32_t convert_array_to_u32_be(const void* ptr);
-
-/**
- * @brief Convert uint8_t number into binary string
+ * @brief Convert `uint8_t` number into \ref `bin8_t` type.
  * 
  * @param[in] num: number
- * @return bin8string_t 
+ * @param[in] endian: current endian order \ref `endian_e` 
+ * @return `bin8_t` 
  */
-bin8string_t convert_u8_to_bin_string(uint8_t num);
+bin8_t convert_u8_to_bin8(uint8_t num, endian_e endian);
 
 /**
- * @brief Convert uint16_t number into binary string
+ * @brief Convert `uint16_t` number into \ref `bin16_t` type.
  * 
  * @param[in] num: number
- * @return bin16string_t 
+ * @param[in] endian: current endian order \ref `endian_e` 
+ * @return `bin16_t` 
  */
-bin16string_t convert_u16_to_bin_string(uint16_t num);
+bin16_t convert_u16_to_bin16(uint16_t num, endian_e endian);
 
 /**
- * @brief Convert uint32_t number into binary string.
+ * @brief Convert `uint32_t` number into \ref `bin32_t` type.
  * 
  * @param[in] num: number 
- * @return bin32string_t 
+ * @param[in] endian: current endian order \see `EndianOrder_tag`
+ * @return `bin32_t` 
  */
-bin32string_t convert_u32_to_bin_string(uint32_t num);
+bin32_t convert_u32_to_bin32(uint32_t num, endian_e endian);
 
 /* C++ detection */
 #ifdef __cplusplus

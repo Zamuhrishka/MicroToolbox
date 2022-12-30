@@ -1,8 +1,8 @@
 /**
- * @file test_bits_macros.c
- * @author Aleksander Kovalchuk (roux@yandex.ru)
- * @brief 
- * @date 2022-05-20
+ * @file    test_bits.c
+ * @author  Aleksander Kovalchuk (aliaksander.kavalchuk@gmail.com)
+ * @brief   This file contains unit tests for bits operations from
+ * 			macros/bits.h file
  */
 
 //_____ I N C L U D E S _______________________________________________________
@@ -25,87 +25,141 @@
 //_____ P R I V A T E  F U N C T I O N S_______________________________________
 
 //_____ P U B L I C  F U N C T I O N S_________________________________________
-void test_SetBits(void)
+/**
+ * @brief Unit test for set bit in uint8_t
+ */
+void test_SetBitsInU8(void)
 {
-	uint8_t test8 = 0;
-	uint16_t test16 = 0;
-	uint32_t test32 = 0;
+	uint8_t actual = 0;
 
 	for (size_t i = 0; i < 8; i++)
 	{
-		SET_BIT(test8, i);
-		TEST_ASSERT_BIT_HIGH(i, test8);		
+		SET_BIT(actual, i);
+		TEST_ASSERT_BIT_HIGH(i, actual);	
 	}
+}
+
+/**
+ * @brief Unit test for set bit in uint16_t
+ */
+void test_SetBitsInU16(void)
+{
+	uint16_t actual = 0;
 
 	for (size_t i = 0; i < 16; i++)
 	{
-		SET_BIT(test16, i);
-		TEST_ASSERT_BIT_HIGH(i, test16);		
+		SET_BIT(actual, i);
+		TEST_ASSERT_BIT_HIGH(i, actual);		
 	}
+}
+
+/**
+ * @brief Unit test for set bit in uint32_t
+ */
+void test_SetBitsInU32(void)
+{
+	uint32_t actual = 0;
 
 	for (size_t i = 0; i < 32; i++)
 	{
-		SET_BIT(test32, i);
-		TEST_ASSERT_BIT_HIGH(i, test32);		
+		SET_BIT(actual, i);
+		TEST_ASSERT_BIT_HIGH(i, actual);		
 	}	
 }
 
-void test_ClearBits(void)
+/**
+ * @brief Unit test for clear bit in uint8_t
+ */
+void test_ClearBitsInU8(void)
 {
-	uint8_t test8 = 0xFF;
-	uint16_t test16 = 0xFFFF;
-	uint32_t test32 = 0xFFFFFFFF;
+	uint8_t actual = 0xFF;
 
 	for (size_t i = 0; i < 8; i++)
 	{
-		CLEAR_BIT(test8, i);
-		TEST_ASSERT_BIT_LOW(i, test8);		
+		CLEAR_BIT(actual, i);
+		TEST_ASSERT_BIT_LOW(i, actual);		
 	}
+}
+
+/**
+ * @brief Unit test for clear bit in uint16_t
+ */
+void test_ClearBitsInU16(void)
+{
+	uint16_t actual = 0xFFFF;
 
 	for (size_t i = 0; i < 16; i++)
 	{
-		CLEAR_BIT(test16, i);
-		TEST_ASSERT_BIT_LOW(i, test16);		
+		CLEAR_BIT(actual, i);
+		TEST_ASSERT_BIT_LOW(i, actual);		
 	}
+}
+
+/**
+ * @brief Unit test for clear bit in uint32_t
+ */
+void test_ClearBitsInU32(void)
+{
+	uint32_t actual = 0xFFFFFFFF;
 
 	for (size_t i = 0; i < 32; i++)
 	{
-		CLEAR_BIT(test32, i);
-		TEST_ASSERT_BIT_LOW(i, test32);		
+		CLEAR_BIT(actual, i);
+		TEST_ASSERT_BIT_LOW(i, actual);		
 	}	
 }
 
-void test_ToggleBits(void)
+/**
+ * @brief Unit test for toggle bit in uint8_t
+ */
+void test_ToggleBitsInU8(void)
 {
-	uint8_t test8 = 0;
-	uint16_t test16 = 0;
-	uint32_t test32 = 0;
+	uint8_t actual = 0;
 
 	for (size_t i = 0; i < 8; i++)
 	{
-		TOGGLE_BIT(test8, i);
-		TEST_ASSERT_BIT_HIGH(i, test8);	
-        TOGGLE_BIT(test8, i);
-        TEST_ASSERT_BIT_LOW(i, test8);
+		TOGGLE_BIT(actual, i);
+		TEST_ASSERT_BIT_HIGH(i, actual);	
+        TOGGLE_BIT(actual, i);
+        TEST_ASSERT_BIT_LOW(i, actual);
 	}
+}
+
+/**
+ * @brief Unit test for toggle bit in uint16_t
+ */
+void test_ToggleBitsInU16(void)
+{
+	uint16_t actual = 0;
 
 	for (size_t i = 0; i < 16; i++)
 	{
-		TOGGLE_BIT(test16, i);
-		TEST_ASSERT_BIT_HIGH(i, test16);
-        TOGGLE_BIT(test16, i);
-        TEST_ASSERT_BIT_LOW(i, test16);		
+		TOGGLE_BIT(actual, i);
+		TEST_ASSERT_BIT_HIGH(i, actual);
+        TOGGLE_BIT(actual, i);
+        TEST_ASSERT_BIT_LOW(i, actual);		
 	}
+}
+
+/**
+ * @brief Unit test for toggle bit in uint32_t
+ */
+void test_ToggleBitsInU32(void)
+{
+	uint32_t actual = 0;
 
 	for (size_t i = 0; i < 32; i++)
 	{
-		TOGGLE_BIT(test32, i);
-		TEST_ASSERT_BIT_HIGH(i, test32);
-        TOGGLE_BIT(test32, i);
-        TEST_ASSERT_BIT_LOW(i, test32);
-	}	
+		TOGGLE_BIT(actual, i);
+		TEST_ASSERT_BIT_HIGH(i, actual);
+        TOGGLE_BIT(actual, i);
+        TEST_ASSERT_BIT_LOW(i, actual);		
+	}
 }
 
+/**
+ * @brief Unit test for test bit in uint32_t
+ */
 void test_TestBits(void)
 {
 	uint32_t test = 0;
@@ -119,6 +173,9 @@ void test_TestBits(void)
 	}
 }
 
+/**
+ * @brief Unit test for creates a mask macro
+ */
 void test_Bitfield(void)
 {
 	TEST_ASSERT_EQUAL_UINT(0x00FF0000, MAKE_BITFIELD(23,16));
@@ -126,6 +183,9 @@ void test_Bitfield(void)
 	TEST_ASSERT_EQUAL_UINT(0x0000000F, MAKE_BITFIELD(3,0));
 }
 
+/**
+ * @brief Unit test for number of bits calculation macro
+ */
 void test_NumBits(void)
 {
 	TEST_ASSERT_EQUAL_UINT(8, NUM_BITS(uint8_t));
@@ -133,7 +193,9 @@ void test_NumBits(void)
 	TEST_ASSERT_EQUAL_UINT(32, NUM_BITS(uint32_t));
 }
 
-
+/**
+ * @brief Unit test for isolate the rightmost 1-bit macro
+ */
 void test_LSO(void)
 {
 	TEST_ASSERT_EQUAL_UINT(0b0000000000000001, LSO(0b0010011001010001));
@@ -158,6 +220,9 @@ void test_LSO(void)
 	TEST_ASSERT_EQUAL_UINT(0b0000000000000000, LSO(0b0000000000000000));
 }
 
+/**
+ * @brief Unit test for isolate the rightmost 0-bit macro
+ */
 void test_LCO(void)
 {
 	TEST_ASSERT_EQUAL_UINT(0b0000000000000001, LCO(0b0010011001010010));
@@ -182,6 +247,9 @@ void test_LCO(void)
 	TEST_ASSERT_EQUAL_UINT(0b0000000000000001, LCO(0b0000000000000000));
 }
 
+/**
+ * @brief Unit test for turn on the rightmost 0-bit macro
+ */
 void test_SLSB(void)
 {
 	TEST_ASSERT_EQUAL_UINT(0b0010011001010011, SLSB(0b0010011001010010));
@@ -200,6 +268,9 @@ void test_SLSB(void)
 	TEST_ASSERT_EQUAL_UINT(0b11111111111111111, SLSB(0b1111111111111111));
 }
 
+/**
+ * @brief Unit test for turn off the rightmost 0-bit macro
+ */
 void test_CLSB(void)
 {
 	TEST_ASSERT_EQUAL_UINT(0b0010011001010000, CLSB(0b0010011001010001));
@@ -214,4 +285,43 @@ void test_CLSB(void)
 
 	TEST_ASSERT_EQUAL_UINT(0b0000000000000001, SLSB(0b0000000000000000));
 	TEST_ASSERT_EQUAL_UINT(0b11111111111111111, SLSB(0b1111111111111111));
+}
+
+/**
+ * @brief Unit test for function to reverse the individual bits in a uint8_t
+ */
+void test_bits_mirror_u8(void)
+{
+	TEST_ASSERT_EQUAL_UINT8(0xF0, bits_mirror_u8(0x0F));
+	TEST_ASSERT_EQUAL_UINT8(0x0F, bits_mirror_u8(0xF0));
+	TEST_ASSERT_EQUAL_UINT8(0xAA, bits_mirror_u8(0x55));
+	TEST_ASSERT_EQUAL_UINT8(0x55, bits_mirror_u8(0xAA));
+	TEST_ASSERT_EQUAL_UINT8(0x01, bits_mirror_u8(0x80));
+	TEST_ASSERT_EQUAL_UINT8(0x80, bits_mirror_u8(0x01));
+}
+
+/**
+ * @brief Unit test for function to reverse the individual bits in a uint16_t
+ */
+void test_bits_mirror_u16(void)
+{
+	TEST_ASSERT_EQUAL_UINT16(0xFF00, bits_mirror_u16(0x00FF));
+	TEST_ASSERT_EQUAL_UINT16(0x00FF, bits_mirror_u16(0xFF00));
+	TEST_ASSERT_EQUAL_UINT16(0xAAAA, bits_mirror_u16(0x5555));
+	TEST_ASSERT_EQUAL_UINT16(0x5555, bits_mirror_u16(0xAAAA));
+	TEST_ASSERT_EQUAL_UINT16(0x0001, bits_mirror_u16(0x8000));
+	TEST_ASSERT_EQUAL_UINT16(0x8000, bits_mirror_u16(0x0001));
+}
+
+/**
+ * @brief Unit test for function to reverse the individual bits in a uint32_t
+ */
+void test_bits_mirror_u32(void)
+{
+	TEST_ASSERT_EQUAL_UINT32(0xFFFF0000, bits_mirror_u32(0x0000FFFF));
+	TEST_ASSERT_EQUAL_UINT32(0x0000FFFF, bits_mirror_u32(0xFFFF0000));
+	TEST_ASSERT_EQUAL_UINT32(0xAAAAAAAA, bits_mirror_u32(0x55555555));
+	TEST_ASSERT_EQUAL_UINT32(0x55555555, bits_mirror_u32(0xAAAAAAAA));
+	TEST_ASSERT_EQUAL_UINT32(0x00000001, bits_mirror_u32(0x80000000));
+	TEST_ASSERT_EQUAL_UINT32(0x80000000, bits_mirror_u32(0x00000001));
 }

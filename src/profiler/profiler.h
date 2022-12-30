@@ -1,7 +1,7 @@
 /**
-* \file         profiler.h
-* \author       Kovalchuk Alexander (roux@yandex.ru)
-* \brief        This file contains the prototypes functions which use for...
+* \file
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+* \brief        
 */
 
 #pragma once
@@ -20,29 +20,29 @@ typedef uint32_t ticks_t;
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
 /**
- * @brief	Start time profiler.
+ * \brief	Start timer for time profiler.
  *
- * @param 	none.
+ * \param 	none.
  *
- * @return 	none.
+ * \return 	none.
 **/
-void profiler_start(void);
+void profiler_timer_start(void);
 
 /**
- * @brief	Stop time profiler.
+ * \brief	Stop timer for time profiler.
  *
- * @param 	none.
+ * \param 	none.
  *
- * @return 	number of cpu ticks.
+ * \return 	number of cpu ticks.
 **/
-ticks_t profiler_stop(void);
+ticks_t profiler_timer_stop(void);
 
 /**
- * @brief	Convert number of cpu ticks into time.
+ * \brief	Convert number of cpu ticks into time.
  *
- * @param ticks[in]	Number of cpu ticks.
+ * \param   ticks[in]	Number of cpu ticks.
  *
- * @return time.
+ * \return  time.
 **/
 float profiler_ticks_to_time(ticks_t ticks);
 

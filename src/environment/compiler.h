@@ -1,7 +1,7 @@
 /**
-* \file         compiler.h
-* \author       Kovalchuk Alexander (roux@yandex.ru)
-* \brief        This file contains the prototypes functions which use for...
+* \file
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+* \brief        Compiler abstraction layer   
 */
 
 #pragma once
@@ -11,77 +11,70 @@
     extern "C" {
 #endif
 //_____ I N C L U D E S _______________________________________________________
-#include <stdlib.h>
-#include <stdint.h>
+
 //_____ C O N F I G S  ________________________________________________________
+
 //_____ D E F I N I T I O N S _________________________________________________
 #if (defined(__GCC__))
-    // Указывает GCC всегда подставлять функции, независимо от того включена оптимизация или нет
-    #define __inline__     				__inline__   __attribute__((always_inline))
+    /// Request GCC make function always inline
+    #define __inline__     		    __inline__   __attribute__((always_inline))
 
-    /*
-    * Cигнализирует вам, что функция устарела и ее больше не следует использовать. 
-    * Если вы попытаетесь использовать устаревшую функцию, компилятор выдаст предупреждение. 
-    * Этот атрибут также можно применять к типам и переменным
-    */
-    #define __deprecated           		__attribute__((deprecated))
+   /// Signals that the function is deprecated and should no longer be used.
+    #define __deprecated__          __attribute__((deprecated))
 
-    /*
-    * сообщает компилятору, что эта функция используется, независимо от того найдет 
-    * ли GCC экземпляры вызова этой функции. Это может быть полезно в тех случаях, 
-    * когда функции С вызываются из ассемблера.
-    */
-    #define __attribute_used__     		__attribute__((__used__))
+   /// Tells the compiler that this function is used, whether or not GCC finds 
+   /// instances of this function call.
+   /// \note This can be useful in cases where C functions are called from assembler.
+    #define __attribute_used__     __attribute__((__used__))
 
-    /*
-    * Cообщает компилятору, что эта функция не имеет состояния (т.е. использует для 
-    * генерации возвращаемого результата только переданные ей аргументы).
-    */
-    #define __attribute_const__     	__attribute__((__const__))
+   /// Tells the compiler that this function is stateless.
+   /// \note uses only the arguments passed to it to generate the returned result
+    #define __attribute_const__     __attribute__((__const__))
 
-    /*
-    * Gринуждает компилятор всегда проверять, что возвращаемое значение функции 
-    * проверяется в месте вызова. Этим гарантируется, что везде, откуда вызывается 
-    * функция результат будет проверяться, что позволяет обработать потенциальные ошибки.
-    */
-    #define __must_check            	__attribute__((warn_unused_result))
+    /// Tells linker that this object need to be aligned by value order 
+    #define __align__(value)        __attribute__ ((aligned ((value))))
 
-    #define likely(x)   				__builtin_expect(!!(x), 1)
+   /// Causes the compiler to always check that the return value of a function is 
+   /// checked at the call site.
+    #define __must_check__          __attribute__((warn_unused_result))
 
-    #define unlikely(x) 				__builtin_expect(!!(x), 0)
+    /// The hint to the compiler to emit instructions that will cause branch prediction 
+    /// to favour the "likely" side of a jump instruction.
+    #define __likely__(x)   	    __builtin_expect(!!(x), 1)
+    #define __unlikely__(x) 		__builtin_expect(!!(x), 0)
 
-    #define align(A)                    __attribute__((aligned (A)))
+    /// Tells linker to put object in desire section
+    #define __section__(A)          __attribute__((__section__ (A)))
 
-    #define section(A)                  __attribute__((__section__ (A)))
-
-    #ifndef ARCH_HAS_PREFETCH
-        #define prefetch(x) 				__builtin_prefetch(x)
-    #endif
 #else
-    #define __inline__     			
-    #define __deprecated           	
-    #define __attribute_used__     	
-    #define __attribute_const__     	
-    #define __must_check            	
-    #define likely(x)   				
-    #define unlikely(x) 				
-    #ifndef ARCH_HAS_PREFETCH
-        #define prefetch(x) 			
-    #endif
+    /// Request GCC make function always inline
+    #define __inline__   
+    /// Signals that the function is deprecated and should no longer be used.  	           		
+    #define __deprecated__
+    /// Tells the compiler that this function is used, whether or not GCC finds 
+    /// instances of this function call.
+    /// \note This can be useful in cases where C functions are called from assembler.
+    #define __attribute_used__
+    /// Tells the compiler that this function is stateless.
+    /// \note uses only the arguments passed to it to generate the returned result               	
+    #define __attribute_const__  
+    /// Tells linker that this object need to be aligned by value order           
+    #define __align__(value) 
+    /// Causes the compiler to always check that the return value of a function is 
+    /// checked at the call site.           	
+    #define __must_check__  
+    /// The hint to the compiler to emit instructions that will cause branch prediction 
+    /// to favour the "likely" side of a jump instruction.                       	
+    #define __likely__(x)
+    /// The hint to the compiler to emit instructions that will cause branch prediction 
+    /// to favour the "likely" side of a jump instruction.                 				
+    #define __unlikely__(x)   
+    /// Tells linker to put object in desire section          
+    #define __section__(A)              				
 #endif
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
-static inline void prefetch_range(void *addr, size_t len)
-{
-#ifdef ARCH_HAS_PREFETCH
-    char *cp;
-    char *end = addr + len;
- 
-    for (cp = addr; cp < end; cp += PREFETCH_STRIDE)
-        prefetch(cp);
-#endif
-}
 
 /* C++ detection */
 #ifdef __cplusplus

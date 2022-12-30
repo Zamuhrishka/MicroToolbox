@@ -1,7 +1,7 @@
 /**
-* \file         delay.h
-* \author       Kovalchuk Alexander (roux@yandex.ru)
-* \brief        This file contains the prototypes functions which use for...
+* \file
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+* \brief        Time delay functions.
 */
 
 #pragma once
@@ -19,20 +19,24 @@
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
 /**
-* \brief 	This function used to create us time delay.
+* \brief 	    This function used to create `us` time delay.
 *
-* \param[in] us: value of time delay in us.
+* \warning      blocking function!
 *
-* \return 	none.
+* \param[in]    us: value of time delay in `us`.
+*
+* \return 	    none.
 */
 void delay_us(uint32_t us);
 
 /**
-* \brief 	This function used to create ms time delay.
+* \brief 	    This function used to create `ms` time delay.
 *
-* \param[in] ms: value of time delay in ms.
+* \warning      blocking function!
 *
-* \return 	none.
+* \param[in]    ms: value of time delay in `ms`.
+*
+* \return 	    none.
 */
 void delay_ms(uint32_t ms);
 

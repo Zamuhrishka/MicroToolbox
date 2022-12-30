@@ -1,9 +1,8 @@
 /**
- * @file host.h
- * @author Aleksander Kovalchuk (roux@yandex.ru)
- * @brief 
- * @date 2022-05-20
- */
+* \file
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+* \brief        Host depend constants   
+*/
 
 #pragma once
 

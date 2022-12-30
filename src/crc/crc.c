@@ -1,7 +1,7 @@
 /**
-* \file         crc.c
-* \author       Kovalchuk Alexander (roux@yandex.ru)
-* \brief        This file contains files for calculate crc8/16/32.
+* \file
+* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+* \brief        This file contains functions for calculate crc8/16/32.
 */
 //_____ I N C L U D E S _______________________________________________________
 #include <stdint.h>
@@ -12,7 +12,7 @@
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
 #if defined(CRC8_TABLE)
-//! \brief Checksum CRC8 Table
+//! \brief Checksum CRC-8-Dallas/Maxim Table
 //! Used polynomial: x^8 + x^5 + x^4 + 1 (0x31).
 //! Init  : 0xFF
 //! Revert: false
@@ -58,7 +58,7 @@ const uint8_t Crc8Table[] =
 #endif
 
 #if defined(CRC16_TABLE)
-//! @brief Checksum CRC16 Table
+//! @brief Checksum CRC-16-CCITT Table
 //! Used polynomial: x^16 + x^12 + x^5 + 1 (0x1021).
 //! Init  : 0xFFFF
 //! Revert: false
@@ -104,7 +104,7 @@ const uint16_t Crc16Table[] =
 #endif
 
 #if defined(CRC32_TABLE)
-//! @brief Checksum CRC32 Table
+//! @brief Checksum CRC-32-IEEE 802.3 Table
 //! Used polynomial: x^32 + x^26 + x^23 + x^22 + x^16 + x^12 + x^11
 //! + x^10 + x^8 + x^7 + x^5 + x^4 + x^2 + x + 1 (0x04C11DB7)
 //! Init  : 0xFFFFFFFF
@@ -184,7 +184,7 @@ const uint_least32_t Crc32Table[] =
 //_____ P R I V A T E  F U N C T I O N S_______________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
 /**
-* This function used to calculate checksum crc8.
+* This function used to calculate checksum CRC-8-Dallas/Maxim.
 *
 * Public function defined in crc.h
 */
@@ -225,14 +225,14 @@ uint8_t crc8_table(const uint8_t *pcBlock, size_t len)
 }
 #endif
 /**
-* This function used to calculate checksum crc16.
+* This function used to calculate checksum CRC-16-CCITT.
 *
 * Public function defined in crc.h
 */
 uint16_t crc16(const uint8_t *pcBlock, size_t len)
 {
 	uint16_t crc = 0xFFFF;
-	uint8_t i;
+	uint16_t i;
 
     while(len--)
     {
@@ -267,7 +267,7 @@ uint16_t crc16_table(const uint8_t *pcBlock, size_t len)
 #endif
 
 /**
-* This function used to calculate checksum crc32.
+* This function used to calculate checksum CRC-32-IEEE 802.3.
 *
 * Public function defined in crc.h
 */
