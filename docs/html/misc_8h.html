@@ -97,29 +97,6 @@ Macros</h2></td></tr>
  </p>
 <dl class="section author"><dt>Author</dt><dd>Kovalchuk Alexander (<a href="#" onclick="location.href='mai'+'lto:'+'ali'+'ak'+'san'+'de'+'r.k'+'av'+'alc'+'hu'+'k@g'+'ma'+'il.'+'co'+'m'; return false;">aliak<span style="display: none;">.nosp@m.</span>sand<span style="display: none;">.nosp@m.</span>er.ka<span style="display: none;">.nosp@m.</span>valc<span style="display: none;">.nosp@m.</span>huk@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a5fccb4fc71e44089a1b1a77fc76c0b68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fccb4fc71e44089a1b1a77fc76c0b68">&#9670;&nbsp;</a></span>__FILENAME__</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __FILENAME__&#160;&#160;&#160;_STRIPPATH(__FILE__)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return name of current source file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>path to the source file (<code>__FILE__</code>) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>name of single source file without path to it. </dd></dl>
-
-</div>
-</div>
 <a id="a70c57aae3eb654e205459b4362c8089a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70c57aae3eb654e205459b4362c8089a">&#9670;&nbsp;</a></span>ARRAY_SIZE</h2>
 
@@ -144,6 +121,44 @@ Macros</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number of elements in array. </dd></dl>
+
+</div>
+</div>
+<a id="a562b5123bcb156071136bf92aa2f5a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a562b5123bcb156071136bf92aa2f5a26">&#9670;&nbsp;</a></span>offsetof</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define offsetof</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_t, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_m&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((size_t) &amp;((_t *) 0)-&gt;_m)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This macro calculates the offset into a structure of a particular member. Most compilers have this built in, or as part of <code>stddef.h</code>, but just when you need it, it isn't there. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">_t</td><td>type of structure wrapping (containing) the pointer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">_m</td><td>name of the field to which pointer points inside the structure</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>member offset into a structure. </dd></dl>
 
 </div>
 </div>
@@ -197,44 +212,6 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a562b5123bcb156071136bf92aa2f5a26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a562b5123bcb156071136bf92aa2f5a26">&#9670;&nbsp;</a></span>offsetof</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define offsetof</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_t, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_m&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((size_t) &amp;((_t *) 0)-&gt;_m)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This macro calculates the offset into a structure of a particular member. Most compilers have this built in, or as part of <code>stddef.h</code>, but just when you need it, it isn't there. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">_t</td><td>type of structure wrapping (containing) the pointer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">_m</td><td>name of the field to which pointer points inside the structure</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>member offset into a structure. </dd></dl>
-
-</div>
-</div>
 <a id="ade02fe80afe6819c36adab9f567e447c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ade02fe80afe6819c36adab9f567e447c">&#9670;&nbsp;</a></span>PASTE</h2>
 
@@ -269,6 +246,29 @@ Macros</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a5fccb4fc71e44089a1b1a77fc76c0b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fccb4fc71e44089a1b1a77fc76c0b68">&#9670;&nbsp;</a></span>__FILENAME__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __FILENAME__&#160;&#160;&#160;_STRIPPATH(__FILE__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return name of current source file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>path to the source file (<code>__FILE__</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>name of single source file without path to it. </dd></dl>
 
 </div>
 </div>

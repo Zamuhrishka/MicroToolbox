@@ -126,14 +126,14 @@ Macros</h2></td></tr>
  </p>
 <dl class="section author"><dt>Author</dt><dd>Kovalchuk Alexander (<a href="#" onclick="location.href='mai'+'lto:'+'ali'+'ak'+'san'+'de'+'r.k'+'av'+'alc'+'hu'+'k@g'+'ma'+'il.'+'co'+'m'; return false;">aliak<span style="display: none;">.nosp@m.</span>sand<span style="display: none;">.nosp@m.</span>er.ka<span style="display: none;">.nosp@m.</span>valc<span style="display: none;">.nosp@m.</span>huk@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="acc34f7b55e02f661164bc4c4442132b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc34f7b55e02f661164bc4c4442132b6">&#9670;&nbsp;</a></span>ARITHMETICAL_MEAN</h2>
+<a id="a3acffbd305ee72dcd4593c0d8af64a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3acffbd305ee72dcd4593c0d8af64a4f">&#9670;&nbsp;</a></span>MIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ARITHMETICAL_MEAN</td>
+          <td class="memname">#define MIN</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">a, </td>
@@ -147,12 +147,12 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(((a) + (b)) &gt;&gt; 1u)</td>
+          <td></td><td>&#160;&#160;&#160;(((a) &lt; (b)) ? (a) : (b))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Takes arithmetical mean between <code>a</code> and <code>b</code>. </p>
+<p>This macros take the min between <code>a</code> and <code>b</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>first value </td></tr>
@@ -160,34 +160,123 @@ Macros</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>arithmetical mean. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the min between <code>a</code> and <code>b</code>. </dd></dl>
 
 </div>
 </div>
-<a id="a2f9718e9caecf296f1f36d1009612a2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f9718e9caecf296f1f36d1009612a2d">&#9670;&nbsp;</a></span>INVERT_SIGH</h2>
+<a id="abb47ba586198ed5b28ac22f0ee562648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb47ba586198ed5b28ac22f0ee562648">&#9670;&nbsp;</a></span>MIN_BRANCHLESS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define INVERT_SIGH</td>
+          <td class="memname">#define MIN_BRANCHLESS</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">a</td><td>)</td>
-          <td>&#160;&#160;&#160;((~(a)) + 1)</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((b) ^ (((a) ^ (b)) &amp; -((a) &lt; (b))))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This macros change the number sigh. </p>
+<p>This macros take the min between <code>a</code> and <code>b</code> without branch. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This optimization works well on some machines, but on modern machines using -O3 the branchless version is usually slower than the branching version. Modern compilers can perform this optimization better than you can!</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>number</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>first value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>second value</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>number with changed sigh. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the min between <code>a</code> and <code>b</code>. </dd></dl>
+
+</div>
+</div>
+<a id="afa99ec4acc4ecb2dc3c2d05da15d0e3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa99ec4acc4ecb2dc3c2d05da15d0e3f">&#9670;&nbsp;</a></span>MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(((a) &gt; (b)) ? (a) : (b))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This macros take the max between <code>a</code> and <code>b</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>first value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>second value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the max between <code>a</code> and <code>b</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a759a0d4d04feb4b60ed2ef3520169bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a759a0d4d04feb4b60ed2ef3520169bb7">&#9670;&nbsp;</a></span>MAX_BRANCHLESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_BRANCHLESS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((b) &amp; (((a)-(b)) &gt;&gt; 31) | (a) &amp; (~((a)-(b)) &gt;&gt; 31))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This macros take the max between <code>a</code> and <code>b</code> without branch. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This optimization works well on some machines, but on modern machines using -O3 the branchless version is usually slower than the branching version. Modern compilers can perform this optimization better than you can!</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>first value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>second value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the max between <code>a</code> and <code>b</code>. </dd></dl>
 
 </div>
 </div>
@@ -283,30 +372,30 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a413482842186721fc99eada3b5a4eddd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a413482842186721fc99eada3b5a4eddd">&#9670;&nbsp;</a></span>IS_POWER_2</h2>
+<a id="a2f9718e9caecf296f1f36d1009612a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f9718e9caecf296f1f36d1009612a2d">&#9670;&nbsp;</a></span>INVERT_SIGH</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define IS_POWER_2</td>
+          <td class="memname">#define INVERT_SIGH</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">num</td><td>)</td>
-          <td>&#160;&#160;&#160;(num &amp;&amp; !(num &amp; (num - 1)))</td>
+          <td class="paramname">a</td><td>)</td>
+          <td>&#160;&#160;&#160;((~(a)) + 1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This macros test number for power of 2. </p>
+<p>This macros change the number sigh. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>number</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if number is power of 2. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>number with changed sigh. </dd></dl>
 
 </div>
 </div>
@@ -348,14 +437,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="afa99ec4acc4ecb2dc3c2d05da15d0e3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa99ec4acc4ecb2dc3c2d05da15d0e3f">&#9670;&nbsp;</a></span>MAX</h2>
+<a id="acc34f7b55e02f661164bc4c4442132b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc34f7b55e02f661164bc4c4442132b6">&#9670;&nbsp;</a></span>ARITHMETICAL_MEAN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX</td>
+          <td class="memname">#define ARITHMETICAL_MEAN</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">a, </td>
@@ -369,12 +458,12 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(((a) &gt; (b)) ? (a) : (b))</td>
+          <td></td><td>&#160;&#160;&#160;(((a) + (b)) &gt;&gt; 1u)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This macros take the max between <code>a</code> and <code>b</code>. </p>
+<p>Takes arithmetical mean between <code>a</code> and <code>b</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>first value </td></tr>
@@ -382,18 +471,18 @@ Macros</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the max between <code>a</code> and <code>b</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>arithmetical mean. </dd></dl>
 
 </div>
 </div>
-<a id="a759a0d4d04feb4b60ed2ef3520169bb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a759a0d4d04feb4b60ed2ef3520169bb7">&#9670;&nbsp;</a></span>MAX_BRANCHLESS</h2>
+<a id="aac9153aee4bdb92701df902e06a74eb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac9153aee4bdb92701df902e06a74eb3">&#9670;&nbsp;</a></span>SWAP</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_BRANCHLESS</td>
+          <td class="memname">#define SWAP</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">a, </td>
@@ -407,13 +496,12 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((b) &amp; (((a)-(b)) &gt;&gt; 31) | (a) &amp; (~((a)-(b)) &gt;&gt; 31))</td>
+          <td></td><td>&#160;&#160;&#160;((a) = (a) ^ (b) ^ ((b) = (a)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This macros take the max between <code>a</code> and <code>b</code> without branch. </p>
-<dl class="section warning"><dt>Warning</dt><dd>This optimization works well on some machines, but on modern machines using -O3 the branchless version is usually slower than the branching version. Modern compilers can perform this optimization better than you can!</dd></dl>
+<p>Swap <code>a</code> and <code>b</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>first value </td></tr>
@@ -421,84 +509,34 @@ Macros</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the max between <code>a</code> and <code>b</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
 
 </div>
 </div>
-<a id="a3acffbd305ee72dcd4593c0d8af64a4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3acffbd305ee72dcd4593c0d8af64a4f">&#9670;&nbsp;</a></span>MIN</h2>
+<a id="a413482842186721fc99eada3b5a4eddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a413482842186721fc99eada3b5a4eddd">&#9670;&nbsp;</a></span>IS_POWER_2</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MIN</td>
+          <td class="memname">#define IS_POWER_2</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">a, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">b&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(((a) &lt; (b)) ? (a) : (b))</td>
+          <td class="paramname">num</td><td>)</td>
+          <td>&#160;&#160;&#160;(num &amp;&amp; !(num &amp; (num - 1)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This macros take the min between <code>a</code> and <code>b</code>. </p>
+<p>This macros test number for power of 2. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>first value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>second value</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>number</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the min between <code>a</code> and <code>b</code>. </dd></dl>
-
-</div>
-</div>
-<a id="abb47ba586198ed5b28ac22f0ee562648"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb47ba586198ed5b28ac22f0ee562648">&#9670;&nbsp;</a></span>MIN_BRANCHLESS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MIN_BRANCHLESS</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">a, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">b&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((b) ^ (((a) ^ (b)) &amp; -((a) &lt; (b))))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This macros take the min between <code>a</code> and <code>b</code> without branch. </p>
-<dl class="section warning"><dt>Warning</dt><dd>This optimization works well on some machines, but on modern machines using -O3 the branchless version is usually slower than the branching version. Modern compilers can perform this optimization better than you can!</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>first value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>second value</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the min between <code>a</code> and <code>b</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if number is power of 2. </dd></dl>
 
 </div>
 </div>
@@ -568,44 +606,6 @@ Macros</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>nearest to x the power-of-2 number. </dd></dl>
-
-</div>
-</div>
-<a id="aac9153aee4bdb92701df902e06a74eb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac9153aee4bdb92701df902e06a74eb3">&#9670;&nbsp;</a></span>SWAP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SWAP</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">a, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">b&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((a) = (a) ^ (b) ^ ((b) = (a)))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Swap <code>a</code> and <code>b</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>first value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>second value</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
 
 </div>
 </div>

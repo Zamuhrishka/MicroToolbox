@@ -91,6 +91,51 @@ Functions</h2></td></tr>
 <div class="textblock"><p>This file contains functions for calculate crc8/16/32. </p>
 <dl class="section author"><dt>Author</dt><dd>Kovalchuk Alexander (<a href="#" onclick="location.href='mai'+'lto:'+'ali'+'ak'+'san'+'de'+'r.k'+'av'+'alc'+'hu'+'k@g'+'ma'+'il.'+'co'+'m'; return false;">aliak<span style="display: none;">.nosp@m.</span>sand<span style="display: none;">.nosp@m.</span>er.ka<span style="display: none;">.nosp@m.</span>valc<span style="display: none;">.nosp@m.</span>huk@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a13db8fd9318f160ab0af16835a832812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13db8fd9318f160ab0af16835a832812">&#9670;&nbsp;</a></span>crc8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t crc8 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>pcBlock</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function calculate checksum CRC-8-Dallas/Maxim. </p>
+<ul>
+<li>Used polynomial: <code>x^8 + x^5 + x^4 + 1</code> (0x31).</li>
+<li>Init : 0xFF</li>
+<li>Revert: false</li>
+<li>XorOut: 0x00</li>
+<li>Check : 0xF7 ("123456789")</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pcBlock</td><td>pointer to the data buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>size of data buffer.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>calculated crc8 value. </dd></dl>
+
+</div>
+</div>
 <a id="a5d8eb00eebaa65655774d267323b5a28"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d8eb00eebaa65655774d267323b5a28">&#9670;&nbsp;</a></span>crc16()</h2>
 
@@ -182,51 +227,6 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>calculated crc32 value. </dd></dl>
 <p></code></p>
-
-</div>
-</div>
-<a id="a13db8fd9318f160ab0af16835a832812"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13db8fd9318f160ab0af16835a832812">&#9670;&nbsp;</a></span>crc8()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t crc8 </td>
-          <td>(</td>
-          <td class="paramtype">const uint8_t *&#160;</td>
-          <td class="paramname"><em>pcBlock</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function calculate checksum CRC-8-Dallas/Maxim. </p>
-<ul>
-<li>Used polynomial: <code>x^8 + x^5 + x^4 + 1</code> (0x31).</li>
-<li>Init : 0xFF</li>
-<li>Revert: false</li>
-<li>XorOut: 0x00</li>
-<li>Check : 0xF7 ("123456789")</li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">pcBlock</td><td>pointer to the data buffer. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>size of data buffer.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>calculated crc8 value. </dd></dl>
 
 </div>
 </div>

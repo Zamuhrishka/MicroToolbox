@@ -106,6 +106,70 @@ Macros</h2></td></tr>
  </p>
 <dl class="section author"><dt>Author</dt><dd>Kovalchuk Alexander (<a href="#" onclick="location.href='mai'+'lto:'+'ali'+'ak'+'san'+'de'+'r.k'+'av'+'alc'+'hu'+'k@g'+'ma'+'il.'+'co'+'m'; return false;">aliak<span style="display: none;">.nosp@m.</span>sand<span style="display: none;">.nosp@m.</span>er.ka<span style="display: none;">.nosp@m.</span>valc<span style="display: none;">.nosp@m.</span>huk@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a9f04218fe09e6ee659e045b2f11542ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f04218fe09e6ee659e045b2f11542ed">&#9670;&nbsp;</a></span>__inline__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __inline__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Request GCC make function always inline. </p>
+
+</div>
+</div>
+<a id="abb957c7056bd64517f1d66873c9234b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb957c7056bd64517f1d66873c9234b6">&#9670;&nbsp;</a></span>__deprecated__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __deprecated__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Signals that the function is deprecated and should no longer be used. <br  />
+ </p>
+
+</div>
+</div>
+<a id="ab82e8b0c660170d3cba1cae74544309a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab82e8b0c660170d3cba1cae74544309a">&#9670;&nbsp;</a></span>__attribute_used__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __attribute_used__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tells the compiler that this function is used, whether or not GCC finds instances of this function call. </p><dl class="section note"><dt>Note</dt><dd>This can be useful in cases where C functions are called from assembler. </dd></dl>
+
+</div>
+</div>
+<a id="abea77661c5bf0bc3e4cf992f84a42c5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abea77661c5bf0bc3e4cf992f84a42c5b">&#9670;&nbsp;</a></span>__attribute_const__</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __attribute_const__</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tells the compiler that this function is stateless. </p><dl class="section note"><dt>Note</dt><dd>uses only the arguments passed to it to generate the returned result <br  />
+ </dd></dl>
+
+</div>
+</div>
 <a id="a84724575aade72f69f7052d8eafb3d78"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84724575aade72f69f7052d8eafb3d78">&#9670;&nbsp;</a></span>__align__</h2>
 
@@ -127,67 +191,19 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="abea77661c5bf0bc3e4cf992f84a42c5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abea77661c5bf0bc3e4cf992f84a42c5b">&#9670;&nbsp;</a></span>__attribute_const__</h2>
+<a id="a40ff4399d94b22ada0353702d8ce0184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ff4399d94b22ada0353702d8ce0184">&#9670;&nbsp;</a></span>__must_check__</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define __attribute_const__</td>
+          <td class="memname">#define __must_check__</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Tells the compiler that this function is stateless. </p><dl class="section note"><dt>Note</dt><dd>uses only the arguments passed to it to generate the returned result <br  />
- </dd></dl>
-
-</div>
-</div>
-<a id="ab82e8b0c660170d3cba1cae74544309a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab82e8b0c660170d3cba1cae74544309a">&#9670;&nbsp;</a></span>__attribute_used__</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __attribute_used__</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Tells the compiler that this function is used, whether or not GCC finds instances of this function call. </p><dl class="section note"><dt>Note</dt><dd>This can be useful in cases where C functions are called from assembler. </dd></dl>
-
-</div>
-</div>
-<a id="abb957c7056bd64517f1d66873c9234b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb957c7056bd64517f1d66873c9234b6">&#9670;&nbsp;</a></span>__deprecated__</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __deprecated__</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Signals that the function is deprecated and should no longer be used. <br  />
+<p>Causes the compiler to always check that the return value of a function is checked at the call site. <br  />
  </p>
-
-</div>
-</div>
-<a id="a9f04218fe09e6ee659e045b2f11542ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f04218fe09e6ee659e045b2f11542ed">&#9670;&nbsp;</a></span>__inline__</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __inline__</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Request GCC make function always inline. </p>
 
 </div>
 </div>
@@ -211,18 +227,22 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a40ff4399d94b22ada0353702d8ce0184"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40ff4399d94b22ada0353702d8ce0184">&#9670;&nbsp;</a></span>__must_check__</h2>
+<a id="a1c9cd7d0c2002dd34d5302da4a31b3f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c9cd7d0c2002dd34d5302da4a31b3f7">&#9670;&nbsp;</a></span>__unlikely__</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define __must_check__</td>
+          <td class="memname">#define __unlikely__</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Causes the compiler to always check that the return value of a function is checked at the call site. <br  />
+<p>The hint to the compiler to emit instructions that will cause branch prediction to favour the "likely" side of a jump instruction. <br  />
  </p>
 
 </div>
@@ -244,26 +264,6 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tells linker to put object in desire section <br  />
- </p>
-
-</div>
-</div>
-<a id="a1c9cd7d0c2002dd34d5302da4a31b3f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c9cd7d0c2002dd34d5302da4a31b3f7">&#9670;&nbsp;</a></span>__unlikely__</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __unlikely__</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The hint to the compiler to emit instructions that will cause branch prediction to favour the "likely" side of a jump instruction. <br  />
  </p>
 
 </div>

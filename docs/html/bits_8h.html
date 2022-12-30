@@ -105,6 +105,44 @@ Macros</h2></td></tr>
 <tr class="separator:adf2ad9f5ff0b464fb9bbc2f3078750e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a6a946c19eda6001e330bd7a47dbb9dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a946c19eda6001e330bd7a47dbb9dce">&#9670;&nbsp;</a></span>SET_BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SET_BIT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">var, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">bit&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((var) |= (1&lt;&lt;(bit)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set bit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">var</td><td>variable in which need set bit </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bit</td><td>number of bit which need to set</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+
+</div>
+</div>
 <a id="aab32c2dbc6e55194016fff9d0e70dd34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab32c2dbc6e55194016fff9d0e70dd34">&#9670;&nbsp;</a></span>CLEAR_BIT</h2>
 
@@ -143,66 +181,79 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="adf2ad9f5ff0b464fb9bbc2f3078750e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf2ad9f5ff0b464fb9bbc2f3078750e1">&#9670;&nbsp;</a></span>CLSB</h2>
+<a id="a2809707a2acec727924ca2182c3878ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2809707a2acec727924ca2182c3878ce">&#9670;&nbsp;</a></span>TOGGLE_BIT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CLSB</td>
+          <td class="memname">#define TOGGLE_BIT</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;((x) &amp; ((x)-1))</td>
+          <td class="paramname">var, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">bit&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((var) ^= (1&lt;&lt;(bit)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Turn off the rightmost 1-bit. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Undefined behavior for x=0 value </dd></dl>
+<p>Invert bit. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">var</td><td>variable in which need toggle bit </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bit</td><td>number of bit which need to toggle</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
 
 </div>
 </div>
-<a id="a8aa31a1caa89bcdf73caf7efca2f288b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8aa31a1caa89bcdf73caf7efca2f288b">&#9670;&nbsp;</a></span>LCO</h2>
+<a id="a91013fcf5b33562023b922812bc337bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91013fcf5b33562023b922812bc337bb">&#9670;&nbsp;</a></span>TEST_BIT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LCO</td>
+          <td class="memname">#define TEST_BIT</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(~(x) &amp; ((x)+1))</td>
+          <td class="paramname">var, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Isolate the rightmost 0-bit. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Undefined behavior for x=(~x) value </dd></dl>
-
-</div>
-</div>
-<a id="a3a776ca3cd43d77b2b294cc0e65da720"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a776ca3cd43d77b2b294cc0e65da720">&#9670;&nbsp;</a></span>LSO</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">#define LSO</td>
-          <td>(</td>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;((x) &amp; (-(x)))</td>
+          <td class="paramname">bit&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(((var) &amp; (1&lt;&lt;(bit))) != 0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Isolate the rightmost 1-bit. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Undefined behavior for x=0 value </dd></dl>
+<p>Test bit in variable for set state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">var</td><td>variable in which need test bit </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bit</td><td>bit number</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
 
 </div>
 </div>
@@ -271,41 +322,45 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a6a946c19eda6001e330bd7a47dbb9dce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a946c19eda6001e330bd7a47dbb9dce">&#9670;&nbsp;</a></span>SET_BIT</h2>
+<a id="a3a776ca3cd43d77b2b294cc0e65da720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a776ca3cd43d77b2b294cc0e65da720">&#9670;&nbsp;</a></span>LSO</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SET_BIT</td>
+          <td class="memname">#define LSO</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">var, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bit&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((var) |= (1&lt;&lt;(bit)))</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((x) &amp; (-(x)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set bit. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">var</td><td>variable in which need set bit </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">bit</td><td>number of bit which need to set</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<p>Isolate the rightmost 1-bit. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Undefined behavior for x=0 value </dd></dl>
+
+</div>
+</div>
+<a id="a8aa31a1caa89bcdf73caf7efca2f288b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aa31a1caa89bcdf73caf7efca2f288b">&#9670;&nbsp;</a></span>LCO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCO</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;(~(x) &amp; ((x)+1))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Isolate the rightmost 0-bit. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Undefined behavior for x=(~x) value </dd></dl>
 
 </div>
 </div>
@@ -330,79 +385,24 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a91013fcf5b33562023b922812bc337bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91013fcf5b33562023b922812bc337bb">&#9670;&nbsp;</a></span>TEST_BIT</h2>
+<a id="adf2ad9f5ff0b464fb9bbc2f3078750e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2ad9f5ff0b464fb9bbc2f3078750e1">&#9670;&nbsp;</a></span>CLSB</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define TEST_BIT</td>
+          <td class="memname">#define CLSB</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">var, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bit&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(((var) &amp; (1&lt;&lt;(bit))) != 0)</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;((x) &amp; ((x)-1))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Test bit in variable for set state. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">var</td><td>variable in which need test bit </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">bit</td><td>bit number</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
-
-</div>
-</div>
-<a id="a2809707a2acec727924ca2182c3878ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2809707a2acec727924ca2182c3878ce">&#9670;&nbsp;</a></span>TOGGLE_BIT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TOGGLE_BIT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">var, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bit&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((var) ^= (1&lt;&lt;(bit)))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Invert bit. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">var</td><td>variable in which need toggle bit </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">bit</td><td>number of bit which need to toggle</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
+<p>Turn off the rightmost 1-bit. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Undefined behavior for x=0 value </dd></dl>
 
 </div>
 </div>

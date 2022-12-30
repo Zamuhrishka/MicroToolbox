@@ -143,22 +143,6 @@ Enumerations</h2></td></tr>
 <div class="textblock"><p>This file contains several useful custom data types. </p>
 <dl class="section author"><dt>Author</dt><dd>Kovalchuk Alexander (<a href="#" onclick="location.href='mai'+'lto:'+'ali'+'ak'+'san'+'de'+'r.k'+'av'+'alc'+'hu'+'k@g'+'ma'+'il.'+'co'+'m'; return false;">aliak<span style="display: none;">.nosp@m.</span>sand<span style="display: none;">.nosp@m.</span>er.ka<span style="display: none;">.nosp@m.</span>valc<span style="display: none;">.nosp@m.</span>huk@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a23eb5e058a210efdde3d64e69679fafa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23eb5e058a210efdde3d64e69679fafa">&#9670;&nbsp;</a></span>BIG_ENDIAN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BIG_ENDIAN&#160;&#160;&#160;1234</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constant for Big Endian byte order. </p>
-
-</div>
-</div>
 <a id="a8782a401fbf55261460863fc2f8df1ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8782a401fbf55261460863fc2f8df1ce">&#9670;&nbsp;</a></span>LITTLE_ENDIAN</h2>
 
@@ -175,19 +159,19 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="a070d2ce7b6bb7e5c05602aa8c308d0c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a070d2ce7b6bb7e5c05602aa8c308d0c4">&#9670;&nbsp;</a></span>NULL</h2>
+<a id="a23eb5e058a210efdde3d64e69679fafa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23eb5e058a210efdde3d64e69679fafa">&#9670;&nbsp;</a></span>BIG_ENDIAN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NULL&#160;&#160;&#160;<a class="el" href="types_8h.html#ab979d9d4b4923f7c54d6caa6e1a61936">nullptr</a></td>
+          <td class="memname">#define BIG_ENDIAN&#160;&#160;&#160;1234</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>NULL constant. </p>
+<p>Constant for Big Endian byte order. </p>
 
 </div>
 </div>
@@ -207,20 +191,68 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a9145d3b293565298fe29dc24ca6576d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9145d3b293565298fe29dc24ca6576d7">&#9670;&nbsp;</a></span>bcd_t</h2>
+<a id="a070d2ce7b6bb7e5c05602aa8c308d0c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a070d2ce7b6bb7e5c05602aa8c308d0c4">&#9670;&nbsp;</a></span>NULL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef uint32_t <a class="el" href="types_8h.html#a9145d3b293565298fe29dc24ca6576d7">bcd_t</a></td>
+          <td class="memname">#define NULL&#160;&#160;&#160;<a class="el" href="types_8h.html#ab979d9d4b4923f7c54d6caa6e1a61936">nullptr</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>BCD data type. </p>
+<p>NULL constant. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a5eb3c14d238c56c233246a4d9195e1bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eb3c14d238c56c233246a4d9195e1bb">&#9670;&nbsp;</a></span>endian_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="types_8h.html#a191ab353017484859bb4992631700ae4">EndianOrder_tag</a> <a class="el" href="types_8h.html#a5eb3c14d238c56c233246a4d9195e1bb">endian_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constants for byte order definition. </p>
+
+</div>
+</div>
+<a id="a63d498a52cb52f87fc61a68184ad843c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63d498a52cb52f87fc61a68184ad843c">&#9670;&nbsp;</a></span>mac_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_mac__tag.html">Mac_tag</a> <a class="el" href="types_8h.html#a63d498a52cb52f87fc61a68184ad843c">mac_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MAC address data type. </p>
+
+</div>
+</div>
+<a id="aad5f1e36dcf2e41cd39ce88809b8024b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad5f1e36dcf2e41cd39ce88809b8024b">&#9670;&nbsp;</a></span>bin8_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structbin8__tag.html">bin8_tag</a> <a class="el" href="types_8h.html#aad5f1e36dcf2e41cd39ce88809b8024b">bin8_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Binary string representation of uint8_t type. </p>
 
 </div>
 </div>
@@ -256,38 +288,6 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="aad5f1e36dcf2e41cd39ce88809b8024b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad5f1e36dcf2e41cd39ce88809b8024b">&#9670;&nbsp;</a></span>bin8_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structbin8__tag.html">bin8_tag</a> <a class="el" href="types_8h.html#aad5f1e36dcf2e41cd39ce88809b8024b">bin8_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Binary string representation of uint8_t type. </p>
-
-</div>
-</div>
-<a id="a5eb3c14d238c56c233246a4d9195e1bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5eb3c14d238c56c233246a4d9195e1bb">&#9670;&nbsp;</a></span>endian_e</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="types_8h.html#a191ab353017484859bb4992631700ae4">EndianOrder_tag</a> <a class="el" href="types_8h.html#a5eb3c14d238c56c233246a4d9195e1bb">endian_e</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constants for byte order definition. </p>
-
-</div>
-</div>
 <a id="a7089cbeaadfa990eeaa3017584aee526"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7089cbeaadfa990eeaa3017584aee526">&#9670;&nbsp;</a></span>ip4addr_t</h2>
 
@@ -304,19 +304,19 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="a63d498a52cb52f87fc61a68184ad843c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63d498a52cb52f87fc61a68184ad843c">&#9670;&nbsp;</a></span>mac_t</h2>
+<a id="a9145d3b293565298fe29dc24ca6576d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9145d3b293565298fe29dc24ca6576d7">&#9670;&nbsp;</a></span>bcd_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="struct_mac__tag.html">Mac_tag</a> <a class="el" href="types_8h.html#a63d498a52cb52f87fc61a68184ad843c">mac_t</a></td>
+          <td class="memname">typedef uint32_t <a class="el" href="types_8h.html#a9145d3b293565298fe29dc24ca6576d7">bcd_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>MAC address data type. </p>
+<p>BCD data type. </p>
 
 </div>
 </div>

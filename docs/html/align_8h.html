@@ -126,79 +126,6 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a73ca12b2efc02bc9ec33cd85185a3256"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73ca12b2efc02bc9ec33cd85185a3256">&#9670;&nbsp;</a></span>CACHE_ALIGN_STRUCT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CACHE_ALIGN_STRUCT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">A</td><td>)</td>
-          <td>&#160;&#160;&#160;        struct { uint8_t pad[0]; } STRCONCATHELPER(align, __LINE__) __attribute__ ((aligned ((A))))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Forces alignment of elements within a user defined type (ADT). You can use this macro to separate uncached and cached areas. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>alignment value in bytes.</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
-<div class="line">{</div>
-<div class="line">     uint8_t data1;</div>
-<div class="line">     <a class="code" href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">CACHE_ALIGN_STRUCT</a>(32);</div>
-<div class="line">     uint8_t data2;</div>
-<div class="line">     <a class="code" href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">CACHE_ALIGN_STRUCT</a>(32);</div>
-<div class="line">     uint8_t data3;</div>
-<div class="line">} SomeData_t; </div>
-<div class="ttc" id="aalign_8h_html_a73ca12b2efc02bc9ec33cd85185a3256"><div class="ttname"><a href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">CACHE_ALIGN_STRUCT</a></div><div class="ttdeci">#define CACHE_ALIGN_STRUCT(A)</div><div class="ttdoc">Forces alignment of elements within a user defined type (ADT). You can use this macro to separate unc...</div><div class="ttdef"><b>Definition:</b> align.h:105</div></div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="ad84bb111ec40912b979a837125eacc42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad84bb111ec40912b979a837125eacc42">&#9670;&nbsp;</a></span>CACHE_LINE_ALIGN__INST</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CACHE_LINE_ALIGN__INST</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">T, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">N&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;T##Full_t N</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Instantiate of aligned non-static structure. </p>
-<dl class="section warning"><dt>Warning</dt><dd>The INST macro instantiates the type. It must be given the same parameters as the <a class="el" href="align_8h.html#a16747b9a224662fff8767d42bf95dc05">CACHE_LINE_ALIGN__TYPE</a> macro.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">T</td><td>the type of structure to be wrapped. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>instantiation name of wrapped structure. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="afa48e735f25611db9badf709c44cd826"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa48e735f25611db9badf709c44cd826">&#9670;&nbsp;</a></span>CACHE_LINE_ALIGN__STATIC</h2>
 
@@ -295,6 +222,79 @@ Macros</h2></td></tr>
   </dd>
 </dl>
 
+</div>
+</div>
+<a id="ad84bb111ec40912b979a837125eacc42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84bb111ec40912b979a837125eacc42">&#9670;&nbsp;</a></span>CACHE_LINE_ALIGN__INST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CACHE_LINE_ALIGN__INST</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">T, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">N&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;T##Full_t N</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Instantiate of aligned non-static structure. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The INST macro instantiates the type. It must be given the same parameters as the <a class="el" href="align_8h.html#a16747b9a224662fff8767d42bf95dc05">CACHE_LINE_ALIGN__TYPE</a> macro.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">T</td><td>the type of structure to be wrapped. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>instantiation name of wrapped structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a73ca12b2efc02bc9ec33cd85185a3256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73ca12b2efc02bc9ec33cd85185a3256">&#9670;&nbsp;</a></span>CACHE_ALIGN_STRUCT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CACHE_ALIGN_STRUCT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">A</td><td>)</td>
+          <td>&#160;&#160;&#160;        struct { uint8_t pad[0]; } STRCONCATHELPER(align, __LINE__) __attribute__ ((aligned ((A))))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Forces alignment of elements within a user defined type (ADT). You can use this macro to separate uncached and cached areas. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">A</td><td>alignment value in bytes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line">{</div>
+<div class="line">     uint8_t data1;</div>
+<div class="line">     <a class="code" href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">CACHE_ALIGN_STRUCT</a>(32);</div>
+<div class="line">     uint8_t data2;</div>
+<div class="line">     <a class="code" href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">CACHE_ALIGN_STRUCT</a>(32);</div>
+<div class="line">     uint8_t data3;</div>
+<div class="line">} SomeData_t; </div>
+<div class="ttc" id="aalign_8h_html_a73ca12b2efc02bc9ec33cd85185a3256"><div class="ttname"><a href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">CACHE_ALIGN_STRUCT</a></div><div class="ttdeci">#define CACHE_ALIGN_STRUCT(A)</div><div class="ttdoc">Forces alignment of elements within a user defined type (ADT). You can use this macro to separate unc...</div><div class="ttdef"><b>Definition:</b> align.h:105</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 </div><!-- contents -->
