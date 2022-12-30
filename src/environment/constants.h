@@ -75,16 +75,24 @@
 #endif
 
 /// Max value for `uint8_t` data types
-#define 			UINT8_MAX						((uint8_t)-1)
+#ifndef UINT8_MAX
+	#define 			UINT8_MAX						((uint8_t)-1)
+#endif
 
 /// Max value for `uint16_t` data types
-#define 			UINT16_MAX						((uint16_t)-1)
+#ifndef UINT16_MAX
+	#define 			UINT16_MAX						((uint16_t)-1)
+#endif
 
 /// Max value for `uint32_t` data types
-#define 			UINT32_MAX						((uint32_t)-1)
+#ifndef UINT32_MAX
+	#define 			UINT32_MAX						((uint32_t)-1)
+#endif
 
 /// Max value for `uint64_t` data types
-#define 			UINT64_MAX						((uint64_t)-1)
+#ifndef UINT64_MAX
+	#define 			UINT64_MAX						((uint64_t)-1)
+#endif
 
 /** 
  *  \brief Data capacity constants 
