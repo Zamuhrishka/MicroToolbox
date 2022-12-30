@@ -1,4 +1,4 @@
-// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 /**
 * \file         
@@ -231,8 +231,8 @@ bool convert_string_to_mac_addr(const char *str, mac_t *macAddr)
 */
 bool convert_mac_addr_to_string(const mac_t *macAddr, char *string)
 {
-	char numLowPart = -1;
-	char numHighPart = -1;
+	int8_t numLowPart = -1;
+	int8_t numHighPart = -1;
 	uint8_t offsetLowPart = 1;
 	uint8_t offsetHighPart = 0;
 	char _mac[] = "00:00:00:00:00:00\0";
