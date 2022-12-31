@@ -1,19 +1,16 @@
 /**
-* \file
-* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
-* \brief        This file contains functions for calculate crc8/16/32.
-*/
+ * \file
+ * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+ * \brief        This file contains functions for calculate crc8/16/32.
+ */
 
 #pragma once
 
-/* C++ detection */
-#ifdef __cplusplus
-    extern "C" {
-#endif
 //_____ I N C L U D E S _______________________________________________________
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <string.h>
+
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
 //_____ M A C R O S ___________________________________________________________
@@ -31,8 +28,8 @@
  * \param[in] 	len: size of data buffer.
  *
  * \return 		calculated crc8 value.
-**/
-uint8_t crc8(const uint8_t *pcBlock, size_t len);
+ **/
+uint8_t crc8(const uint8_t* pcBlock, size_t len);
 
 #if defined(CRC8_TABLE)
 /**
@@ -47,8 +44,8 @@ uint8_t crc8(const uint8_t *pcBlock, size_t len);
  * \param[in] 	len: size of data buffer.
  *
  * \return 		calculated crc8 value.
-**/
-uint8_t crc8_table(const uint8_t *pcBlock, size_t len);
+ **/
+uint8_t crc8_table(const uint8_t* pcBlock, size_t len);
 #endif
 
 /**
@@ -63,8 +60,8 @@ uint8_t crc8_table(const uint8_t *pcBlock, size_t len);
  * \param[in] 	len: size of data buffer.
  *
  * \return 		calculated crc16 value.
-**/
-uint16_t crc16(const uint8_t *pcBlock, size_t len);
+ **/
+uint16_t crc16(const uint8_t* pcBlock, size_t len);
 
 #if defined(CRC16_TABLE)
 /**
@@ -79,8 +76,8 @@ uint16_t crc16(const uint8_t *pcBlock, size_t len);
  * \param[in] 	len: size of data buffer.
  *
  * \return 		calculated crc16 value.
-**/
-uint16_t crc16_table(const uint8_t *pcBlock, size_t len);
+ **/
+uint16_t crc16_table(const uint8_t* pcBlock, size_t len);
 #endif
 
 /**
@@ -96,8 +93,8 @@ uint16_t crc16_table(const uint8_t *pcBlock, size_t len);
  * \param[in] 	len: size of data buffer.
  *
  * \return 		calculated crc32 value.
-**/
-uint_least32_t crc32(const uint8_t * buf, size_t len);
+ **/
+uint_least32_t crc32(const uint8_t* buf, size_t len);
 
 #if defined(CRC32_TABLE)
 /**
@@ -113,11 +110,6 @@ uint_least32_t crc32(const uint8_t * buf, size_t len);
  * \param[in] 	len: size of data buffer.
  *
  * \return 		calculated crc32 value.
-**/
-uint_least32_t crc32_table(const uint8_t *buf, size_t len);
-#endif
-
-/* C++ detection */
-#ifdef __cplusplus
-}
+ **/
+uint_least32_t crc32_table(const uint8_t* buf, size_t len);
 #endif

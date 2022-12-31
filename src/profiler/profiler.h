@@ -1,18 +1,15 @@
 /**
-* \file
-* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
-* \brief        
-*/
+ * \file
+ * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+ * \brief
+ */
 
 #pragma once
 
-/* C++ detection */
-#ifdef __cplusplus
-    extern "C" {
-#endif
 //_____ I N C L U D E S _______________________________________________________
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
+
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
 typedef uint32_t ticks_t;
@@ -25,7 +22,7 @@ typedef uint32_t ticks_t;
  * \param 	none.
  *
  * \return 	none.
-**/
+ **/
 void profiler_timer_start(void);
 
 /**
@@ -34,7 +31,7 @@ void profiler_timer_start(void);
  * \param 	none.
  *
  * \return 	number of cpu ticks.
-**/
+ **/
 ticks_t profiler_timer_stop(void);
 
 /**
@@ -43,10 +40,5 @@ ticks_t profiler_timer_stop(void);
  * \param   ticks[in]	Number of cpu ticks.
  *
  * \return  time.
-**/
+ **/
 float profiler_ticks_to_time(ticks_t ticks);
-
-/* C++ detection */
-#ifdef __cplusplus
-}
-#endif

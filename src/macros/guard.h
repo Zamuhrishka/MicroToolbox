@@ -1,15 +1,10 @@
 /**
-* \file
-* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
-* \brief        Guard macros.   
-*/
+ * \file
+ * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+ * \brief        Guard macros.
+ */
 
 #pragma once
-
-/* C++ detection */
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 //_____ I N C L U D E S _______________________________________________________
 #include "misc.h"
@@ -20,20 +15,19 @@ extern "C" {
 //_____ M A C R O S ___________________________________________________________
 /**
  * \brief       Static assert
- * 
+ *
  * \param[in]   COND: bool expresion
  * \param[in]   MSG: fail message
- * 
+ *
  */
-#define STATIC_ASSERT(COND, MSG) \
-        typedef char static_assertion_##MSG[(COND) ? 1 : -1]
+#define STATIC_ASSERT(COND, MSG) typedef char static_assertion_##MSG[(COND) ? 1 : -1]
 
 /**
  * \brief 	Check size of struct on compile time
- * 
+ *
  * \param[in]   st: struct type
  * \param[in]   sz: expected size of struct
- * 
+ *
  * \code
  * typedef struct {
  *         uint8_t     id;
@@ -44,15 +38,14 @@ extern "C" {
  * GuardStructSize(CustomStruct_t, 4);
  * \endcode
  */
-#define GuardStructSize(st, sz) \
-        typedef uint8_t GuardStructSize##st##_header[(sizeof( st) == (sz)) ? 1:-1]
+#define GuardStructSize(st, sz) typedef uint8_t GuardStructSize##st##_header[(sizeof(st) == (sz)) ? 1 : -1]
 
 /**
  * \brief 	Check that size of struct is divide on `sz`
- * 
+ *
  * \param[in]   st: struct type
  * \param[in]   sz: value on which the size of struct must divided
- * 
+ *
  * \code
  * typedef struct {
  * 	uint8_t     id;
@@ -65,16 +58,16 @@ extern "C" {
  * \endcode
  */
 #define GuardStructSizeMultiple(st, sz) \
-        typedef uint8_t GuardStructSizeMultiple##st##_header[((sizeof( st) % (sz)) == 0) ? 1:-1]
+    typedef uint8_t GuardStructSizeMultiple##st##_header[((sizeof(st) % (sz)) == 0) ? 1 : -1]
 
 /**
  * \brief 	Check that offset of struct member equal `os`
- * 
+ *
  * \param[in]   st: struct type
  * \param[in]   mb: name of struct member
  * \param[in]   os: expected offset
- * 
- * \code 
+ *
+ * \code
  * typedef struct {
  * 	uint8_t     id;
  * 	uint8_t     tag;
@@ -87,25 +80,19 @@ extern "C" {
  * GuardStructOffset(CustomStruct_t, isValid,   2);
  * \endcode
  */
-#define GuardStructOffset(st,mb,os) \
-        typedef uint8_t GuardStructOffset##st##mb_header[(offsetof( st,mb) == os) ? 1: -1]
+#define GuardStructOffset(st, mb, os) \
+    typedef uint8_t GuardStructOffset##st##mb_header[(offsetof(st, mb) == os) ? 1 : -1]
 
 /**
- * \brief 
- * 
+ * \brief
+ *
  * \code
  *   GuardEnumEntries(MdData, sizeof(MdData), 0x40000 - 0x40);
  * \endcode
- * 
+ *
  * The following is to ensure that we have at least `0x40` byte padding at the end
  */
-#define GuardEnumEntries(st,cnt, max_cnt) \
-        typedef uint8_t GuardEnumEntries##st##_header[(( cnt) <= (max_cnt)) ? 1:-1]
+#define GuardEnumEntries(st, cnt, max_cnt) typedef uint8_t GuardEnumEntries##st##_header[((cnt) <= (max_cnt)) ? 1 : -1]
 //_____ V A R I A B L E S _____________________________________________________
 
 //_____ P U B L I C  F U N C T I O N S_________________________________________
-
-/* C++ detection */
-#ifdef __cplusplus
-}
-#endif
