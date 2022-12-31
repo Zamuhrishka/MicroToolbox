@@ -66,6 +66,9 @@ $(document).ready(function(){initNavTree('bits_8h.html',''); initResizable(); })
 <div class="title">bits.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This file contains macros for bits manipulations.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="compiler_8h_source.html">compiler.h</a>&quot;</code><br />
 </div>
@@ -73,16 +76,16 @@ $(document).ready(function(){initNavTree('bits_8h.html',''); initResizable(); })
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a6a946c19eda6001e330bd7a47dbb9dce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a6a946c19eda6001e330bd7a47dbb9dce">SET_BIT</a>(var,  bit)&#160;&#160;&#160;((var) |= (1&lt;&lt;(bit)))</td></tr>
+<tr class="memitem:a6a946c19eda6001e330bd7a47dbb9dce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a6a946c19eda6001e330bd7a47dbb9dce">SET_BIT</a>(var,  bit)&#160;&#160;&#160;((var) |= (1 &lt;&lt; (bit)))</td></tr>
 <tr class="memdesc:a6a946c19eda6001e330bd7a47dbb9dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set bit.  <a href="bits_8h.html#a6a946c19eda6001e330bd7a47dbb9dce">More...</a><br /></td></tr>
 <tr class="separator:a6a946c19eda6001e330bd7a47dbb9dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab32c2dbc6e55194016fff9d0e70dd34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#aab32c2dbc6e55194016fff9d0e70dd34">CLEAR_BIT</a>(var,  bit)&#160;&#160;&#160;((var) &amp;= (~(1&lt;&lt;(bit))))</td></tr>
+<tr class="memitem:aab32c2dbc6e55194016fff9d0e70dd34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#aab32c2dbc6e55194016fff9d0e70dd34">CLEAR_BIT</a>(var,  bit)&#160;&#160;&#160;((var) &amp;= (~(1 &lt;&lt; (bit))))</td></tr>
 <tr class="memdesc:aab32c2dbc6e55194016fff9d0e70dd34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear bit.  <a href="bits_8h.html#aab32c2dbc6e55194016fff9d0e70dd34">More...</a><br /></td></tr>
 <tr class="separator:aab32c2dbc6e55194016fff9d0e70dd34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2809707a2acec727924ca2182c3878ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a2809707a2acec727924ca2182c3878ce">TOGGLE_BIT</a>(var,  bit)&#160;&#160;&#160;((var) ^= (1&lt;&lt;(bit)))</td></tr>
+<tr class="memitem:a2809707a2acec727924ca2182c3878ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a2809707a2acec727924ca2182c3878ce">TOGGLE_BIT</a>(var,  bit)&#160;&#160;&#160;((var) ^= (1 &lt;&lt; (bit)))</td></tr>
 <tr class="memdesc:a2809707a2acec727924ca2182c3878ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert bit.  <a href="bits_8h.html#a2809707a2acec727924ca2182c3878ce">More...</a><br /></td></tr>
 <tr class="separator:a2809707a2acec727924ca2182c3878ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91013fcf5b33562023b922812bc337bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a91013fcf5b33562023b922812bc337bb">TEST_BIT</a>(var,  bit)&#160;&#160;&#160;(((var) &amp; (1&lt;&lt;(bit))) != 0)</td></tr>
+<tr class="memitem:a91013fcf5b33562023b922812bc337bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a91013fcf5b33562023b922812bc337bb">TEST_BIT</a>(var,  bit)&#160;&#160;&#160;(((var) &amp; (1 &lt;&lt; (bit))) != 0)</td></tr>
 <tr class="memdesc:a91013fcf5b33562023b922812bc337bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test bit in variable for set state.  <a href="bits_8h.html#a91013fcf5b33562023b922812bc337bb">More...</a><br /></td></tr>
 <tr class="separator:a91013fcf5b33562023b922812bc337bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b3d0b8254a0d9cab59892a237230aed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a9b3d0b8254a0d9cab59892a237230aed">MAKE_BITFIELD</a>(u,  l)&#160;&#160;&#160;((((1ul &lt;&lt; (u)) - 1ul) | (1ul &lt;&lt; (u))) &amp; ~((1ul &lt;&lt; (l)) - 1ul))</td></tr>
@@ -94,17 +97,20 @@ Macros</h2></td></tr>
 <tr class="memitem:a3a776ca3cd43d77b2b294cc0e65da720"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a3a776ca3cd43d77b2b294cc0e65da720">LSO</a>(x)&#160;&#160;&#160;((x) &amp; (-(x)))</td></tr>
 <tr class="memdesc:a3a776ca3cd43d77b2b294cc0e65da720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Isolate the rightmost 1-bit.  <a href="bits_8h.html#a3a776ca3cd43d77b2b294cc0e65da720">More...</a><br /></td></tr>
 <tr class="separator:a3a776ca3cd43d77b2b294cc0e65da720"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8aa31a1caa89bcdf73caf7efca2f288b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a8aa31a1caa89bcdf73caf7efca2f288b">LCO</a>(x)&#160;&#160;&#160;(~(x) &amp; ((x)+1))</td></tr>
+<tr class="memitem:a8aa31a1caa89bcdf73caf7efca2f288b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a8aa31a1caa89bcdf73caf7efca2f288b">LCO</a>(x)&#160;&#160;&#160;(~(x) &amp; ((x) + 1))</td></tr>
 <tr class="memdesc:a8aa31a1caa89bcdf73caf7efca2f288b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Isolate the rightmost 0-bit.  <a href="bits_8h.html#a8aa31a1caa89bcdf73caf7efca2f288b">More...</a><br /></td></tr>
 <tr class="separator:a8aa31a1caa89bcdf73caf7efca2f288b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a833c01ddcddbc1ac9d32a4afc8564ab3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a833c01ddcddbc1ac9d32a4afc8564ab3">SLSB</a>(x)&#160;&#160;&#160;((x) | ((x)+1))</td></tr>
+<tr class="memitem:a833c01ddcddbc1ac9d32a4afc8564ab3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#a833c01ddcddbc1ac9d32a4afc8564ab3">SLSB</a>(x)&#160;&#160;&#160;((x) | ((x) + 1))</td></tr>
 <tr class="memdesc:a833c01ddcddbc1ac9d32a4afc8564ab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on the rightmost 0-bit.  <a href="bits_8h.html#a833c01ddcddbc1ac9d32a4afc8564ab3">More...</a><br /></td></tr>
 <tr class="separator:a833c01ddcddbc1ac9d32a4afc8564ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf2ad9f5ff0b464fb9bbc2f3078750e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bits_8h.html#adf2ad9f5ff0b464fb9bbc2f3078750e1">CLSB</a>(x)&#160;&#160;&#160;((x) &amp; ((x)-1))</td></tr>
 <tr class="memdesc:adf2ad9f5ff0b464fb9bbc2f3078750e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off the rightmost 1-bit.  <a href="bits_8h.html#adf2ad9f5ff0b464fb9bbc2f3078750e1">More...</a><br /></td></tr>
 <tr class="separator:adf2ad9f5ff0b464fb9bbc2f3078750e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This file contains macros for bits manipulations. </p>
+<dl class="section author"><dt>Author</dt><dd>Kovalchuk Alexander (<a href="#" onclick="location.href='mai'+'lto:'+'ali'+'ak'+'san'+'de'+'r.k'+'av'+'alc'+'hu'+'k@g'+'ma'+'il.'+'co'+'m'; return false;">aliak<span style="display: none;">.nosp@m.</span>sand<span style="display: none;">.nosp@m.</span>er.ka<span style="display: none;">.nosp@m.</span>valc<span style="display: none;">.nosp@m.</span>huk@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a6a946c19eda6001e330bd7a47dbb9dce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a946c19eda6001e330bd7a47dbb9dce">&#9670;&nbsp;</a></span>SET_BIT</h2>
 
@@ -126,7 +132,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((var) |= (1&lt;&lt;(bit)))</td>
+          <td></td><td>&#160;&#160;&#160;((var) |= (1 &lt;&lt; (bit)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -164,7 +170,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((var) &amp;= (~(1&lt;&lt;(bit))))</td>
+          <td></td><td>&#160;&#160;&#160;((var) &amp;= (~(1 &lt;&lt; (bit))))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -202,7 +208,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((var) ^= (1&lt;&lt;(bit)))</td>
+          <td></td><td>&#160;&#160;&#160;((var) ^= (1 &lt;&lt; (bit)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -240,7 +246,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(((var) &amp; (1&lt;&lt;(bit))) != 0)</td>
+          <td></td><td>&#160;&#160;&#160;(((var) &amp; (1 &lt;&lt; (bit))) != 0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -354,7 +360,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(~(x) &amp; ((x)+1))</td>
+          <td>&#160;&#160;&#160;(~(x) &amp; ((x) + 1))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -375,7 +381,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;((x) | ((x)+1))</td>
+          <td>&#160;&#160;&#160;((x) | ((x) + 1))</td>
         </tr>
       </table>
 </div><div class="memdoc">

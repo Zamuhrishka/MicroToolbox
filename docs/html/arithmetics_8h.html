@@ -67,8 +67,7 @@ $(document).ready(function(){initNavTree('arithmetics_8h.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 
-<p>Macros for arithmetics operation. <br  />
-  
+<p>Macros for arithmetics operation.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
@@ -87,16 +86,16 @@ Macros</h2></td></tr>
 <tr class="memitem:afa99ec4acc4ecb2dc3c2d05da15d0e3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#afa99ec4acc4ecb2dc3c2d05da15d0e3f">MAX</a>(a,  b)&#160;&#160;&#160;(((a) &gt; (b)) ? (a) : (b))</td></tr>
 <tr class="memdesc:afa99ec4acc4ecb2dc3c2d05da15d0e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macros take the max between <code>a</code> and <code>b</code>.  <a href="arithmetics_8h.html#afa99ec4acc4ecb2dc3c2d05da15d0e3f">More...</a><br /></td></tr>
 <tr class="separator:afa99ec4acc4ecb2dc3c2d05da15d0e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a759a0d4d04feb4b60ed2ef3520169bb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#a759a0d4d04feb4b60ed2ef3520169bb7">MAX_BRANCHLESS</a>(a,  b)&#160;&#160;&#160;((b) &amp; (((a)-(b)) &gt;&gt; 31) | (a) &amp; (~((a)-(b)) &gt;&gt; 31))</td></tr>
+<tr class="memitem:a759a0d4d04feb4b60ed2ef3520169bb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#a759a0d4d04feb4b60ed2ef3520169bb7">MAX_BRANCHLESS</a>(a,  b)&#160;&#160;&#160;((b) &amp; (((a) - (b)) &gt;&gt; 31) | (a) &amp; (~((a) - (b)) &gt;&gt; 31))</td></tr>
 <tr class="memdesc:a759a0d4d04feb4b60ed2ef3520169bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macros take the max between <code>a</code> and <code>b</code> without branch.  <a href="arithmetics_8h.html#a759a0d4d04feb4b60ed2ef3520169bb7">More...</a><br /></td></tr>
 <tr class="separator:a759a0d4d04feb4b60ed2ef3520169bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79a9e539846012abc7a852b8a447140b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#a79a9e539846012abc7a852b8a447140b">IS_EQUAL</a>(a,  b)&#160;&#160;&#160;(((a) ^ (b)) == 0)</td></tr>
 <tr class="memdesc:a79a9e539846012abc7a852b8a447140b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macros test two values for equal.  <a href="arithmetics_8h.html#a79a9e539846012abc7a852b8a447140b">More...</a><br /></td></tr>
 <tr class="separator:a79a9e539846012abc7a852b8a447140b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfbb95b23d920b279e35603d061600df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#abfbb95b23d920b279e35603d061600df">IS_EVEN</a>(num)&#160;&#160;&#160;(((num) &amp; 1) == 1)</td></tr>
+<tr class="memitem:abfbb95b23d920b279e35603d061600df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#abfbb95b23d920b279e35603d061600df">IS_EVEN</a>(num)&#160;&#160;&#160;(((num)&amp;1) == 1)</td></tr>
 <tr class="memdesc:abfbb95b23d920b279e35603d061600df"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macros test number for even.  <a href="arithmetics_8h.html#abfbb95b23d920b279e35603d061600df">More...</a><br /></td></tr>
 <tr class="separator:abfbb95b23d920b279e35603d061600df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89e6a58c06e990fb5aab2b07dad914a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#a89e6a58c06e990fb5aab2b07dad914a5">IS_ODD</a>(num)&#160;&#160;&#160;(!(((num) &amp; 1) == 1))</td></tr>
+<tr class="memitem:a89e6a58c06e990fb5aab2b07dad914a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#a89e6a58c06e990fb5aab2b07dad914a5">IS_ODD</a>(num)&#160;&#160;&#160;(!(((num)&amp;1) == 1))</td></tr>
 <tr class="memdesc:a89e6a58c06e990fb5aab2b07dad914a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macros test number for odd.  <a href="arithmetics_8h.html#a89e6a58c06e990fb5aab2b07dad914a5">More...</a><br /></td></tr>
 <tr class="separator:a89e6a58c06e990fb5aab2b07dad914a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f9718e9caecf296f1f36d1009612a2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#a2f9718e9caecf296f1f36d1009612a2d">INVERT_SIGH</a>(a)&#160;&#160;&#160;((~(a)) + 1)</td></tr>
@@ -114,16 +113,15 @@ Macros</h2></td></tr>
 <tr class="memitem:a413482842186721fc99eada3b5a4eddd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#a413482842186721fc99eada3b5a4eddd">IS_POWER_2</a>(num)&#160;&#160;&#160;(num &amp;&amp; !(num &amp; (num - 1)))</td></tr>
 <tr class="memdesc:a413482842186721fc99eada3b5a4eddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macros test number for power of 2.  <a href="arithmetics_8h.html#a413482842186721fc99eada3b5a4eddd">More...</a><br /></td></tr>
 <tr class="separator:a413482842186721fc99eada3b5a4eddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabd656101afb378450950a563d767424"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#aabd656101afb378450950a563d767424">ROUND_UP</a>(x,  b)&#160;&#160;&#160;((((x) + ((b) - 1)) / (b)) * (b))</td></tr>
+<tr class="memitem:aabd656101afb378450950a563d767424"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#aabd656101afb378450950a563d767424">ROUND_UP</a>(x,  b)&#160;&#160;&#160;((((x) + ((b)-1)) / (b)) * (b))</td></tr>
 <tr class="memdesc:aabd656101afb378450950a563d767424"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro will round a value up to the next 'base'.  <a href="arithmetics_8h.html#aabd656101afb378450950a563d767424">More...</a><br /></td></tr>
 <tr class="separator:aabd656101afb378450950a563d767424"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac212c103af460795f08b9c938eae01b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#ac212c103af460795f08b9c938eae01b2">ROUND_UP_POW_2</a>(x)&#160;&#160;&#160;((_OR32((x) - 1)) + 1)</td></tr>
+<tr class="memitem:ac212c103af460795f08b9c938eae01b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arithmetics_8h.html#ac212c103af460795f08b9c938eae01b2">ROUND_UP_POW_2</a>(x)&#160;&#160;&#160;((_OR32((x)-1)) + 1)</td></tr>
 <tr class="memdesc:ac212c103af460795f08b9c938eae01b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">These macros work together to progressively set each bit below the MSb. set in a 32-bit value. By cascading the macros, we can round any value up to the nearest power-of-2 at compile time.  <a href="arithmetics_8h.html#ac212c103af460795f08b9c938eae01b2">More...</a><br /></td></tr>
 <tr class="separator:ac212c103af460795f08b9c938eae01b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Macros for arithmetics operation. <br  />
- </p>
+<div class="textblock"><p>Macros for arithmetics operation. </p>
 <dl class="section author"><dt>Author</dt><dd>Kovalchuk Alexander (<a href="#" onclick="location.href='mai'+'lto:'+'ali'+'ak'+'san'+'de'+'r.k'+'av'+'alc'+'hu'+'k@g'+'ma'+'il.'+'co'+'m'; return false;">aliak<span style="display: none;">.nosp@m.</span>sand<span style="display: none;">.nosp@m.</span>er.ka<span style="display: none;">.nosp@m.</span>valc<span style="display: none;">.nosp@m.</span>huk@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a3acffbd305ee72dcd4593c0d8af64a4f"></a>
@@ -262,7 +260,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((b) &amp; (((a)-(b)) &gt;&gt; 31) | (a) &amp; (~((a)-(b)) &gt;&gt; 31))</td>
+          <td></td><td>&#160;&#160;&#160;((b) &amp; (((a) - (b)) &gt;&gt; 31) | (a) &amp; (~((a) - (b)) &gt;&gt; 31))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -329,7 +327,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">num</td><td>)</td>
-          <td>&#160;&#160;&#160;(((num) &amp; 1) == 1)</td>
+          <td>&#160;&#160;&#160;(((num)&amp;1) == 1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -356,7 +354,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">num</td><td>)</td>
-          <td>&#160;&#160;&#160;(!(((num) &amp; 1) == 1))</td>
+          <td>&#160;&#160;&#160;(!(((num)&amp;1) == 1))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -561,7 +559,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((((x) + ((b) - 1)) / (b)) * (b))</td>
+          <td></td><td>&#160;&#160;&#160;((((x) + ((b)-1)) / (b)) * (b))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -570,7 +568,7 @@ Macros</h2></td></tr>
 <div class="fragment"><div class="line"><a class="code" href="arithmetics_8h.html#aabd656101afb378450950a563d767424">ROUND_UP</a>(115, 3) = 117</div>
 <div class="line">115/3 = 38.3(3)</div>
 <div class="line">117/3 = 39</div>
-<div class="ttc" id="aarithmetics_8h_html_aabd656101afb378450950a563d767424"><div class="ttname"><a href="arithmetics_8h.html#aabd656101afb378450950a563d767424">ROUND_UP</a></div><div class="ttdeci">#define ROUND_UP(x, b)</div><div class="ttdoc">This macro will round a value up to the next 'base'.</div><div class="ttdef"><b>Definition:</b> arithmetics.h:159</div></div>
+<div class="ttc" id="aarithmetics_8h_html_aabd656101afb378450950a563d767424"><div class="ttname"><a href="arithmetics_8h.html#aabd656101afb378450950a563d767424">ROUND_UP</a></div><div class="ttdeci">#define ROUND_UP(x, b)</div><div class="ttdoc">This macro will round a value up to the next 'base'.</div><div class="ttdef"><b>Definition:</b> arithmetics.h:155</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>base </td></tr>
@@ -593,7 +591,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;((_OR32((x) - 1)) + 1)</td>
+          <td>&#160;&#160;&#160;((_OR32((x)-1)) + 1)</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -13,7 +13,6 @@ So please feel free to use this toolbox and add code to this toolbox if you want
 Structure:
 
 - [align](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/align) - functions and macros which used for data align.
-- [atomic](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/atomic) - functions and macros for atomic operations.
 - [conversion](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/conversion) - functions which used for conversion different data type to each other.
 - [crc](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/crc) - functions for calculate CRC.
 - [delay](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/delay) - functions for time delays.
