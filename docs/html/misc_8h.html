@@ -67,8 +67,7 @@ $(document).ready(function(){initNavTree('misc_8h.html',''); initResizable(); })
 </div><!--header-->
 <div class="contents">
 
-<p>Various useful macros. <br  />
-  
+<p>Various useful macros.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="host_8h_source.html">environment/host.h</a>&quot;</code><br />
 </div>
@@ -76,10 +75,10 @@ $(document).ready(function(){initNavTree('misc_8h.html',''); initResizable(); })
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a70c57aae3eb654e205459b4362c8089a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="misc_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array)&#160;&#160;&#160;(sizeof(array)/sizeof((array)[0]))</td></tr>
+<tr class="memitem:a70c57aae3eb654e205459b4362c8089a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="misc_8h.html#a70c57aae3eb654e205459b4362c8089a">ARRAY_SIZE</a>(array)&#160;&#160;&#160;(sizeof(array) / sizeof((array)[0]))</td></tr>
 <tr class="memdesc:a70c57aae3eb654e205459b4362c8089a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements in an array.  <a href="misc_8h.html#a70c57aae3eb654e205459b4362c8089a">More...</a><br /></td></tr>
 <tr class="separator:a70c57aae3eb654e205459b4362c8089a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a562b5123bcb156071136bf92aa2f5a26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="misc_8h.html#a562b5123bcb156071136bf92aa2f5a26">offsetof</a>(_t,  _m)&#160;&#160;&#160;((size_t) &amp;((_t *) 0)-&gt;_m)</td></tr>
+<tr class="memitem:a562b5123bcb156071136bf92aa2f5a26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="misc_8h.html#a562b5123bcb156071136bf92aa2f5a26">offsetof</a>(_t,  _m)&#160;&#160;&#160;((size_t) &amp; ((_t*)0)-&gt;_m)</td></tr>
 <tr class="memdesc:a562b5123bcb156071136bf92aa2f5a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro calculates the offset into a structure of a particular member. Most compilers have this built in, or as part of <code>stddef.h</code>, but just when you need it, it isn't there.  <a href="misc_8h.html#a562b5123bcb156071136bf92aa2f5a26">More...</a><br /></td></tr>
 <tr class="separator:a562b5123bcb156071136bf92aa2f5a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb5d109b14809e8b84360d83e291141c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="misc_8h.html#acb5d109b14809e8b84360d83e291141c">container_of</a>(_p,  _t,  _m)</td></tr>
@@ -93,8 +92,7 @@ Macros</h2></td></tr>
 <tr class="separator:a5fccb4fc71e44089a1b1a77fc76c0b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Various useful macros. <br  />
- </p>
+<div class="textblock"><p>Various useful macros. </p>
 <dl class="section author"><dt>Author</dt><dd>Kovalchuk Alexander (<a href="#" onclick="location.href='mai'+'lto:'+'ali'+'ak'+'san'+'de'+'r.k'+'av'+'alc'+'hu'+'k@g'+'ma'+'il.'+'co'+'m'; return false;">aliak<span style="display: none;">.nosp@m.</span>sand<span style="display: none;">.nosp@m.</span>er.ka<span style="display: none;">.nosp@m.</span>valc<span style="display: none;">.nosp@m.</span>huk@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a70c57aae3eb654e205459b4362c8089a"></a>
@@ -108,7 +106,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">array</td><td>)</td>
-          <td>&#160;&#160;&#160;(sizeof(array)/sizeof((array)[0]))</td>
+          <td>&#160;&#160;&#160;(sizeof(array) / sizeof((array)[0]))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -145,7 +143,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((size_t) &amp;((_t *) 0)-&gt;_m)</td>
+          <td></td><td>&#160;&#160;&#160;((size_t) &amp; ((_t*)0)-&gt;_m)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -193,11 +191,11 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                        ({                                                   \</div>
-<div class="line">                                            const __typeof__(((_t *) 0)-&gt;_m) * __mptr = (_p);\</div>
-<div class="line">                                            (_t *) ((<span class="keywordtype">char</span> *) __mptr - <a class="code" href="misc_8h.html#a562b5123bcb156071136bf92aa2f5a26">offsetof</a>(_t, _m));     \</div>
-<div class="line">                                        })</div>
-<div class="ttc" id="amisc_8h_html_a562b5123bcb156071136bf92aa2f5a26"><div class="ttname"><a href="misc_8h.html#a562b5123bcb156071136bf92aa2f5a26">offsetof</a></div><div class="ttdeci">#define offsetof(_t, _m)</div><div class="ttdoc">This macro calculates the offset into a structure of a particular member. Most compilers have this bu...</div><div class="ttdef"><b>Definition:</b> misc.h:41</div></div>
+<b>Value:</b><div class="fragment"><div class="line">        ({                                                 \</div>
+<div class="line">            const __typeof__(((_t*)0)-&gt;_m)* __mptr = (_p); \</div>
+<div class="line">            (_t*)((<span class="keywordtype">char</span>*)__mptr - <a class="code" href="misc_8h.html#a562b5123bcb156071136bf92aa2f5a26">offsetof</a>(_t, _m));       \</div>
+<div class="line">        })</div>
+<div class="ttc" id="amisc_8h_html_a562b5123bcb156071136bf92aa2f5a26"><div class="ttname"><a href="misc_8h.html#a562b5123bcb156071136bf92aa2f5a26">offsetof</a></div><div class="ttdeci">#define offsetof(_t, _m)</div><div class="ttdoc">This macro calculates the offset into a structure of a particular member. Most compilers have this bu...</div><div class="ttdef"><b>Definition:</b> misc.h:36</div></div>
 </div><!-- fragment -->
 <p>This macro can be used to return a pointer to a top-level structure given a pointer to an intermediate value. </p>
 <dl class="params"><dt>Parameters</dt><dd>

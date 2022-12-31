@@ -67,8 +67,7 @@ $(document).ready(function(){initNavTree('guard_8h.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 
-<p>Guard macros. <br  />
-  
+<p>Guard macros.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="misc_8h_source.html">misc.h</a>&quot;</code><br />
 </div>
@@ -76,24 +75,23 @@ $(document).ready(function(){initNavTree('guard_8h.html',''); initResizable(); }
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ab3337c57078358ca9e78dbf3f0048859"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guard_8h.html#ab3337c57078358ca9e78dbf3f0048859">STATIC_ASSERT</a>(COND,  MSG)&#160;&#160;&#160;        typedef char static_assertion_##MSG[(COND) ? 1 : -1]</td></tr>
+<tr class="memitem:ab3337c57078358ca9e78dbf3f0048859"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guard_8h.html#ab3337c57078358ca9e78dbf3f0048859">STATIC_ASSERT</a>(COND,  MSG)&#160;&#160;&#160;typedef char static_assertion_##MSG[(COND) ? 1 : -1]</td></tr>
 <tr class="memdesc:ab3337c57078358ca9e78dbf3f0048859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static assert.  <a href="guard_8h.html#ab3337c57078358ca9e78dbf3f0048859">More...</a><br /></td></tr>
 <tr class="separator:ab3337c57078358ca9e78dbf3f0048859"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa33a92f93d2fc4d726f4b9701921e7d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guard_8h.html#aa33a92f93d2fc4d726f4b9701921e7d5">GuardStructSize</a>(st,  sz)&#160;&#160;&#160;        typedef uint8_t GuardStructSize##st##_header[(sizeof( st) == (sz)) ? 1:-1]</td></tr>
+<tr class="memitem:aa33a92f93d2fc4d726f4b9701921e7d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guard_8h.html#aa33a92f93d2fc4d726f4b9701921e7d5">GuardStructSize</a>(st,  sz)&#160;&#160;&#160;typedef uint8_t GuardStructSize##st##_header[(sizeof(st) == (sz)) ? 1 : -1]</td></tr>
 <tr class="memdesc:aa33a92f93d2fc4d726f4b9701921e7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check size of struct on compile time.  <a href="guard_8h.html#aa33a92f93d2fc4d726f4b9701921e7d5">More...</a><br /></td></tr>
 <tr class="separator:aa33a92f93d2fc4d726f4b9701921e7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dd43cfa91faabd8e5b0d0ac6885f417"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guard_8h.html#a1dd43cfa91faabd8e5b0d0ac6885f417">GuardStructSizeMultiple</a>(st,  sz)&#160;&#160;&#160;        typedef uint8_t GuardStructSizeMultiple##st##_header[((sizeof( st) % (sz)) == 0) ? 1:-1]</td></tr>
+<tr class="memitem:a1dd43cfa91faabd8e5b0d0ac6885f417"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guard_8h.html#a1dd43cfa91faabd8e5b0d0ac6885f417">GuardStructSizeMultiple</a>(st,  sz)&#160;&#160;&#160;    typedef uint8_t GuardStructSizeMultiple##st##_header[((sizeof(st) % (sz)) == 0) ? 1 : -1]</td></tr>
 <tr class="memdesc:a1dd43cfa91faabd8e5b0d0ac6885f417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that size of struct is divide on <code>sz</code>  <a href="guard_8h.html#a1dd43cfa91faabd8e5b0d0ac6885f417">More...</a><br /></td></tr>
 <tr class="separator:a1dd43cfa91faabd8e5b0d0ac6885f417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c380e044b99196b8c07df5015d5aac1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guard_8h.html#a9c380e044b99196b8c07df5015d5aac1">GuardStructOffset</a>(st,  mb,  os)&#160;&#160;&#160;        typedef uint8_t GuardStructOffset##st##mb_header[(<a class="el" href="misc_8h.html#a562b5123bcb156071136bf92aa2f5a26">offsetof</a>( st,mb) == os) ? 1: -1]</td></tr>
+<tr class="memitem:a9c380e044b99196b8c07df5015d5aac1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guard_8h.html#a9c380e044b99196b8c07df5015d5aac1">GuardStructOffset</a>(st,  mb,  os)&#160;&#160;&#160;    typedef uint8_t GuardStructOffset##st##mb_header[(<a class="el" href="misc_8h.html#a562b5123bcb156071136bf92aa2f5a26">offsetof</a>(st, mb) == os) ? 1 : -1]</td></tr>
 <tr class="memdesc:a9c380e044b99196b8c07df5015d5aac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that offset of struct member equal <code>os</code>  <a href="guard_8h.html#a9c380e044b99196b8c07df5015d5aac1">More...</a><br /></td></tr>
 <tr class="separator:a9c380e044b99196b8c07df5015d5aac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ab84987f86ad121f1b5cf39490f2b28"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guard_8h.html#a2ab84987f86ad121f1b5cf39490f2b28">GuardEnumEntries</a>(st,  cnt,  max_cnt)&#160;&#160;&#160;        typedef uint8_t GuardEnumEntries##st##_header[(( cnt) &lt;= (max_cnt)) ? 1:-1]</td></tr>
+<tr class="memitem:a2ab84987f86ad121f1b5cf39490f2b28"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="guard_8h.html#a2ab84987f86ad121f1b5cf39490f2b28">GuardEnumEntries</a>(st,  cnt,  max_cnt)&#160;&#160;&#160;typedef uint8_t GuardEnumEntries##st##_header[((cnt) &lt;= (max_cnt)) ? 1 : -1]</td></tr>
 <tr class="separator:a2ab84987f86ad121f1b5cf39490f2b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Guard macros. <br  />
- </p>
+<div class="textblock"><p>Guard macros. </p>
 <dl class="section author"><dt>Author</dt><dd>Kovalchuk Alexander (<a href="#" onclick="location.href='mai'+'lto:'+'ali'+'ak'+'san'+'de'+'r.k'+'av'+'alc'+'hu'+'k@g'+'ma'+'il.'+'co'+'m'; return false;">aliak<span style="display: none;">.nosp@m.</span>sand<span style="display: none;">.nosp@m.</span>er.ka<span style="display: none;">.nosp@m.</span>valc<span style="display: none;">.nosp@m.</span>huk@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ab3337c57078358ca9e78dbf3f0048859"></a>
@@ -117,7 +115,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;        typedef char static_assertion_##MSG[(COND) ? 1 : -1]</td>
+          <td></td><td>&#160;&#160;&#160;typedef char static_assertion_##MSG[(COND) ? 1 : -1]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -154,7 +152,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;        typedef uint8_t GuardStructSize##st##_header[(sizeof( st) == (sz)) ? 1:-1]</td>
+          <td></td><td>&#160;&#160;&#160;typedef uint8_t GuardStructSize##st##_header[(sizeof(st) == (sz)) ? 1 : -1]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -174,7 +172,7 @@ Macros</h2></td></tr>
 <div class="line">        uint8_t     res;</div>
 <div class="line">} CustomStruct_t;</div>
 <div class="line"><a class="code" href="guard_8h.html#aa33a92f93d2fc4d726f4b9701921e7d5">GuardStructSize</a>(CustomStruct_t, 4);</div>
-<div class="ttc" id="aguard_8h_html_aa33a92f93d2fc4d726f4b9701921e7d5"><div class="ttname"><a href="guard_8h.html#aa33a92f93d2fc4d726f4b9701921e7d5">GuardStructSize</a></div><div class="ttdeci">#define GuardStructSize(st, sz)</div><div class="ttdoc">Check size of struct on compile time.</div><div class="ttdef"><b>Definition:</b> guard.h:47</div></div>
+<div class="ttc" id="aguard_8h_html_aa33a92f93d2fc4d726f4b9701921e7d5"><div class="ttname"><a href="guard_8h.html#aa33a92f93d2fc4d726f4b9701921e7d5">GuardStructSize</a></div><div class="ttdeci">#define GuardStructSize(st, sz)</div><div class="ttdoc">Check size of struct on compile time.</div><div class="ttdef"><b>Definition:</b> guard.h:41</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -199,7 +197,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;        typedef uint8_t GuardStructSizeMultiple##st##_header[((sizeof( st) % (sz)) == 0) ? 1:-1]</td>
+          <td></td><td>&#160;&#160;&#160;    typedef uint8_t GuardStructSizeMultiple##st##_header[((sizeof(st) % (sz)) == 0) ? 1 : -1]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -220,7 +218,7 @@ Macros</h2></td></tr>
 <div class="line">} CustomStruct_t;</div>
 <div class="line"><a class="code" href="guard_8h.html#aa33a92f93d2fc4d726f4b9701921e7d5">GuardStructSize</a>(CustomStruct_t, 4);</div>
 <div class="line"><a class="code" href="guard_8h.html#a1dd43cfa91faabd8e5b0d0ac6885f417">GuardStructSizeMultiple</a>(CustomStruct_t, 4);</div>
-<div class="ttc" id="aguard_8h_html_a1dd43cfa91faabd8e5b0d0ac6885f417"><div class="ttname"><a href="guard_8h.html#a1dd43cfa91faabd8e5b0d0ac6885f417">GuardStructSizeMultiple</a></div><div class="ttdeci">#define GuardStructSizeMultiple(st, sz)</div><div class="ttdoc">Check that size of struct is divide on sz</div><div class="ttdef"><b>Definition:</b> guard.h:67</div></div>
+<div class="ttc" id="aguard_8h_html_a1dd43cfa91faabd8e5b0d0ac6885f417"><div class="ttname"><a href="guard_8h.html#a1dd43cfa91faabd8e5b0d0ac6885f417">GuardStructSizeMultiple</a></div><div class="ttdeci">#define GuardStructSizeMultiple(st, sz)</div><div class="ttdoc">Check that size of struct is divide on sz</div><div class="ttdef"><b>Definition:</b> guard.h:60</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -251,7 +249,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;        typedef uint8_t GuardStructOffset##st##mb_header[(<a class="el" href="misc_8h.html#a562b5123bcb156071136bf92aa2f5a26">offsetof</a>( st,mb) == os) ? 1: -1]</td>
+          <td></td><td>&#160;&#160;&#160;    typedef uint8_t GuardStructOffset##st##mb_header[(<a class="el" href="misc_8h.html#a562b5123bcb156071136bf92aa2f5a26">offsetof</a>(st, mb) == os) ? 1 : -1]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -275,7 +273,7 @@ Macros</h2></td></tr>
 <div class="line"><a class="code" href="guard_8h.html#a9c380e044b99196b8c07df5015d5aac1">GuardStructOffset</a>(CustomStruct_t, <span class="keywordtype">id</span>,        0);</div>
 <div class="line"><a class="code" href="guard_8h.html#a9c380e044b99196b8c07df5015d5aac1">GuardStructOffset</a>(CustomStruct_t, tag,       1);</div>
 <div class="line"><a class="code" href="guard_8h.html#a9c380e044b99196b8c07df5015d5aac1">GuardStructOffset</a>(CustomStruct_t, isValid,   2);</div>
-<div class="ttc" id="aguard_8h_html_a9c380e044b99196b8c07df5015d5aac1"><div class="ttname"><a href="guard_8h.html#a9c380e044b99196b8c07df5015d5aac1">GuardStructOffset</a></div><div class="ttdeci">#define GuardStructOffset(st, mb, os)</div><div class="ttdoc">Check that offset of struct member equal os</div><div class="ttdef"><b>Definition:</b> guard.h:90</div></div>
+<div class="ttc" id="aguard_8h_html_a9c380e044b99196b8c07df5015d5aac1"><div class="ttname"><a href="guard_8h.html#a9c380e044b99196b8c07df5015d5aac1">GuardStructOffset</a></div><div class="ttdeci">#define GuardStructOffset(st, mb, os)</div><div class="ttdoc">Check that offset of struct member equal os</div><div class="ttdef"><b>Definition:</b> guard.h:83</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -306,12 +304,12 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;        typedef uint8_t GuardEnumEntries##st##_header[(( cnt) &lt;= (max_cnt)) ? 1:-1]</td>
+          <td></td><td>&#160;&#160;&#160;typedef uint8_t GuardEnumEntries##st##_header[((cnt) &lt;= (max_cnt)) ? 1 : -1]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a class="code" href="guard_8h.html#a2ab84987f86ad121f1b5cf39490f2b28">GuardEnumEntries</a>(MdData, <span class="keyword">sizeof</span>(MdData), 0x40000 - 0x40);</div>
-<div class="ttc" id="aguard_8h_html_a2ab84987f86ad121f1b5cf39490f2b28"><div class="ttname"><a href="guard_8h.html#a2ab84987f86ad121f1b5cf39490f2b28">GuardEnumEntries</a></div><div class="ttdeci">#define GuardEnumEntries(st, cnt, max_cnt)</div><div class="ttdef"><b>Definition:</b> guard.h:102</div></div>
+<div class="ttc" id="aguard_8h_html_a2ab84987f86ad121f1b5cf39490f2b28"><div class="ttname"><a href="guard_8h.html#a2ab84987f86ad121f1b5cf39490f2b28">GuardEnumEntries</a></div><div class="ttdeci">#define GuardEnumEntries(st, cnt, max_cnt)</div><div class="ttdef"><b>Definition:</b> guard.h:95</div></div>
 </div><!-- fragment --><p>The following is to ensure that we have at least <code>0x40</code> byte padding at the end </p>
 
 </div>

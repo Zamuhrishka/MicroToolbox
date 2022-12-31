@@ -67,37 +67,35 @@ $(document).ready(function(){initNavTree('align_8h.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 
-<p>This file contains the prototypes functions and macros which used for data align. <br  />
-  
+<p>This file contains the prototypes functions and macros which used for data align.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &lt;stdbool.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="compiler_8h_source.html">compiler.h</a>&quot;</code><br />
 </div>
 <p><a href="align_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a5a7467e27d986c23d290d188d6b28ca0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="align_8h.html#a5a7467e27d986c23d290d188d6b28ca0">ALIGN</a>(A)&#160;&#160;&#160;(__attribute__ ((aligned (A))))</td></tr>
+<tr class="memitem:a5a7467e27d986c23d290d188d6b28ca0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="align_8h.html#a5a7467e27d986c23d290d188d6b28ca0">ALIGN</a>(A)&#160;&#160;&#160;(__attribute__((aligned(A))))</td></tr>
 <tr class="memdesc:a5a7467e27d986c23d290d188d6b28ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macros which forces a variable to always be aligned.  <a href="align_8h.html#a5a7467e27d986c23d290d188d6b28ca0">More...</a><br /></td></tr>
 <tr class="separator:a5a7467e27d986c23d290d188d6b28ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa48e735f25611db9badf709c44cd826"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="align_8h.html#afa48e735f25611db9badf709c44cd826">CACHE_LINE_ALIGN__STATIC</a>(T,  N,  A)&#160;&#160;&#160;        __attribute__ ((aligned (A))) typedef struct { T d; uint8_t p[(A) - (sizeof(T) % (A))]; } T##Full_t; static T##Full_t N</td></tr>
+<tr class="memitem:afa48e735f25611db9badf709c44cd826"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="align_8h.html#afa48e735f25611db9badf709c44cd826">CACHE_LINE_ALIGN__STATIC</a>(T,  N,  A)</td></tr>
 <tr class="memdesc:afa48e735f25611db9badf709c44cd826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrap the given structure into a padded, aligned structure and instantiate a static copy of it.  <a href="align_8h.html#afa48e735f25611db9badf709c44cd826">More...</a><br /></td></tr>
 <tr class="separator:afa48e735f25611db9badf709c44cd826"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16747b9a224662fff8767d42bf95dc05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="align_8h.html#a16747b9a224662fff8767d42bf95dc05">CACHE_LINE_ALIGN__TYPE</a>(T,  N,  A)&#160;&#160;&#160;        __attribute__ ((aligned ((A)))) typedef struct { T d; uint8_t p[(A) - (sizeof(T) % (A))]; } T##Full_t; extern T##Full_t N</td></tr>
+<tr class="memitem:a16747b9a224662fff8767d42bf95dc05"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="align_8h.html#a16747b9a224662fff8767d42bf95dc05">CACHE_LINE_ALIGN__TYPE</a>(T,  N,  A)</td></tr>
 <tr class="memdesc:a16747b9a224662fff8767d42bf95dc05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of aligned non-static structure.  <a href="align_8h.html#a16747b9a224662fff8767d42bf95dc05">More...</a><br /></td></tr>
 <tr class="separator:a16747b9a224662fff8767d42bf95dc05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad84bb111ec40912b979a837125eacc42"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="align_8h.html#ad84bb111ec40912b979a837125eacc42">CACHE_LINE_ALIGN__INST</a>(T,  N)&#160;&#160;&#160;T##Full_t N</td></tr>
 <tr class="memdesc:ad84bb111ec40912b979a837125eacc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate of aligned non-static structure.  <a href="align_8h.html#ad84bb111ec40912b979a837125eacc42">More...</a><br /></td></tr>
 <tr class="separator:ad84bb111ec40912b979a837125eacc42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73ca12b2efc02bc9ec33cd85185a3256"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">CACHE_ALIGN_STRUCT</a>(A)&#160;&#160;&#160;        struct { uint8_t pad[0]; } STRCONCATHELPER(align, __LINE__) __attribute__ ((aligned ((A))))</td></tr>
+<tr class="memitem:a73ca12b2efc02bc9ec33cd85185a3256"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">CACHE_ALIGN_STRUCT</a>(A)</td></tr>
 <tr class="memdesc:a73ca12b2efc02bc9ec33cd85185a3256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forces alignment of elements within a user defined type (ADT). You can use this macro to separate uncached and cached areas.  <a href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">More...</a><br /></td></tr>
 <tr class="separator:a73ca12b2efc02bc9ec33cd85185a3256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file contains the prototypes functions and macros which used for data align. <br  />
- </p>
+<div class="textblock"><p>This file contains the prototypes functions and macros which used for data align. </p>
 <dl class="section author"><dt>Author</dt><dd>Kovalchuk Alexander (<a href="#" onclick="location.href='mai'+'lto:'+'ali'+'ak'+'san'+'de'+'r.k'+'av'+'alc'+'hu'+'k@g'+'ma'+'il.'+'co'+'m'; return false;">aliak<span style="display: none;">.nosp@m.</span>sand<span style="display: none;">.nosp@m.</span>er.ka<span style="display: none;">.nosp@m.</span>valc<span style="display: none;">.nosp@m.</span>huk@g<span style="display: none;">.nosp@m.</span>mail<span style="display: none;">.nosp@m.</span>.com</a>) </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a5a7467e27d986c23d290d188d6b28ca0"></a>
@@ -111,7 +109,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">A</td><td>)</td>
-          <td>&#160;&#160;&#160;(__attribute__ ((aligned (A))))</td>
+          <td>&#160;&#160;&#160;(__attribute__((aligned(A))))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -153,11 +151,17 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;        __attribute__ ((aligned (A))) typedef struct { T d; uint8_t p[(A) - (sizeof(T) % (A))]; } T##Full_t; static T##Full_t N</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Value:</b><div class="fragment"><div class="line">    __attribute__((aligned(A))) <span class="keyword">typedef</span> <span class="keyword">struct </span>\</div>
+<div class="line">    {                                          \</div>
+<div class="line">        T d;                                   \</div>
+<div class="line">        uint8_t p[(A) - (<span class="keyword">sizeof</span>(T) % (A))];    \</div>
+<div class="line">    } T##Full_t;                               \</div>
+<div class="line">    static T##Full_t N</div>
+</div><!-- fragment -->
 <p>Wrap the given structure into a padded, aligned structure and instantiate a static copy of it. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -173,7 +177,7 @@ Macros</h2></td></tr>
 <div class="line">} BssContextData_t;</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="align_8h.html#afa48e735f25611db9badf709c44cd826">CACHE_LINE_ALIGN__STATIC</a>(BssContextData_t, bssData, 32);</div>
-<div class="ttc" id="aalign_8h_html_afa48e735f25611db9badf709c44cd826"><div class="ttname"><a href="align_8h.html#afa48e735f25611db9badf709c44cd826">CACHE_LINE_ALIGN__STATIC</a></div><div class="ttdeci">#define CACHE_LINE_ALIGN__STATIC(T, N, A)</div><div class="ttdoc">Wrap the given structure into a padded, aligned structure and instantiate a static copy of it.</div><div class="ttdef"><b>Definition:</b> align.h:60</div></div>
+<div class="ttc" id="aalign_8h_html_afa48e735f25611db9badf709c44cd826"><div class="ttname"><a href="align_8h.html#afa48e735f25611db9badf709c44cd826">CACHE_LINE_ALIGN__STATIC</a></div><div class="ttdeci">#define CACHE_LINE_ALIGN__STATIC(T, N, A)</div><div class="ttdoc">Wrap the given structure into a padded, aligned structure and instantiate a static copy of it.</div><div class="ttdef"><b>Definition:</b> align.h:56</div></div>
 </div><!-- fragment --><p>The data can then be access as per this example:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">return</span> bssData.d.pDevContext;</div>
 </div><!-- fragment --> 
@@ -206,11 +210,17 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;        __attribute__ ((aligned ((A)))) typedef struct { T d; uint8_t p[(A) - (sizeof(T) % (A))]; } T##Full_t; extern T##Full_t N</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Value:</b><div class="fragment"><div class="line">    __attribute__((aligned((A)))) <span class="keyword">typedef</span> <span class="keyword">struct </span>\</div>
+<div class="line">    {                                            \</div>
+<div class="line">        T d;                                     \</div>
+<div class="line">        uint8_t p[(A) - (<span class="keyword">sizeof</span>(T) % (A))];      \</div>
+<div class="line">    } T##Full_t;                                 \</div>
+<div class="line">    extern T##Full_t N</div>
+</div><!-- fragment -->
 <p>Definition of aligned non-static structure. </p>
 <p>The <code>TYPE</code> macro defines the padded structure type and externs it so that it can be accessed from any file including the header.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -273,11 +283,15 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">A</td><td>)</td>
-          <td>&#160;&#160;&#160;        struct { uint8_t pad[0]; } STRCONCATHELPER(align, __LINE__) __attribute__ ((aligned ((A))))</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keyword">struct                    </span>\</div>
+<div class="line">    {                         \</div>
+<div class="line">        uint8_t pad[0];       \</div>
+<div class="line">    } STRCONCATHELPER(align, __LINE__) __attribute__((aligned((A))))</div>
+</div><!-- fragment -->
 <p>Forces alignment of elements within a user defined type (ADT). You can use this macro to separate uncached and cached areas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -292,8 +306,8 @@ Macros</h2></td></tr>
 <div class="line">     uint8_t data2;</div>
 <div class="line">     <a class="code" href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">CACHE_ALIGN_STRUCT</a>(32);</div>
 <div class="line">     uint8_t data3;</div>
-<div class="line">} SomeData_t; </div>
-<div class="ttc" id="aalign_8h_html_a73ca12b2efc02bc9ec33cd85185a3256"><div class="ttname"><a href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">CACHE_ALIGN_STRUCT</a></div><div class="ttdeci">#define CACHE_ALIGN_STRUCT(A)</div><div class="ttdoc">Forces alignment of elements within a user defined type (ADT). You can use this macro to separate unc...</div><div class="ttdef"><b>Definition:</b> align.h:105</div></div>
+<div class="line">} SomeData_t;</div>
+<div class="ttc" id="aalign_8h_html_a73ca12b2efc02bc9ec33cd85185a3256"><div class="ttname"><a href="align_8h.html#a73ca12b2efc02bc9ec33cd85185a3256">CACHE_ALIGN_STRUCT</a></div><div class="ttdeci">#define CACHE_ALIGN_STRUCT(A)</div><div class="ttdoc">Forces alignment of elements within a user defined type (ADT). You can use this macro to separate unc...</div><div class="ttdef"><b>Definition:</b> align.h:112</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

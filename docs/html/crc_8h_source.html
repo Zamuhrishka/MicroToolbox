@@ -67,41 +67,33 @@ $(document).ready(function(){initNavTree('crc_8h_source.html',''); initResizable
 <a href="crc_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/* C++ detection */</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//_____ I N C L U D E S _______________________________________________________</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//_____ C O N F I G S  ________________________________________________________</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//_____ D E F I N I T I O N S _________________________________________________</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//_____ M A C R O S ___________________________________________________________</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//_____ V A R I A B L E S _____________________________________________________</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//_____ P U B L I C  F U N C T I O N S_________________________________________</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="crc_8h.html#a13db8fd9318f160ab0af16835a832812">   35</a></span>&#160;<span class="comment"></span>uint8_t <a class="code" href="crc_8h.html#a13db8fd9318f160ab0af16835a832812">crc8</a>(<span class="keyword">const</span> uint8_t *pcBlock, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#if defined(CRC8_TABLE)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;uint8_t crc8_table(<span class="keyword">const</span> uint8_t *pcBlock, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="crc_8h.html#a5d8eb00eebaa65655774d267323b5a28">   67</a></span>&#160;uint16_t <a class="code" href="crc_8h.html#a5d8eb00eebaa65655774d267323b5a28">crc16</a>(<span class="keyword">const</span> uint8_t *pcBlock, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#if defined(CRC16_TABLE)</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;uint16_t crc16_table(<span class="keyword">const</span> uint8_t *pcBlock, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="crc_8h.html#a120ab36d168b6251533d8d24e8fa432f">  100</a></span>&#160;uint_least32_t <a class="code" href="crc_8h.html#a120ab36d168b6251533d8d24e8fa432f">crc32</a>(<span class="keyword">const</span> uint8_t * buf, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#if defined(CRC32_TABLE)</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;uint_least32_t crc32_table(<span class="keyword">const</span> uint8_t *buf, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">/* C++ detection */</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//_____ I N C L U D E S _______________________________________________________</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//_____ C O N F I G S  ________________________________________________________</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//_____ D E F I N I T I O N S _________________________________________________</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//_____ M A C R O S ___________________________________________________________</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//_____ V A R I A B L E S _____________________________________________________</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//_____ P U B L I C  F U N C T I O N S_________________________________________</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="crc_8h.html#a13db8fd9318f160ab0af16835a832812">   32</a></span>&#160;<span class="comment"></span>uint8_t <a class="code" href="crc_8h.html#a13db8fd9318f160ab0af16835a832812">crc8</a>(<span class="keyword">const</span> uint8_t* pcBlock, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#if defined(CRC8_TABLE)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;uint8_t crc8_table(<span class="keyword">const</span> uint8_t* pcBlock, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="crc_8h.html#a5d8eb00eebaa65655774d267323b5a28">   64</a></span>&#160;uint16_t <a class="code" href="crc_8h.html#a5d8eb00eebaa65655774d267323b5a28">crc16</a>(<span class="keyword">const</span> uint8_t* pcBlock, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#if defined(CRC16_TABLE)</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;uint16_t crc16_table(<span class="keyword">const</span> uint8_t* pcBlock, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="crc_8h.html#a120ab36d168b6251533d8d24e8fa432f">   97</a></span>&#160;uint_least32_t <a class="code" href="crc_8h.html#a120ab36d168b6251533d8d24e8fa432f">crc32</a>(<span class="keyword">const</span> uint8_t* buf, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#if defined(CRC32_TABLE)</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;uint_least32_t crc32_table(<span class="keyword">const</span> uint8_t* buf, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="acrc_8h_html_a120ab36d168b6251533d8d24e8fa432f"><div class="ttname"><a href="crc_8h.html#a120ab36d168b6251533d8d24e8fa432f">crc32</a></div><div class="ttdeci">uint_least32_t crc32(const uint8_t *buf, size_t len)</div><div class="ttdoc">This function calculate checksum CRC-32-IEEE 802.3.</div></div>
 <div class="ttc" id="acrc_8h_html_a13db8fd9318f160ab0af16835a832812"><div class="ttname"><a href="crc_8h.html#a13db8fd9318f160ab0af16835a832812">crc8</a></div><div class="ttdeci">uint8_t crc8(const uint8_t *pcBlock, size_t len)</div><div class="ttdoc">This function calculate checksum CRC-8-Dallas/Maxim.</div></div>
 <div class="ttc" id="acrc_8h_html_a5d8eb00eebaa65655774d267323b5a28"><div class="ttname"><a href="crc_8h.html#a5d8eb00eebaa65655774d267323b5a28">crc16</a></div><div class="ttdeci">uint16_t crc16(const uint8_t *pcBlock, size_t len)</div><div class="ttdoc">This function calculate checksum CRC-16-CCITT.</div></div>
