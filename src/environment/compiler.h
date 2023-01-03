@@ -11,7 +11,9 @@
 //_____ C O N F I G S  ________________________________________________________
 
 //_____ D E F I N I T I O N S _________________________________________________
-#if (defined(__GCC__))
+#if defined(__clang__)
+
+#elif defined(__GNUC__) || defined(__GNUG__)
     /// Request GCC make function always inline
     #define __inline__ __inline__ __attribute__((always_inline))
 
