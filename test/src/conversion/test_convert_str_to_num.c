@@ -1,7 +1,7 @@
 /**
 * \file         test_convert_str_to_num.c
 * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
-* \brief        This file contains unit tests for convert string to number functions, 
+* \brief        This file contains unit tests for convert string to number functions,
 *               from @conversion.c file
 */
 
@@ -26,15 +26,15 @@
  */
 void test_ConvertStrToU8(void)
 {
-	uint8_t expected[] = {0, 1, 12, 123, 255};
-	uint8_t current = 0;
-	char* str[] = {"0", "1", "12", "123", "255"};
+    uint8_t expected[] = {0, 1, 12, 123, 255};
+    uint8_t current = 0;
+    char* str[] = {"0", "1", "12", "123", "255"};
 
-	for (size_t i = 0; i < sizeof(expected)/sizeof(uint8_t); i++)
-	{
-		current = convert_str_to_u8(str[i]);
-		TEST_ASSERT_EQUAL_INT(current, expected[i]);
-	}
+    for (size_t i = 0; i < sizeof(expected)/sizeof(uint8_t); i++)
+    {
+        current = convert_str_to_u8(str[i]);
+        TEST_ASSERT_EQUAL_INT(current, expected[i]);
+    }
 }
 
 /**
@@ -42,15 +42,15 @@ void test_ConvertStrToU8(void)
  */
 void test_ConvertStrToI8(void)
 {
-	int8_t expected[] = {-127, -89, -6, 0, 3, 42, 127};
-	int8_t current = 0;
-	char* str[] = {"-127", "-89", "-6", "0", "3", "42", "127"};
+    int8_t expected[] = {-127, -89, -6, 0, 3, 42, 127};
+    int8_t current = 0;
+    char* str[] = {"-127", "-89", "-6", "0", "3", "42", "127"};
 
-	for (size_t i = 0; i < sizeof(expected)/sizeof(uint8_t); i++)
-	{
-		current = convert_str_to_i8(str[i]);
-		TEST_ASSERT_EQUAL_INT(current, expected[i]);
-	}
+    for (size_t i = 0; i < sizeof(expected)/sizeof(uint8_t); i++)
+    {
+        current = convert_str_to_i8(str[i]);
+        TEST_ASSERT_EQUAL_INT(current, expected[i]);
+    }
 }
 
 /**
@@ -58,15 +58,15 @@ void test_ConvertStrToI8(void)
  */
 void test_ConvertStrToU16(void)
 {
-	uint16_t expected[] = {0, 1, 12, 123, 1234, 65535};
-	uint16_t current = 0;
-	char* str[] = {"0", "1", "12", "123", "1234", "65535"};
+    uint16_t expected[] = {0, 1, 12, 123, 1234, 65535};
+    uint16_t current = 0;
+    char* str[] = {"0", "1", "12", "123", "1234", "65535"};
 
-	for (size_t i = 0; i < sizeof(expected)/sizeof(uint16_t); i++)
-	{
-		current = convert_str_to_u16(str[i]);
-		TEST_ASSERT_EQUAL_INT(current, expected[i]);
-	}
+    for (size_t i = 0; i < sizeof(expected)/sizeof(uint16_t); i++)
+    {
+        current = convert_str_to_u16(str[i]);
+        TEST_ASSERT_EQUAL_INT(current, expected[i]);
+    }
 }
 
 /**
@@ -74,15 +74,15 @@ void test_ConvertStrToU16(void)
  */
 void test_ConvertStrToI16(void)
 {
-	uint16_t expected[] = {-32767, -1234, -123, -12, -1, 0, 1, 12, 123, 1234, 32767};
-	uint16_t current = 0;
-	char* str[] = {"-32767", "-1234", "-123", "-12", "-1", "0", "1", "12", "123", "1234", "32767"};
+    uint16_t expected[] = {-32767, -1234, -123, -12, -1, 0, 1, 12, 123, 1234, 32767};
+    uint16_t current = 0;
+    char* str[] = {"-32767", "-1234", "-123", "-12", "-1", "0", "1", "12", "123", "1234", "32767"};
 
-	for (size_t i = 0; i < sizeof(expected)/sizeof(int16_t); i++)
-	{
-		current = convert_str_to_i16(str[i]);
-		TEST_ASSERT_EQUAL_INT(current, expected[i]);
-	}
+    for (size_t i = 0; i < sizeof(expected)/sizeof(int16_t); i++)
+    {
+        current = convert_str_to_i16(str[i]);
+        TEST_ASSERT_EQUAL_INT(current, expected[i]);
+    }
 }
 
 /**
@@ -90,15 +90,15 @@ void test_ConvertStrToI16(void)
  */
 void test_ConvertStrToU32(void)
 {
-	uint32_t expected[] = {0, 1, 12, 123, 1234, 12345, 123456, 1234567, 12345678, 123456789, 4294967295};
-	uint32_t current = 0;
-	char* str[] = {"0", "1","12", "123", "1234", "12345", "123456", "1234567", "12345678", "123456789", "4294967295"};
+    uint32_t expected[] = {0, 1, 12, 123, 1234, 12345, 123456, 1234567, 12345678, 123456789, 4294967295};
+    uint32_t current = 0;
+    char* str[] = {"0", "1","12", "123", "1234", "12345", "123456", "1234567", "12345678", "123456789", "4294967295"};
 
-	for (size_t i = 0; i < sizeof(expected)/sizeof(uint32_t); i++)
-	{
-		current = convert_str_to_u32(str[i]);
-		TEST_ASSERT_EQUAL_INT(current, expected[i]);
-	}
+    for (size_t i = 0; i < sizeof(expected)/sizeof(uint32_t); i++)
+    {
+        current = convert_str_to_u32(str[i]);
+        TEST_ASSERT_EQUAL_INT(current, expected[i]);
+    }
 }
 
 /**
@@ -106,16 +106,16 @@ void test_ConvertStrToU32(void)
  */
 void test_ConvertStrToI32(void)
 {
-	int32_t expected[] = {-2147483647, -123456789, -12345678, -1234567, -123456, -12345, -1234, -123, -12,\
+    int32_t expected[] = {-2147483647, -123456789, -12345678, -1234567, -123456, -12345, -1234, -123, -12,\
                         -1, 0, 1, 12, 123, 1234, 12345, 123456, 1234567, 12345678, 123456789, 2147483647};
-	int32_t current = 0;
-	char* str[] = {"-2147483647", "-123456789", "-12345678", "-1234567", "-123456", "-12345", "-1234", "-123",\
-                	"-12", "-1", "0", "1", "12", "123", "1234", "12345", "123456", "1234567", "12345678",\
+    int32_t current = 0;
+    char* str[] = {"-2147483647", "-123456789", "-12345678", "-1234567", "-123456", "-12345", "-1234", "-123",\
+                    "-12", "-1", "0", "1", "12", "123", "1234", "12345", "123456", "1234567", "12345678",\
                     "123456789", "2147483647"};
 
-	for (size_t i = 0; i < sizeof(expected)/sizeof(int32_t); i++)
-	{
-		current = convert_str_to_i32(str[i]);
-		TEST_ASSERT_EQUAL_INT(current, expected[i]);
-	}
+    for (size_t i = 0; i < sizeof(expected)/sizeof(int32_t); i++)
+    {
+        current = convert_str_to_i32(str[i]);
+        TEST_ASSERT_EQUAL_INT(current, expected[i]);
+    }
 }

@@ -51,14 +51,14 @@ uint32_t byte_order_swap32(uint32_t num);
 uint64_t byte_order_swap64(uint64_t num);
 
 /**
- * \brief		    Store `16-bit` value to bytes array in little-endian order.
+ * \brief           Store `16-bit` value to bytes array in little-endian order.
  *
  * \param[in]       val: Value to write to output array.
  * \param[out]      array: Minimum `2-bytes` long output array to write value to.
  *
- * \return 		    none.
+ * \return          none.
  **/
-void byte_order_u16_to_array_le(uint16_t val, void* array);
+void byte_order_u16_to_array_le(uint16_t val, void *array);
 
 /**
  * \brief           Store `32-bit` value to bytes array in little-endian order.
@@ -66,9 +66,9 @@ void byte_order_u16_to_array_le(uint16_t val, void* array);
  * \param[in]       val: Value to write to output array.
  * \param[out]      array: Minimum `4-bytes` long output array to write value to.
  *
- * \return 		    none.
+ * \return          none.
  */
-void byte_order_u32_to_array_le(uint32_t val, void* array);
+void byte_order_u32_to_array_le(uint32_t val, void *array);
 
 /**
  * \brief           Load `16-bit` value from bytes array in little-endian order.
@@ -77,7 +77,7 @@ void byte_order_u32_to_array_le(uint32_t val, void* array);
  *
  * \return          `16-bit` value extracted from input array.
  */
-uint16_t byte_order_array_to_u16_le(const void* array);
+uint16_t byte_order_array_to_u16_le(const void *array);
 
 /**
  * \brief           Load `32-bit` value from bytes array in little-endian order.
@@ -86,7 +86,7 @@ uint16_t byte_order_array_to_u16_le(const void* array);
  *
  * \return          `32-bit` value extracted from input array.
  */
-uint32_t byte_order_array_to_u32_le(const void* array);
+uint32_t byte_order_array_to_u32_le(const void *array);
 
 /**
  * \brief           Store `16-bit` value to bytes array in big-endian order.
@@ -94,9 +94,9 @@ uint32_t byte_order_array_to_u32_le(const void* array);
  * \param[in]       val: Value to write to output array.
  * \param[out]      array: Minimum `2-bytes` long output array to write value to.
  *
- * \return 		    none.
+ * \return          none.
  */
-void byte_order_u16_to_array_be(uint16_t val, void* array);
+void byte_order_u16_to_array_be(uint16_t val, void *array);
 
 /**
  * \brief           Store `32-bit` value to bytes array in big-endian order.
@@ -104,9 +104,9 @@ void byte_order_u16_to_array_be(uint16_t val, void* array);
  * \param[in]       val: Value to write to output array.
  * \param[out]      array: Minimum `4-bytes` long output array to write value to.
  *
- * \return 		    none.
+ * \return          none.
  */
-void byte_order_u32_to_array_be(uint32_t val, void* array);
+void byte_order_u32_to_array_be(uint32_t val, void *array);
 
 /**
  * \brief           Load `16-bit` value from bytes array in big-endian order.
@@ -115,7 +115,7 @@ void byte_order_u32_to_array_be(uint32_t val, void* array);
  *
  * \return          `16-bit` value extracted from input array.
  */
-uint16_t byte_order_array_to_u16_be(const void* array);
+uint16_t byte_order_array_to_u16_be(const void *array);
 
 /**
  * \brief           Load `32-bit` value from bytes array in big-endian order.
@@ -124,4 +124,4 @@ uint16_t byte_order_array_to_u16_be(const void* array);
  *
  * \return          `32-bit` value extracted from input array.
  */
-uint32_t byte_order_array_to_u32_be(const void* array);
+uint32_t byte_order_array_to_u32_be(const void *array);

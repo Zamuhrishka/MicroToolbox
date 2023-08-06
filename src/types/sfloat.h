@@ -11,7 +11,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-
 #include "constants.h"
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
@@ -24,14 +23,14 @@ typedef struct
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
 /**
- * \brief 	Rescale a fixed-point value to a different scale. Rounds towards zero.
+ * \brief   Rescale a fixed-point value to a different scale. Rounds towards zero.
  *
- * \param  	f[in] - sfloat number which need to be rescale.
- * \param  	new_scale[in] - new scale value.
+ * \param   f[in] - sfloat number which need to be rescale.
+ * \param   new_scale[in] - new scale value.
  *
- * \return 	rescaled fixed-point number.
+ * \return  rescaled fixed-point number.
  */
-static inline int_least32_t sfloat_rescale(sfloat_t* f, int_least32_t new_scale)
+static inline int_least32_t sfloat_rescale(sfloat_t *f, int_least32_t new_scale)
 {
     if (f->scale == 0)
     {
@@ -54,14 +53,14 @@ static inline int_least32_t sfloat_rescale(sfloat_t* f, int_least32_t new_scale)
 }
 
 /**
- * \brief 	Convert a fixed-point sfloat value to a floating-point value.
- * 			Returns NaN for "unknown" values.
+ * \brief   Convert a fixed-point sfloat value to a floating-point value.
+ *  Returns NaN for "unknown" values.
  *
- * \param  	f[in] - sfloat number.
+ * \param   f[in] - sfloat number.
  *
- * \return 	float number.
+ * \return  float number.
  */
-static inline float sfloat_to_float(sfloat_t* f)
+static inline float sfloat_to_float(sfloat_t *f)
 {
     if (f->scale == 0)
     {
@@ -72,11 +71,11 @@ static inline float sfloat_to_float(sfloat_t* f)
 }
 
 /**
- * \brief 	Convert a float-point number into fixed-point sfloat number
+ * \brief   Convert a float-point number into fixed-point sfloat number
  *
- * \param  	fnum[in] - float-point number.
+ * \param   fnum[in] - float-point number.
  *
- * \return 	fixed-point number.
+ * \return  fixed-point number.
  */
 static inline sfloat_t float_to_sfloat(float fnum)
 {

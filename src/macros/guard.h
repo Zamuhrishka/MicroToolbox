@@ -23,7 +23,7 @@
 #define STATIC_ASSERT(COND, MSG) typedef char static_assertion_##MSG[(COND) ? 1 : -1]
 
 /**
- * \brief 	Check size of struct on compile time
+ * \brief   Check size of struct on compile time
  *
  * \param[in]   st: struct type
  * \param[in]   sz: expected size of struct
@@ -41,17 +41,17 @@
 #define GuardStructSize(st, sz) typedef uint8_t GuardStructSize##st##_header[(sizeof(st) == (sz)) ? 1 : -1]
 
 /**
- * \brief 	Check that size of struct is divide on `sz`
+ * \brief   Check that size of struct is divide on `sz`
  *
  * \param[in]   st: struct type
  * \param[in]   sz: value on which the size of struct must divided
  *
  * \code
  * typedef struct {
- * 	uint8_t     id;
- * 	uint8_t     tag;
- * 	bool        isValid;
- * 	uint8_t     res;
+ *  uint8_t     id;
+ *  uint8_t     tag;
+ *  bool        isValid;
+ *  uint8_t     res;
  * } CustomStruct_t;
  * GuardStructSize(CustomStruct_t, 4);
  * GuardStructSizeMultiple(CustomStruct_t, 4);
@@ -61,7 +61,7 @@
     typedef uint8_t GuardStructSizeMultiple##st##_header[((sizeof(st) % (sz)) == 0) ? 1 : -1]
 
 /**
- * \brief 	Check that offset of struct member equal `os`
+ * \brief   Check that offset of struct member equal `os`
  *
  * \param[in]   st: struct type
  * \param[in]   mb: name of struct member
@@ -69,10 +69,10 @@
  *
  * \code
  * typedef struct {
- * 	uint8_t     id;
- * 	uint8_t     tag;
- * 	bool        isValid;
- * 	uint8_t     res;
+ *  uint8_t     id;
+ *  uint8_t     tag;
+ *  bool        isValid;
+ *  uint8_t     res;
  * } CustomStruct_t;
  * GuardStructSize(CustomStruct_t, 4);
  * GuardStructOffset(CustomStruct_t, id,        0);

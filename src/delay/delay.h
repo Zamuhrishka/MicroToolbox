@@ -16,23 +16,23 @@
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
 /**
- * \brief 	    This function used to create `us` time delay.
+ * \brief       This function used to create `us` time delay.
  *
  * \warning      blocking function!
  *
  * \param[in]    us: value of time delay in `us`.
  *
- * \return 	    none.
+ * \return       none.
  */
 void delay_us(uint32_t us);
 
 /**
- * \brief 	    This function used to create `ms` time delay.
+ * \brief       This function used to create `ms` time delay.
  *
  * \warning      blocking function!
  *
  * \param[in]    ms: value of time delay in `ms`.
  *
- * \return 	    none.
+ * \return       none.
  */
 void delay_ms(uint32_t ms);

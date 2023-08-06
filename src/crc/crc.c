@@ -117,7 +117,7 @@ const uint_least32_t Crc32Table[] = {
  *
  * Public function defined in crc.h
  */
-uint8_t crc8(const uint8_t* pcBlock, size_t len)
+uint8_t crc8(const uint8_t *pcBlock, size_t len)
 {
     uint8_t crc = 0xFF;
     uint8_t i;
@@ -141,7 +141,7 @@ uint8_t crc8(const uint8_t* pcBlock, size_t len)
  *
  * Public function defined in crc.h
  */
-uint8_t crc8_table(const uint8_t* pcBlock, size_t len)
+uint8_t crc8_table(const uint8_t *pcBlock, size_t len)
 {
     uint8_t crc = 0xFF;
 
@@ -158,7 +158,7 @@ uint8_t crc8_table(const uint8_t* pcBlock, size_t len)
  *
  * Public function defined in crc.h
  */
-uint16_t crc16(const uint8_t* pcBlock, size_t len)
+uint16_t crc16(const uint8_t *pcBlock, size_t len)
 {
     uint16_t crc = 0xFFFF;
     uint16_t i;
@@ -182,7 +182,7 @@ uint16_t crc16(const uint8_t* pcBlock, size_t len)
  *
  * Public function defined in crc.h
  */
-uint16_t crc16_table(const uint8_t* pcBlock, size_t len)
+uint16_t crc16_table(const uint8_t *pcBlock, size_t len)
 {
     uint16_t crc = 0xFFFF;
 
@@ -200,7 +200,7 @@ uint16_t crc16_table(const uint8_t* pcBlock, size_t len)
  *
  * Public function defined in crc.h
  */
-uint_least32_t crc32(const uint8_t* buf, size_t len)
+uint_least32_t crc32(const uint8_t *buf, size_t len)
 {
     uint_least32_t crc_table[256];
     uint_least32_t crc;
@@ -233,7 +233,7 @@ uint_least32_t crc32(const uint8_t* buf, size_t len)
  *
  * Public function defined in crc.h
  */
-uint_least32_t crc32_table(const uint8_t* buf, size_t len)
+uint_least32_t crc32_table(const uint8_t *buf, size_t len)
 {
     uint_least32_t crc = 0xFFFFFFFF;
 

@@ -20,91 +20,91 @@
 //_____ P U B L I C  F U N C T I O N S_________________________________________
 void test_crc8(void)
 {
-	uint8_t data[256] = {};
-	uint8_t crc = 0;
-	uint8_t crc_expected = 0x14;
+    uint8_t data[256] = {};
+    uint8_t crc = 0;
+    uint8_t crc_expected = 0x14;
 
-	for(size_t i = 0; i < sizeof(data); i++) {
-		data[i] = i;
-	}
+    for(size_t i = 0; i < sizeof(data); i++) {
+        data[i] = i;
+    }
 
-	crc = crc8(data, sizeof(data));
+    crc = crc8(data, sizeof(data));
 
-	TEST_ASSERT_EQUAL_UINT8(crc, crc_expected);
+    TEST_ASSERT_EQUAL_UINT8(crc, crc_expected);
 }
 
 void test_crc8_table(void)
 {
-	uint8_t data[256] = {};
-	uint8_t crc = 0;
-	uint8_t crc_expected = 0x14;
+    uint8_t data[256] = {};
+    uint8_t crc = 0;
+    uint8_t crc_expected = 0x14;
 
-	for(size_t i = 0; i < sizeof(data); i++) {
-		data[i] = i;
-	}
+    for(size_t i = 0; i < sizeof(data); i++) {
+        data[i] = i;
+    }
 
-	crc = crc8_table(data, sizeof(data));
+    crc = crc8_table(data, sizeof(data));
 
-	TEST_ASSERT_EQUAL_UINT8(crc, crc_expected);
+    TEST_ASSERT_EQUAL_UINT8(crc, crc_expected);
 }
 
 void test_crc16(void)
 {
-	uint8_t data[256] = {};
-	uint16_t crc = 0;
-	uint16_t crc_expected = 0x3fbd;
+    uint8_t data[256] = {};
+    uint16_t crc = 0;
+    uint16_t crc_expected = 0x3fbd;
 
-	for(size_t i = 0; i < sizeof(data); i++) {
-		data[i] = i;
-	}
+    for(size_t i = 0; i < sizeof(data); i++) {
+        data[i] = i;
+    }
 
-	crc = crc16(data, sizeof(data));
+    crc = crc16(data, sizeof(data));
 
-	TEST_ASSERT_EQUAL_UINT16(crc, crc_expected);
+    TEST_ASSERT_EQUAL_UINT16(crc, crc_expected);
 }
 
 void test_crc16_table(void)
 {
-	uint8_t data[256] = {};
-	uint16_t crc = 0;
-	uint16_t crc_expected = 0x3fbd;
+    uint8_t data[256] = {};
+    uint16_t crc = 0;
+    uint16_t crc_expected = 0x3fbd;
 
-	for(size_t i = 0; i < sizeof(data); i++) {
-		data[i] = i;
-	}
+    for(size_t i = 0; i < sizeof(data); i++) {
+        data[i] = i;
+    }
 
-	crc = crc16_table(data, sizeof(data));
+    crc = crc16_table(data, sizeof(data));
 
-	TEST_ASSERT_EQUAL_UINT16(crc, crc_expected);
+    TEST_ASSERT_EQUAL_UINT16(crc, crc_expected);
 }
 
 void test_crc32(void)
 {
-	uint8_t data[256] = {};
-	uint32_t crc = 0;
-	uint32_t crcTable = 0;
-	uint32_t crc_expected = 0x29058C73;
+    uint8_t data[256] = {};
+    uint32_t crc = 0;
+    uint32_t crcTable = 0;
+    uint32_t crc_expected = 0x29058C73;
 
-	for(size_t i = 0; i < sizeof(data); i++) {
-		data[i] = i;
-	}
+    for(size_t i = 0; i < sizeof(data); i++) {
+        data[i] = i;
+    }
 
-	crc = crc32(data, sizeof(data));
+    crc = crc32(data, sizeof(data));
 
-	TEST_ASSERT_EQUAL_UINT32(crc, crc_expected);
+    TEST_ASSERT_EQUAL_UINT32(crc, crc_expected);
 }
 
 void test_crc32_table(void)
 {
-	uint8_t data[256] = {};
-	uint32_t crc = 0;
-	uint32_t crc_expected = 0x29058C73;
+    uint8_t data[256] = {};
+    uint32_t crc = 0;
+    uint32_t crc_expected = 0x29058C73;
 
-	for(size_t i = 0; i < sizeof(data); i++) {
-		data[i] = i;
-	}
+    for(size_t i = 0; i < sizeof(data); i++) {
+        data[i] = i;
+    }
 
-	crc = crc32_table(data, sizeof(data));
+    crc = crc32_table(data, sizeof(data));
 
-	TEST_ASSERT_EQUAL_UINT32(crc, crc_expected);
+    TEST_ASSERT_EQUAL_UINT32(crc, crc_expected);
 }

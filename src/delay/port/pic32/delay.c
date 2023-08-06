@@ -3,7 +3,7 @@
  * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
  * \brief        Time delay functions for PIC32 microcontrollers.
  *
- * \warning		Work of this functions need to be checked!
+ * \warning      Work of this functions need to be checked!
  */
 
 //_____ I N C L U D E S _______________________________________________________
@@ -16,7 +16,7 @@
 //_____ D E F I N I T I O N S _________________________________________________
 #if !defined(PCLK_HZ)
     #error "Constant PCLK_HZ undefined. Please define peripherals bus clock in Hz\
-			Example: #define PCLK_HZ 8000000"
+            Example: #define PCLK_HZ 8000000"
 #endif
 
 #define COUNT_PER_USEC ((PCLK_HZ / 1000000) / 2)
@@ -69,8 +69,7 @@ void delay_ms(uint32_t ms)
     // Restart core timer.
     WriteCoreTimer(0);
     // Wait till core timer completes the count.
-    while (ReadCoreTimer() < targetCount)
-        ;
+    while (ReadCoreTimer() < targetCount) {};
     // Restore count back.
     WriteCoreTimer(bakupCount + targetCount);
 }
