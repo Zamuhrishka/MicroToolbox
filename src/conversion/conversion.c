@@ -128,7 +128,7 @@ static uint8_t count_num(uint32_t dig, enum Constants f_n_bit)
  *
  * \return digits count
  */
-static uint8_t string_digit_num_count(const char* dig)
+static uint8_t string_digit_num_count(const char *dig)
 {
     uint8_t num = 0;
     bool digit = 0;
@@ -194,7 +194,7 @@ char convert_hex_num_to_char(uint8_t num)
  *
  * Public function defined in convert.h
  */
-bool convert_string_to_mac_addr(const char* str, mac_t* macAddr)
+bool convert_string_to_mac_addr(const char *str, mac_t *macAddr)
 {
     int8_t numLowPart = -1;
     int8_t numHighPart = -1;
@@ -235,7 +235,7 @@ bool convert_string_to_mac_addr(const char* str, mac_t* macAddr)
  *
  * Public function defined in convert.h
  */
-bool convert_mac_addr_to_string(const mac_t* macAddr, char* string)
+bool convert_mac_addr_to_string(const mac_t *macAddr, char *string)
 {
     int8_t numLowPart = -1;
     int8_t numHighPart = -1;
@@ -275,16 +275,16 @@ bool convert_mac_addr_to_string(const mac_t* macAddr, char* string)
  *
  * Public function defined in convert.h
  */
-bool convert_ip4addr_to_string(ip4addr_t ip, char* string)
+bool convert_ip4addr_to_string(ip4addr_t ip, char *string)
 {
-    uint8_t* p;
+    uint8_t *p;
 
     if (string == NULL)
     {
         return false;
     }
 
-    p = (uint8_t*)&ip;
+    p = (uint8_t *)&ip;
     sprintf(string, "%u.%u.%u.%u", p[0], p[1], p[2], p[3]);
 
     return true;
@@ -296,7 +296,7 @@ bool convert_ip4addr_to_string(ip4addr_t ip, char* string)
  *
  * Public function defined in convert.h
  */
-bool convert_string_to_ip4addr(ip4addr_t* ip, const char* string)
+bool convert_string_to_ip4addr(ip4addr_t *ip, const char *string)
 {
     int ip1, ip2, ip3, ip4;
     ip4addr_t _ip = 0;
@@ -367,7 +367,7 @@ bcd_t convert_num_to_bcd(uint32_t dec)
  *
  * Public function defined in conversion.h
  */
-bool convert_is_dec_number(const char* str, size_t len)
+bool convert_is_dec_number(const char *str, size_t len)
 {
     if (NULL == str || len == 0)
     {
@@ -392,7 +392,7 @@ bool convert_is_dec_number(const char* str, size_t len)
  *
  * Public function defined in conversion.h
  */
-bool convert_is_hex_number(const char* str, size_t len)
+bool convert_is_hex_number(const char *str, size_t len)
 {
     if (NULL == str || len == 0)
     {
@@ -415,7 +415,7 @@ bool convert_is_hex_number(const char* str, size_t len)
  *
  * Public function defined in conversion.h
  */
-uint8_t convert_str_to_u8(const char* str)
+uint8_t convert_str_to_u8(const char *str)
 {
     uint8_t dig = 0;
 
@@ -442,7 +442,7 @@ uint8_t convert_str_to_u8(const char* str)
  *
  * Public function defined in conversion.h
  */
-int8_t convert_str_to_i8(const char* str)
+int8_t convert_str_to_i8(const char *str)
 {
     int8_t dig = 1;
 
@@ -451,7 +451,7 @@ int8_t convert_str_to_i8(const char* str)
         return 0;
     }
 
-    char* pointer = &str[0];
+    char *pointer = &str[0];
 
     if (str[0] == '-')
     {
@@ -467,7 +467,7 @@ int8_t convert_str_to_i8(const char* str)
  *
  * Public function defined in conversion.h
  */
-uint16_t convert_str_to_u16(const char* str)
+uint16_t convert_str_to_u16(const char *str)
 {
     uint16_t dig;
     uint8_t num = 0;
@@ -499,7 +499,7 @@ uint16_t convert_str_to_u16(const char* str)
  *
  * Public function defined in conversion.h
  */
-int16_t convert_str_to_i16(const char* str)
+int16_t convert_str_to_i16(const char *str)
 {
     int16_t dig = 1;
 
@@ -508,7 +508,7 @@ int16_t convert_str_to_i16(const char* str)
         return 0;
     }
 
-    char* pointer = &str[0];
+    char *pointer = &str[0];
 
     if (str[0] == '-')
     {
@@ -524,7 +524,7 @@ int16_t convert_str_to_i16(const char* str)
  *
  * Public function defined in conversion.h
  */
-uint32_t convert_str_to_u32(const char* str)
+uint32_t convert_str_to_u32(const char *str)
 {
     uint32_t dig;
     uint8_t num = 0;
@@ -579,7 +579,7 @@ uint32_t convert_str_to_u32(const char* str)
  *
  * Public function defined in conversion.h
  */
-int32_t convert_str_to_i32(const char* str)
+int32_t convert_str_to_i32(const char *str)
 {
     int32_t dig = 1;
 
@@ -588,7 +588,7 @@ int32_t convert_str_to_i32(const char* str)
         return 0;
     }
 
-    char* pointer = &str[0];
+    char *pointer = &str[0];
 
     if (str[0] == '-')
     {
@@ -604,7 +604,7 @@ int32_t convert_str_to_i32(const char* str)
  *
  * Public function defined in conversion.h
  */
-void convert_u8_to_str(char* str, uint8_t dig)
+void convert_u8_to_str(char *str, uint8_t dig)
 {
     if (NULL != str)
     {
@@ -630,11 +630,11 @@ void convert_u8_to_str(char* str, uint8_t dig)
  *
  * Public function defined in conversion.h
  */
-void convert_i8_to_str(char* str, int8_t dig)
+void convert_i8_to_str(char *str, int8_t dig)
 {
     if (NULL != str)
     {
-        char* pointer = &str[0];
+        char *pointer = &str[0];
 
         if (dig < 0)
         {
@@ -652,7 +652,7 @@ void convert_i8_to_str(char* str, int8_t dig)
  *
  * Public function defined in conversion.h
  */
-void convert_u16_to_str(char* str, uint16_t dig)
+void convert_u16_to_str(char *str, uint16_t dig)
 {
     if (NULL != str)
     {
@@ -691,11 +691,11 @@ void convert_u16_to_str(char* str, uint16_t dig)
  *
  * Public function defined in conversion.h
  */
-void convert_i16_to_str(char* str, int16_t dig)
+void convert_i16_to_str(char *str, int16_t dig)
 {
     if (NULL != str)
     {
-        char* pointer = &str[0];
+        char *pointer = &str[0];
 
         if (dig < 0)
         {
@@ -713,7 +713,7 @@ void convert_i16_to_str(char* str, int16_t dig)
  *
  * Public function defined in conversion.h
  */
-void convert_u32_to_str(char* str, uint32_t dig)
+void convert_u32_to_str(char *str, uint32_t dig)
 {
     if (NULL != str)
     {
@@ -802,11 +802,11 @@ void convert_u32_to_str(char* str, uint32_t dig)
  *
  * Public function defined in conversion.h
  */
-void convert_i32_to_str(char* str, int32_t dig)
+void convert_i32_to_str(char *str, int32_t dig)
 {
     if (NULL != str)
     {
-        char* pointer = &str[0];
+        char *pointer = &str[0];
 
         if (dig < 0)
         {

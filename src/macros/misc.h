@@ -33,7 +33,7 @@
  * \return          member offset into a structure.
  */
 #ifndef offsetof
-    #define offsetof(_t, _m) ((size_t) & ((_t*)0)->_m)
+    #define offsetof(_t, _m) ((size_t) & ((_t *)0)->_m)
 #endif
 
 /**
@@ -47,10 +47,10 @@
  * \return          a pointer to a top-level structure.
  */
 #ifndef container_of
-    #define container_of(_p, _t, _m)                       \
-        ({                                                 \
-            const __typeof__(((_t*)0)->_m)* __mptr = (_p); \
-            (_t*)((char*)__mptr - offsetof(_t, _m));       \
+    #define container_of(_p, _t, _m) \
+        ({ \
+            const __typeof__(((_t *)0)->_m) *__mptr = (_p); \
+            (_t *)((char *)__mptr - offsetof(_t, _m)); \
         })
 #endif
 
@@ -75,16 +75,16 @@
 #ifdef strrchr
     #define __FILENAME__ (strrchr(__FILE__, FILE_SPLITTER) ? strrchr(__FILE__, FILE_SPLITTER) + 1 : __FILE__)
 #else
-    #define _STRIPPATH(s)                                                                \
-        (sizeof(s) > 2 && (s)[sizeof(s) - 2] == FILE_SPLITTER     ? (s) + sizeof(s) - 1  \
-         : sizeof(s) > 3 && (s)[sizeof(s) - 3] == FILE_SPLITTER   ? (s) + sizeof(s) - 2  \
-         : sizeof(s) > 4 && (s)[sizeof(s) - 4] == FILE_SPLITTER   ? (s) + sizeof(s) - 3  \
-         : sizeof(s) > 5 && (s)[sizeof(s) - 5] == FILE_SPLITTER   ? (s) + sizeof(s) - 4  \
-         : sizeof(s) > 6 && (s)[sizeof(s) - 6] == FILE_SPLITTER   ? (s) + sizeof(s) - 5  \
-         : sizeof(s) > 7 && (s)[sizeof(s) - 7] == FILE_SPLITTER   ? (s) + sizeof(s) - 6  \
-         : sizeof(s) > 8 && (s)[sizeof(s) - 8] == FILE_SPLITTER   ? (s) + sizeof(s) - 7  \
-         : sizeof(s) > 9 && (s)[sizeof(s) - 9] == FILE_SPLITTER   ? (s) + sizeof(s) - 8  \
-         : sizeof(s) > 10 && (s)[sizeof(s) - 10] == FILE_SPLITTER ? (s) + sizeof(s) - 9  \
+    #define _STRIPPATH(s) \
+        (sizeof(s) > 2 && (s)[sizeof(s) - 2] == FILE_SPLITTER     ? (s) + sizeof(s) - 1 \
+         : sizeof(s) > 3 && (s)[sizeof(s) - 3] == FILE_SPLITTER   ? (s) + sizeof(s) - 2 \
+         : sizeof(s) > 4 && (s)[sizeof(s) - 4] == FILE_SPLITTER   ? (s) + sizeof(s) - 3 \
+         : sizeof(s) > 5 && (s)[sizeof(s) - 5] == FILE_SPLITTER   ? (s) + sizeof(s) - 4 \
+         : sizeof(s) > 6 && (s)[sizeof(s) - 6] == FILE_SPLITTER   ? (s) + sizeof(s) - 5 \
+         : sizeof(s) > 7 && (s)[sizeof(s) - 7] == FILE_SPLITTER   ? (s) + sizeof(s) - 6 \
+         : sizeof(s) > 8 && (s)[sizeof(s) - 8] == FILE_SPLITTER   ? (s) + sizeof(s) - 7 \
+         : sizeof(s) > 9 && (s)[sizeof(s) - 9] == FILE_SPLITTER   ? (s) + sizeof(s) - 8 \
+         : sizeof(s) > 10 && (s)[sizeof(s) - 10] == FILE_SPLITTER ? (s) + sizeof(s) - 9 \
          : sizeof(s) > 11 && (s)[sizeof(s) - 11] == FILE_SPLITTER ? (s) + sizeof(s) - 10 \
                                                                   : (s))
     /*! \endcond */

@@ -71,7 +71,7 @@ typedef uint32_t ip4addr_t;
 typedef uint32_t bcd_t;
 
 /// Null pointer data type
-#define nullptr ((void*)0)
+#define nullptr ((void *)0)
 
 /// NULL constant
 #if !defined(NULL)

@@ -11,7 +11,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-
 #include "constants.h"
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
@@ -31,7 +30,7 @@ typedef struct
  *
  * \return  rescaled fixed-point number.
  */
-static inline int_least32_t sfloat_rescale(sfloat_t* f, int_least32_t new_scale)
+static inline int_least32_t sfloat_rescale(sfloat_t *f, int_least32_t new_scale)
 {
     if (f->scale == 0)
     {
@@ -61,7 +60,7 @@ static inline int_least32_t sfloat_rescale(sfloat_t* f, int_least32_t new_scale)
  *
  * \return  float number.
  */
-static inline float sfloat_to_float(sfloat_t* f)
+static inline float sfloat_to_float(sfloat_t *f)
 {
     if (f->scale == 0)
     {

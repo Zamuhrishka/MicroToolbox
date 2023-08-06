@@ -12,14 +12,13 @@
 #include <stddef.h>
 #include <stdint.h>
 
-
 // TODO: Need to make compiler independet align attribute
 #include "compiler.h"
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
 //_____ M A C R O S ___________________________________________________________
 /*! \cond PRIVATE */
-#define STRCONCAT(x, y) x##y
+#define STRCONCAT(x, y)       x##y
 #define STRCONCATHELPER(x, y) STRCONCAT(x, y)
 /*! \endcond */
 
@@ -53,12 +52,12 @@
  *     return bssData.d.pDevContext;
  * \endcode
  */
-#define CACHE_LINE_ALIGN__STATIC(T, N, A)      \
+#define CACHE_LINE_ALIGN__STATIC(T, N, A) \
     __attribute__((aligned(A))) typedef struct \
-    {                                          \
-        T d;                                   \
-        uint8_t p[(A) - (sizeof(T) % (A))];    \
-    } T##Full_t;                               \
+    { \
+        T d; \
+        uint8_t p[(A) - (sizeof(T) % (A))]; \
+    } T##Full_t; \
     static T##Full_t N
 
 /**
@@ -72,12 +71,12 @@
  * \param[in]   A: alignment value in bytes.
  *
  */
-#define CACHE_LINE_ALIGN__TYPE(T, N, A)          \
+#define CACHE_LINE_ALIGN__TYPE(T, N, A) \
     __attribute__((aligned((A)))) typedef struct \
-    {                                            \
-        T d;                                     \
-        uint8_t p[(A) - (sizeof(T) % (A))];      \
-    } T##Full_t;                                 \
+    { \
+        T d; \
+        uint8_t p[(A) - (sizeof(T) % (A))]; \
+    } T##Full_t; \
     extern T##Full_t N
 
 /**
@@ -110,9 +109,9 @@
  * \endcode
  */
 #define CACHE_ALIGN_STRUCT(A) \
-    struct                    \
-    {                         \
-        uint8_t pad[0];       \
+    struct \
+    { \
+        uint8_t pad[0]; \
     } STRCONCATHELPER(align, __LINE__) __attribute__((aligned((A))))
 
 //_____ V A R I A B L E S _____________________________________________________

@@ -29,7 +29,7 @@
  *
  * \return      calculated crc8 value.
  **/
-uint8_t crc8(const uint8_t* pcBlock, size_t len);
+uint8_t crc8(const uint8_t *pcBlock, size_t len);
 
 #if defined(CRC8_TABLE)
 /**
@@ -45,7 +45,7 @@ uint8_t crc8(const uint8_t* pcBlock, size_t len);
  *
  * \return      calculated crc8 value.
  **/
-uint8_t crc8_table(const uint8_t* pcBlock, size_t len);
+uint8_t crc8_table(const uint8_t *pcBlock, size_t len);
 #endif
 
 /**
@@ -61,7 +61,7 @@ uint8_t crc8_table(const uint8_t* pcBlock, size_t len);
  *
  * \return      calculated crc16 value.
  **/
-uint16_t crc16(const uint8_t* pcBlock, size_t len);
+uint16_t crc16(const uint8_t *pcBlock, size_t len);
 
 #if defined(CRC16_TABLE)
 /**
@@ -77,7 +77,7 @@ uint16_t crc16(const uint8_t* pcBlock, size_t len);
  *
  * \return      calculated crc16 value.
  **/
-uint16_t crc16_table(const uint8_t* pcBlock, size_t len);
+uint16_t crc16_table(const uint8_t *pcBlock, size_t len);
 #endif
 
 /**
@@ -94,7 +94,7 @@ uint16_t crc16_table(const uint8_t* pcBlock, size_t len);
  *
  * \return      calculated crc32 value.
  **/
-uint_least32_t crc32(const uint8_t* buf, size_t len);
+uint_least32_t crc32(const uint8_t *buf, size_t len);
 
 #if defined(CRC32_TABLE)
 /**
@@ -111,5 +111,5 @@ uint_least32_t crc32(const uint8_t* buf, size_t len);
  *
  * \return      calculated crc32 value.
  **/
-uint_least32_t crc32_table(const uint8_t* buf, size_t len);
+uint_least32_t crc32_table(const uint8_t *buf, size_t len);
 #endif

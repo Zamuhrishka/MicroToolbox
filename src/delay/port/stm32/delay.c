@@ -17,16 +17,16 @@
 #endif
 //_____ D E F I N I T I O N S _________________________________________________
 // DWT Control register
-#define DWT_CONTROL_REG (*((volatile uint32_t*)0xE0001000))
+#define DWT_CONTROL_REG (*((volatile uint32_t *)0xE0001000))
 
 // CYCCNTENA bit in DWT_CONTROL register
 #define DWT_CYCCNTENA_BIT (1UL << 0)
 
 // DWT Cycle Counter register
-#define DWT_CYCCNT_REG (*((volatile uint32_t*)0xE0001004))
+#define DWT_CYCCNT_REG (*((volatile uint32_t *)0xE0001004))
 
 // DEMCR: Debug Exception and Monitor Control Register
-#define DWT_DEMCR_REG (*((volatile uint32_t*)0xE000EDFC))
+#define DWT_DEMCR_REG (*((volatile uint32_t *)0xE000EDFC))
 
 // Trace enable bit in DEMCR register
 #define DWT_TRCENA_BIT (1 << 24)
@@ -82,9 +82,9 @@ void delay_us(uint32_t us)
 {
     uint32_t us_count_tick = us * (SYS_CLOCK / 1000000UL);
 
-    DWT_InitCycleCounter();   // enable DWT hardware
-    DWT_ResetCycleCounter();  // reset cycle counter
-    DWT_EnableCycleCounter(); // start counting
+    DWT_InitCycleCounter();    // enable DWT hardware
+    DWT_ResetCycleCounter();   // reset cycle counter
+    DWT_EnableCycleCounter();  // start counting
 
     while (DWT_GetCycleCounter() < us_count_tick) {};
 
@@ -100,9 +100,9 @@ void delay_ms(uint32_t ms)
 {
     uint32_t ms_count_tick = ms * (SYS_CLOCK / 1000UL);
 
-    DWT_InitCycleCounter();   // enable DWT hardware
-    DWT_ResetCycleCounter();  // reset cycle counter
-    DWT_EnableCycleCounter(); // start counting
+    DWT_InitCycleCounter();    // enable DWT hardware
+    DWT_ResetCycleCounter();   // reset cycle counter
+    DWT_EnableCycleCounter();  // start counting
 
     while (DWT_GetCycleCounter() < ms_count_tick) {};
 
