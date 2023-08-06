@@ -26,12 +26,12 @@
  */
 void test_ConvertIsDecNumber_Positive(void)
 {
-	char* str[] = {"0", "1","12", "123", "1234", "12345", "123456", "1234567", "12345678", "123456789", "4294967295"};
+    char* str[] = {"0", "1","12", "123", "1234", "12345", "123456", "1234567", "12345678", "123456789", "4294967295"};
 
-	for (size_t i = 0; i < sizeof(str)/sizeof(char*); i++)
-	{
-		TEST_ASSERT_TRUE(convert_is_dec_number(str[i], strlen(str[i])));
-	}
+    for (size_t i = 0; i < sizeof(str)/sizeof(char*); i++)
+    {
+        TEST_ASSERT_TRUE(convert_is_dec_number(str[i], strlen(str[i])));
+    }
 }
 
 /**
@@ -39,13 +39,13 @@ void test_ConvertIsDecNumber_Positive(void)
  */
 void test_ConvertIsDecNumber_Negative(void)
 {
-	char* str[] = {"-2147483647", "-123456789", "-12345678", "-1234567", "-123456", "-12345", "-1234", "-123",\
-                	"-12", "-1"};
+    char* str[] = {"-2147483647", "-123456789", "-12345678", "-1234567", "-123456", "-12345", "-1234", "-123",\
+                    "-12", "-1"};
 
-	for (size_t i = 0; i < sizeof(str)/sizeof(char*); i++)
-	{
-		TEST_ASSERT_TRUE(convert_is_dec_number(str[i], strlen(str[i])));
-	}
+    for (size_t i = 0; i < sizeof(str)/sizeof(char*); i++)
+    {
+        TEST_ASSERT_TRUE(convert_is_dec_number(str[i], strlen(str[i])));
+    }
 }
 
 /**
@@ -53,12 +53,12 @@ void test_ConvertIsDecNumber_Negative(void)
  */
 void test_ConvertIsDecNumber_Invalid(void)
 {
-	char* str[] = {" ", "", "2147-483647", "A123456789", "v12345678", "-1234567r", "1234RT56", "gfhfthx"};
+    char* str[] = {" ", "", "2147-483647", "A123456789", "v12345678", "-1234567r", "1234RT56", "gfhfthx"};
 
-	for (size_t i = 0; i < sizeof(str)/sizeof(char*); i++)
-	{
-		TEST_ASSERT_FALSE(convert_is_dec_number(str[i], strlen(str[i])));
-	}
+    for (size_t i = 0; i < sizeof(str)/sizeof(char*); i++)
+    {
+        TEST_ASSERT_FALSE(convert_is_dec_number(str[i], strlen(str[i])));
+    }
 }
 
 /**
@@ -66,17 +66,17 @@ void test_ConvertIsDecNumber_Invalid(void)
  */
 void test_ConvertIsHexNumber_Correct(void)
 {
-	char* str[] = {"0", "1","2", "3", "4", "5", "6", "7", "8", "9",\
+    char* str[] = {"0", "1","2", "3", "4", "5", "6", "7", "8", "9",\
                     "A", "B", "C", "D", "E", "F",\
                     "a", "b", "c", "d", "e", "f",\
                     "10", "11","12", "13", "14", "15", "16", "17", "18", "19",\
                     "1A", "1B","1C", "1D", "1E", "1F",\
                     "1a", "1b","1c", "1d", "1e", "1f"};
 
-	for (size_t i = 0; i < sizeof(str)/sizeof(char*); i++)
-	{
-		TEST_ASSERT_TRUE(convert_is_hex_number(str[i], strlen(str[i])));
-	}
+    for (size_t i = 0; i < sizeof(str)/sizeof(char*); i++)
+    {
+        TEST_ASSERT_TRUE(convert_is_hex_number(str[i], strlen(str[i])));
+    }
 }
 
 /**
@@ -84,10 +84,10 @@ void test_ConvertIsHexNumber_Correct(void)
  */
 void test_ConvertIsHexNumber_Incorrect(void)
 {
-	char* str[] = {" ", "", "r", "Dty", "E7fg", "0xEE"};
+    char* str[] = {" ", "", "r", "Dty", "E7fg", "0xEE"};
 
-	for (size_t i = 0; i < sizeof(str)/sizeof(char*); i++)
-	{
-		TEST_ASSERT_FALSE(convert_is_hex_number(str[i], strlen(str[i])));
-	}
+    for (size_t i = 0; i < sizeof(str)/sizeof(char*); i++)
+    {
+        TEST_ASSERT_FALSE(convert_is_hex_number(str[i], strlen(str[i])));
+    }
 }

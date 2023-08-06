@@ -35,7 +35,7 @@ enum Constants
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P R I V A T E  F U N C T I O N S_______________________________________
 /**
- * \brief 	Check if this char is a decimal number?
+ * \brief   Check if this char is a decimal number?
  *
  * \param[in] c: given char
  *
@@ -47,7 +47,7 @@ static inline bool is_dec_digit(const unsigned char c)
 }
 
 /**
- * \brief 	Check if this char is a hex number?
+ * \brief   Check if this char is a hex number?
  *
  * \param[in] c: given char
  *
@@ -59,10 +59,10 @@ static inline bool is_hex_digit(const unsigned char c)
 }
 
 /**
- * \brief 	Calculate count of digits in number
+ * \brief   Calculate count of digits in number
  *
- * \param[in] dig:  	given number
- * \param[in] f_n_bit: 	size of number
+ * \param[in] dig:      given number
+ * \param[in] f_n_bit:  size of number
  *
  * \return digits count
  */
@@ -122,7 +122,7 @@ static uint8_t count_num(uint32_t dig, enum Constants f_n_bit)
 }
 
 /**
- * \brief 	Calculate count of digits in string.
+ * \brief   Calculate count of digits in string.
  *
  * \param[in] dig: given string number representation
  *

@@ -24,12 +24,12 @@
  */
 void test_IsByteAlign(void)
 {
-	uintptr_t pointer[] = {0x2000, 0x2001, 0x2002, 0x2003, 0x2004};
-	
-	for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
-	{
-		TEST_ASSERT_TRUE(is_align(pointer[i], sizeof(uint8_t)));
-	}	
+    uintptr_t pointer[] = {0x2000, 0x2001, 0x2002, 0x2003, 0x2004};
+
+    for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
+    {
+        TEST_ASSERT_TRUE(is_align(pointer[i], sizeof(uint8_t)));
+    }
 }
 
 /**
@@ -37,12 +37,12 @@ void test_IsByteAlign(void)
  */
 void test_IsTwoBytesAlign(void)
 {
-	uintptr_t pointer[] = {0x2000, 0x2002, 0x2004};
-	
-	for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
-	{
-		TEST_ASSERT_TRUE(is_align(pointer[i], sizeof(uint16_t)));
-	}	
+    uintptr_t pointer[] = {0x2000, 0x2002, 0x2004};
+
+    for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
+    {
+        TEST_ASSERT_TRUE(is_align(pointer[i], sizeof(uint16_t)));
+    }
 }
 
 /**
@@ -50,12 +50,12 @@ void test_IsTwoBytesAlign(void)
  */
 void test_IsFourBytesAlign(void)
 {
-	uintptr_t pointer[] = {0x2000, 0x2004, 0x2008};
-	
-	for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
-	{
-		TEST_ASSERT_TRUE(is_align(pointer[i], sizeof(uint32_t)));
-	}	
+    uintptr_t pointer[] = {0x2000, 0x2004, 0x2008};
+
+    for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
+    {
+        TEST_ASSERT_TRUE(is_align(pointer[i], sizeof(uint32_t)));
+    }
 }
 
 /**
@@ -63,12 +63,12 @@ void test_IsFourBytesAlign(void)
  */
 void test_IsEightBytesAlign(void)
 {
-	uintptr_t pointer[] = {0x2000, 0x2008, 0x2010};
-	
-	for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
-	{
-		TEST_ASSERT_TRUE(is_align(pointer[i], sizeof(uint64_t)));
-	}
+    uintptr_t pointer[] = {0x2000, 0x2008, 0x2010};
+
+    for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
+    {
+        TEST_ASSERT_TRUE(is_align(pointer[i], sizeof(uint64_t)));
+    }
 }
 
 /**
@@ -76,12 +76,12 @@ void test_IsEightBytesAlign(void)
  */
 void test_IsTwoBytesNotAlign(void)
 {
-	uintptr_t pointer[] = {0x2001, 0x2003, 0x2005};
-	
-	for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
-	{
-		TEST_ASSERT_FALSE(is_align(pointer[i], sizeof(uint16_t)));
-	}
+    uintptr_t pointer[] = {0x2001, 0x2003, 0x2005};
+
+    for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
+    {
+        TEST_ASSERT_FALSE(is_align(pointer[i], sizeof(uint16_t)));
+    }
 }
 
 /**
@@ -89,12 +89,12 @@ void test_IsTwoBytesNotAlign(void)
  */
 void test_IsFourBytesNotAlign(void)
 {
-	uintptr_t pointer[] = {0x2002, 0x2003, 0x2005};
-	
-	for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
-	{
-		TEST_ASSERT_FALSE(is_align(pointer[i], sizeof(uint32_t)));
-	}	
+    uintptr_t pointer[] = {0x2002, 0x2003, 0x2005};
+
+    for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
+    {
+        TEST_ASSERT_FALSE(is_align(pointer[i], sizeof(uint32_t)));
+    }
 }
 
 /**
@@ -102,12 +102,12 @@ void test_IsFourBytesNotAlign(void)
  */
 void test_IsEightBytesNotAlign(void)
 {
-	uintptr_t pointer[] = {0x2002, 0x2003, 0x2005};
-	
-	for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
-	{
-		TEST_ASSERT_FALSE(is_align(pointer[i], sizeof(uint64_t)));
-	}
+    uintptr_t pointer[] = {0x2002, 0x2003, 0x2005};
+
+    for (size_t i = 0; i < sizeof(pointer)/sizeof(uintptr_t); i++)
+    {
+        TEST_ASSERT_FALSE(is_align(pointer[i], sizeof(uint64_t)));
+    }
 }
 
 /**
@@ -115,14 +115,14 @@ void test_IsEightBytesNotAlign(void)
  */
 void test_AlignDownTwoBytes(void)
 {
-	uintptr_t addr[] = 		{0x2000, 0x2001, 0x2002};
-	uintptr_t expected[] = 	{0x2000, 0x2000, 0x2002};
-	
-	for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
-	{
-		uintptr_t current_value = align_down(addr[i], sizeof(uint16_t));
-		TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
-	}	
+    uintptr_t addr[] =      {0x2000, 0x2001, 0x2002};
+    uintptr_t expected[] =  {0x2000, 0x2000, 0x2002};
+
+    for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
+    {
+        uintptr_t current_value = align_down(addr[i], sizeof(uint16_t));
+        TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
+    }
 }
 
 /**
@@ -130,14 +130,14 @@ void test_AlignDownTwoBytes(void)
  */
 void test_AlignDownFourBytes(void)
 {
-	uintptr_t addr[] = 		{0x2000, 0x2001, 0x2002, 0x2003, 0x2004};
-	uintptr_t expected[] = 	{0x2000, 0x2000, 0x2000, 0x2000, 0x2004};
-	
-	for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
-	{
-		uintptr_t current_value = align_down(addr[i], sizeof(uint32_t));
-		TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
-	}	
+    uintptr_t addr[] =      {0x2000, 0x2001, 0x2002, 0x2003, 0x2004};
+    uintptr_t expected[] =  {0x2000, 0x2000, 0x2000, 0x2000, 0x2004};
+
+    for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
+    {
+        uintptr_t current_value = align_down(addr[i], sizeof(uint32_t));
+        TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
+    }
 }
 
 /**
@@ -145,14 +145,14 @@ void test_AlignDownFourBytes(void)
  */
 void test_AlignDownEightBytes(void)
 {
-	uintptr_t addr[] = 		{0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005, 0x2006, 0x2007, 0x2008};
-	uintptr_t expected[] = 	{0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2008};
-	
-	for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
-	{
-		uintptr_t current_value = align_down(addr[i], sizeof(uint64_t));
-		TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
-	}	
+    uintptr_t addr[] =      {0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005, 0x2006, 0x2007, 0x2008};
+    uintptr_t expected[] =  {0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2000, 0x2008};
+
+    for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
+    {
+        uintptr_t current_value = align_down(addr[i], sizeof(uint64_t));
+        TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
+    }
 }
 
 /**
@@ -160,14 +160,14 @@ void test_AlignDownEightBytes(void)
  */
 void test_AlignUpTwoBytes(void)
 {
-	uintptr_t addr[] = 		{0x2000, 0x2001, 0x2002, 0x2003};
-	uintptr_t expected[] = 	{0x2000, 0x2002, 0x2002, 0x2004};
-	
-	for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
-	{
-		uintptr_t current_value = align_up(addr[i], sizeof(uint16_t));
-		TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
-	}	
+    uintptr_t addr[] =      {0x2000, 0x2001, 0x2002, 0x2003};
+    uintptr_t expected[] =  {0x2000, 0x2002, 0x2002, 0x2004};
+
+    for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
+    {
+        uintptr_t current_value = align_up(addr[i], sizeof(uint16_t));
+        TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
+    }
 }
 
 /**
@@ -175,14 +175,14 @@ void test_AlignUpTwoBytes(void)
  */
 void test_AlignUpFourBytes(void)
 {
-	uintptr_t addr[] = 		{0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005};
-	uintptr_t expected[] = 	{0x2000, 0x2004, 0x2004, 0x2004, 0x2004, 0x2008};
-	
-	for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
-	{
-		uintptr_t current_value = align_up(addr[i], sizeof(uint32_t));
-		TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
-	}	
+    uintptr_t addr[] =      {0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005};
+    uintptr_t expected[] =  {0x2000, 0x2004, 0x2004, 0x2004, 0x2004, 0x2008};
+
+    for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
+    {
+        uintptr_t current_value = align_up(addr[i], sizeof(uint32_t));
+        TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
+    }
 }
 
 /**
@@ -190,12 +190,12 @@ void test_AlignUpFourBytes(void)
  */
 void test_AlignUpEightBytes(void)
 {
-	uintptr_t addr[] = 		{0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005, 0x2006, 0x2007, 0x2008, 0x2009};
-	uintptr_t expected[] = 	{0x2000, 0x2008, 0x2008, 0x2008, 0x2008, 0x2008, 0x2008, 0x2008, 0x2008, 0x2010};
-	
-	for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
-	{
-		uintptr_t current_value = align_up(addr[i], sizeof(uint64_t));
-		TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
-	}	
+    uintptr_t addr[] = {0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005, 0x2006, 0x2007, 0x2008, 0x2009};
+    uintptr_t expected[] = {0x2000, 0x2008, 0x2008, 0x2008, 0x2008, 0x2008, 0x2008, 0x2008, 0x2008, 0x2010};
+
+    for (size_t i = 0; i < sizeof(addr)/sizeof(uintptr_t); i++)
+    {
+        uintptr_t current_value = align_up(addr[i], sizeof(uint64_t));
+        TEST_ASSERT_EQUAL_UINT(current_value, expected[i]);
+    }
 }

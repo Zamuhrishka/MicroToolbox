@@ -26,7 +26,7 @@
 /**
  * \brief       Macros which forces a variable to always be aligned.
  *
- * \param[in] 	A: alignment value in bytes.
+ * \param[in]   A: alignment value in bytes.
  */
 #define ALIGN(A) (__attribute__((aligned(A))))
 
@@ -34,9 +34,9 @@
  * \brief       Wrap the given structure into a padded, aligned structure
  *              and instantiate a static copy of it.
  *
- * \param[in] 	T: the type of structure to be wrapped.
- * \param[in] 	N: instantiation name of wrapped structure.
- * \param[in] 	A: alignment value in bytes.
+ * \param[in]   T: the type of structure to be wrapped.
+ * \param[in]   N: instantiation name of wrapped structure.
+ * \param[in]   A: alignment value in bytes.
  *
  * \code
  *     typedef struct
@@ -67,9 +67,9 @@
  * The `TYPE` macro defines the padded structure type and externs it so that it can be accessed
  * from any file including the header.
  *
- * \param[in] 	T: the type of structure to be wrapped.
- * \param[in] 	N: instantiation name of wrapped structure.
- * \param[in] 	A: alignment value in bytes.
+ * \param[in]   T: the type of structure to be wrapped.
+ * \param[in]   N: instantiation name of wrapped structure.
+ * \param[in]   A: alignment value in bytes.
  *
  */
 #define CACHE_LINE_ALIGN__TYPE(T, N, A)          \
@@ -86,8 +86,8 @@
  * \warning     The INST macro instantiates the type. It must be given the same parameters as the \ref
  * CACHE_LINE_ALIGN__TYPE macro.
  *
- * \param[in] 	T: the type of structure to be wrapped.
- * \param[in] 	N: instantiation name of wrapped structure.
+ * \param[in]   T: the type of structure to be wrapped.
+ * \param[in]   N: instantiation name of wrapped structure.
  *
  */
 #define CACHE_LINE_ALIGN__INST(T, N) T##Full_t N
@@ -96,7 +96,7 @@
  * \brief       Forces alignment of elements within a user defined type (ADT).
  *              You can use this macro to separate uncached and cached areas.
  *
- * \param[in] 	A: alignment value in bytes.
+ * \param[in]   A: alignment value in bytes.
  *
  * \code
  * typedef struct

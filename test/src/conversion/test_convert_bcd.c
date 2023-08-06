@@ -26,16 +26,16 @@
  */
 void test_ConvertNumToBcd(void)
 {
-	uint32_t patternNum[] = {0,1,10,15,53,124};
-	uint32_t patternBCD[] = {0,1,16,21,83,292};
-	uint32_t bcd = 0;
+    uint32_t patternNum[] = {0,1,10,15,53,124};
+    uint32_t patternBCD[] = {0,1,16,21,83,292};
+    uint32_t bcd = 0;
 
     size_t i = 0;
-	for(i = 0; i < sizeof(patternNum)/sizeof(uint32_t); i++)
-	{
-		bcd = convert_num_to_bcd(patternNum[i]);
-		TEST_ASSERT_EQUAL_INT(bcd, patternBCD[i]);
-	}
+    for(i = 0; i < sizeof(patternNum)/sizeof(uint32_t); i++)
+    {
+        bcd = convert_num_to_bcd(patternNum[i]);
+        TEST_ASSERT_EQUAL_INT(bcd, patternBCD[i]);
+    }
 }
 
 /**
@@ -43,15 +43,14 @@ void test_ConvertNumToBcd(void)
  */
 void test_ConvertBcdToNum(void)
 {
-	uint32_t patternNum[] = {0,1,10,15,53,124};
-	uint32_t patternBCD[] = {0,1,16,21,83,292};
-	uint32_t dec = 0;
+    uint32_t patternNum[] = {0,1,10,15,53,124};
+    uint32_t patternBCD[] = {0,1,16,21,83,292};
+    uint32_t dec = 0;
 
     size_t i = 0;
-	for(i = 0; i < sizeof(patternNum)/sizeof(uint32_t); i++)
-	{
-		dec = convert_bcd_to_num(patternBCD[i]);
-		TEST_ASSERT_EQUAL_INT(dec, patternNum[i]);
-	}
+    for(i = 0; i < sizeof(patternNum)/sizeof(uint32_t); i++)
+    {
+        dec = convert_bcd_to_num(patternBCD[i]);
+        TEST_ASSERT_EQUAL_INT(dec, patternNum[i]);
+    }
 }
-

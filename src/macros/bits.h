@@ -77,33 +77,33 @@
 #define NUM_BITS(type) (sizeof(type) * 8u)
 
 /**
- * \brief 			Isolate the rightmost 1-bit
+ * \brief           Isolate the rightmost 1-bit
  *
- * \warning 		Undefined behavior for x=0 value
+ * \warning         Undefined behavior for x=0 value
  *
  */
 #define LSO(x) ((x) & (-(x)))
 
 /**
- * \brief 			Isolate the rightmost 0-bit
+ * \brief           Isolate the rightmost 0-bit
  *
- * \warning			Undefined behavior for x=(~x) value
+ * \warning         Undefined behavior for x=(~x) value
  *
  */
 #define LCO(x) (~(x) & ((x) + 1))
 
 /**
- * \brief 			Turn on the rightmost 0-bit
+ * \brief           Turn on the rightmost 0-bit
  *
- * \warning 		Undefined behavior for x=(~x) value
+ * \warning         Undefined behavior for x=(~x) value
  *
  */
 #define SLSB(x) ((x) | ((x) + 1))
 
 /**
- * \brief 			Turn off the rightmost 1-bit
+ * \brief           Turn off the rightmost 1-bit
  *
- * \warning 		Undefined behavior for x=0 value
+ * \warning         Undefined behavior for x=0 value
  *
  */
 #define CLSB(x) ((x) & ((x)-1))

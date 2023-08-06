@@ -13,22 +13,22 @@
 //_____ C O N F I G S  ________________________________________________________
 #if !defined(SYS_CLOCK)
     #error "Constant SYS_CLOCK undefined. Please define system bus clock in Hz.\
-			Example: #define SYS_CLOCK 8000000"
+            Example: #define SYS_CLOCK 8000000"
 #endif
 //_____ D E F I N I T I O N S _________________________________________________
-//// DWT Control register
+// DWT Control register
 #define DWT_CONTROL_REG (*((volatile uint32_t*)0xE0001000))
 
-//// CYCCNTENA bit in DWT_CONTROL register
+// CYCCNTENA bit in DWT_CONTROL register
 #define DWT_CYCCNTENA_BIT (1UL << 0)
 
-//// DWT Cycle Counter register
+// DWT Cycle Counter register
 #define DWT_CYCCNT_REG (*((volatile uint32_t*)0xE0001004))
 
-//// DEMCR: Debug Exception and Monitor Control Register
+// DEMCR: Debug Exception and Monitor Control Register
 #define DWT_DEMCR_REG (*((volatile uint32_t*)0xE000EDFC))
 
-//// Trace enable bit in DEMCR register
+// Trace enable bit in DEMCR register
 #define DWT_TRCENA_BIT (1 << 24)
 //_____ M A C R O S ___________________________________________________________
 /**
