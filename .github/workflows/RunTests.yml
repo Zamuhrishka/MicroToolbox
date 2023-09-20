@@ -1,4 +1,4 @@
-name: UnitTest
+name: UnitTests
 
 on:
   push:
