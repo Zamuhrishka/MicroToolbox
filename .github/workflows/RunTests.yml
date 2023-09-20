@@ -1,0 +1,27 @@
+name: UnitTest
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: 
+      - master
+jobs:
+  unit_tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+        
+    - name: Install dependencies
+      run: |
+        gem install ceedling
+
+    - name: Tests
+      run: ceedling test:all
