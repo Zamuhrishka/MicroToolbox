@@ -1,3 +1,5 @@
+<img src="https://github.com/Zamuhrishka/UglyContainers/workflows/UnitTest/badge.svg?branch=master">
+
 ## Description
 
 ![alt text](docs/pics/header_image.png "Firmware Toolbox")
