@@ -1,4 +1,4 @@
-<img src="https://github.com/Zamuhrishka/UglyContainers/workflows/UnitTests/badge.svg?branch=master">
+<img src="https://github.com/Zamuhrishka/UglyContainers/workflows/UnitTest/badge.svg?branch=master">
 
 ## Description
 
