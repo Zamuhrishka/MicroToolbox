@@ -1,6 +1,6 @@
 ---
 :project:
-  :use_exceptions: FALSE
+  :use_exceptions: TRUE
   :use_mocks: FALSE
   :use_test_preprocessor: TRUE
   :use_preprocessor_directives: FALSE
@@ -9,7 +9,7 @@
   :build_root: build
   :release_build: TRUE
   :test_file_prefix: test_
-  :which_ceedling: vendor/ceedling
+  :which_ceedling: gem
   :ceedling_version: 0.30.0
   :options_paths:
     - options/
@@ -65,7 +65,7 @@
 
 :plugins:
   :load_paths:
-    - vendor/ceedling/plugins
+    - "#{Ceedling.load_path}"
   :enabled:
     # - stdout_pretty_tests_report
     - stdout_gtestlike_tests_report
