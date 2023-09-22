@@ -1,4 +1,5 @@
 <img src="https://github.com/Zamuhrishka/FWToolbox/workflows/UnitTests/badge.svg?branch=master">
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=jpb06_jest-badges-action&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=jpb06_jest-badges-action)
 
 ## Description
 
