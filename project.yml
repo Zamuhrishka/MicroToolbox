@@ -11,8 +11,6 @@
   :test_file_prefix: test_
   :which_ceedling: gem
   :ceedling_version: 0.30.0
-  :options_paths:
-    - options/
   :default_tasks:
     - test:all
 
