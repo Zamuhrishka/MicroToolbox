@@ -51,7 +51,10 @@ Doxygen.conf
 pvs-studio.bat
 PVS-Studio.cfg
 rakefile.rb
+!project.yml
 
-
-
-
+# Not source files
+docs/pics/1688930964270_small.png
+docs/pics/1688931522780_small.png
+docs/pics/kandinsky-download-1688930964270.png
+docs/pics/kandinsky-download-1688931522780.png
