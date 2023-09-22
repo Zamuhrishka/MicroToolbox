@@ -1,4 +1,5 @@
 <img src="https://github.com/Zamuhrishka/FWToolbox/workflows/UnitTests/badge.svg?branch=master">
+![](https://byob.yarr.is/RubbaBoy/Example/time)
 
 ## Description
 
