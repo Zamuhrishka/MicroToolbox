@@ -34,9 +34,9 @@
   #  1) remove the trailing [] from the :common: section
   #  2) add entries to the :common: section (e.g. :test: has TEST defined)
   # :common: &common_defines []
-  :common: &common_defines
+  # :common: &common_defines
   :test:
-    - *common_defines
+    # - *common_defines
     - TEST
     - CRC8_TABLE
     - CRC16_TABLE
