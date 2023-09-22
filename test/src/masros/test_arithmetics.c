@@ -8,8 +8,8 @@
 //_____ I N C L U D E S _______________________________________________________
 #include "unity.h"
 
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -22,10 +22,6 @@
 //_____ P U B L I C  F U N C T I O N S_________________________________________
 void test_min_positive(void)
 {
-    int res = MIN(100, 50);
-    TEST_ASSERT_EQUAL_INT(50, res);
-
-
     TEST_ASSERT_EQUAL_INT(50, MIN(100, 50));
     TEST_ASSERT_EQUAL_INT(1000, MIN(2000, 1000));
     TEST_ASSERT_EQUAL_INT(10000, MIN(20000, 10000));
@@ -58,7 +54,6 @@ void test_min_equal(void)
     TEST_ASSERT_EQUAL_INT(50, MIN(50, 50));
     TEST_ASSERT_EQUAL_INT(-2000, MIN(-2000, -2000));
 }
-
 
 void test_min_bl_positive(void)
 {
@@ -95,11 +90,6 @@ void test_min_bl_equal(void)
     TEST_ASSERT_EQUAL_INT(-2000, MIN_BRANCHLESS(-2000, -2000));
 }
 
-
-
-
-
-
 void test_max_positive(void)
 {
     TEST_ASSERT_EQUAL_INT(100, MAX(100, 50));
@@ -134,7 +124,6 @@ void test_max_equal(void)
     TEST_ASSERT_EQUAL_INT(50, MAX(50, 50));
     TEST_ASSERT_EQUAL_INT(-2000, MAX(-2000, -2000));
 }
-
 
 void test_max_bl_positive(void)
 {
@@ -285,7 +274,6 @@ void test_round_up(void)
     TEST_ASSERT_EQUAL_INT(116, ROUND_UP(115, 2));
     TEST_ASSERT_EQUAL_INT(120, ROUND_UP(118, 10));
 }
-
 
 void test_round_up_pow_2(void)
 {

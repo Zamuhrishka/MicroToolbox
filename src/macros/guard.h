@@ -19,8 +19,14 @@
  * \param[in]   COND: bool expresion
  * \param[in]   MSG: fail message
  *
+ * \warning The `MSG` need to be text without quotes and spaces!
+ *
+ * \example
+ * \code
+ * STATIC_ASSERT(sizeof(int)==4, The_int_has_invalid_size);
+ * \endcode
  */
-#define STATIC_ASSERT(COND, MSG) typedef char static_assertion_##MSG[(COND) ? 1 : -1]
+#define STATIC_ASSERT(COND, MSG) typedef char static_assertion##MSG[(COND) ? 1 : -1]
 
 /**
  * \brief   Check size of struct on compile time
