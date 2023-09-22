@@ -7,15 +7,15 @@
   :use_auxiliary_dependencies: TRUE
   :auto_link_deep_dependencies: TRUE
   :build_root: build
-  :release_build: TRUE
+  :release_build: FALSE
   :test_file_prefix: test_
   :which_ceedling: gem
   :ceedling_version: 0.30.0
   :default_tasks:
     - test:all
 
-:test_build:
-  :use_assembly: FALSE
+# :test_build:
+#   :use_assembly: FALSE
 
 :paths:
   :test:
@@ -29,10 +29,6 @@
     - test/support
   :libraries: []
 
-:files:
-  :source:
-    - +:src/main.c
-
 :defines:
   # in order to add common defines:
   #  1) remove the trailing [] from the :common: section
@@ -45,9 +41,9 @@
     - CRC8_TABLE
     - CRC16_TABLE
     - CRC32_TABLE
-  :test_preprocess:
-    - *common_defines
-    - TEST
+  # :test_preprocess:
+  #   - *common_defines
+  #   - TEST
 
 # LIBRARIES
 # These libraries are automatically injected into the build process. Those specified as
