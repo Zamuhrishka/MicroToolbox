@@ -9,6 +9,7 @@
 
 //_____ I N C L U D E S _______________________________________________________
 #include <stdbool.h>
+#include <stddef.h>
 #include <stdint.h>
 
 #include "types.h"
