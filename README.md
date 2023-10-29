@@ -1,8 +1,9 @@
 <img src="https://github.com/Zamuhrishka/FWToolbox/workflows/UnitTests/badge.svg?branch=master">
 
-## Description
+# MicroToolbox: Small-Scale Aids for Firmware Crafting
 
-![alt text](docs/pics/header_image.png "Firmware Toolbox")
+<!-- ![alt text](docs/pics/LOGO.png "Firmware Toolbox") -->
+<img src="docs/pics/LOGO.png" width="200" height="200">
 
 Sets of various small helper functions useful when developing firmware.
 
