@@ -17,13 +17,11 @@
 :paths:
   :test:
     - +:test/**
-    - -:test/support
   :source:
     - src/**
   :include:
     - src/
-  :support:
-    - test/support
+    - +:include/**
   :libraries: []
 
 :defines:
