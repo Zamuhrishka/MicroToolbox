@@ -70,13 +70,6 @@ typedef uint32_t ip4addr_t;
 /// BCD data type
 typedef uint32_t bcd_t;
 
-/// Null pointer data type
-#define nullptr ((void *)0)
-
-/// NULL constant
-#if !defined(NULL)
-    #define NULL nullptr
-#endif
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
