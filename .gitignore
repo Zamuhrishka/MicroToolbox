@@ -67,3 +67,5 @@ docs/pics/kandinsky-download-1688931522780.png
 .vscode/ipch
 
 patterns/
+
+src/main.cpp
