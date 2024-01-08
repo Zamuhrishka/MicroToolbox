@@ -1,10 +1,18 @@
 /**
  * \file         delay.c
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        Time delay functions for PIC32 microcontrollers.
+ * \brief        Time delay functions for PIC32 microcontrollers. This module implements precise
+ *               delay functions using the PIC32's core timer. It includes `delay_us` for microsecond
+ *               delays and `delay_ms` for millisecond delays. These functions calculate delay duration
+ *               based on the peripheral clock frequency (PCLK_HZ) and provide accurate timing control
+ *               essential for various applications in embedded systems. It's important to define
+ *               PCLK_HZ correctly for accurate timing. The implementation ensures that the core timer
+ *               count is properly managed and restored after each delay, enabling consistent performance.
  *
- * \warning      Work of this functions need to be checked!
+ * \warning      Work of these functions needs to be checked and validated for specific hardware
+ *               configurations.
  */
+
 
 #if !defined(PIO_UNIT_TESTING) && !defined(MODULE_DELAY_DISABLED)
 //_____ I N C L U D E S _______________________________________________________

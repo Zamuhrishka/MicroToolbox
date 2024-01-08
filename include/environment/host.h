@@ -1,7 +1,9 @@
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        Host depend constants
+ * \brief        This file defines constants that depend on the host environment. For example, it might include
+ *               definitions for different file path splitters based on the operating system
+ *               (Windows, Linux, Unix, macOS, etc.).
  */
 
 #pragma once

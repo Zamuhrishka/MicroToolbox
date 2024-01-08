@@ -1,8 +1,16 @@
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        This file contains several useful custom data types.
+ * \brief        This module defines a set of data types and constants for managing various
+ *               forms of data in embedded systems programming. It includes endianess constants
+ *               for byte order identification, custom data types for MAC addresses, binary
+ *               string representations for different integer types, IP addresses, and BCD
+ *               (Binary-Coded Decimal) data type. These definitions are crucial for handling
+ *               data in a standardized way across different hardware platforms and network
+ *               communication protocols, ensuring compatibility and efficient data processing
+ *               in embedded and networked systems.
  */
+
 
 #pragma once
 

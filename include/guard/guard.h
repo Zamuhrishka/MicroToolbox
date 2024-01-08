@@ -1,8 +1,16 @@
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        Guard macros.
+ * \brief        This module contains a collection of macros designed for compile-time assertions
+ *               and structural validations in C. It includes macros for static assertions, guarding
+ *               the size of structures, ensuring structure sizes are multiples of a specified value,
+ *               and verifying the offset of structure members. These tools are crucial for ensuring
+ *               data structure consistency and memory layout expectations, especially in embedded
+ *               systems programming where such guarantees are critical for reliable operation.
+ *               Additionally, it provides a macro for validating the number of entries in an enumeration
+ *               relative to a maximum count, further enhancing data integrity checks.
  */
+
 
 #pragma once
 

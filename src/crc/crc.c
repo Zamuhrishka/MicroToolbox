@@ -1,8 +1,16 @@
+// This is an open source non-commercial project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        This file contains functions for calculate crc8/16/32.
+ * \brief        This module is dedicated to calculating CRC (Cyclic Redundancy Check) values
+ *               for data integrity verification in embedded systems. It supports various CRC
+ *               standards including CRC-8-Dallas/Maxim, CRC-16-CCITT, and CRC-32-IEEE 802.3,
+ *               catering to different data checking requirements. The module provides both
+ *               direct calculation and table-based methods for CRC computation, ensuring
+ *               flexibility and efficiency in data validation processes.
  */
+
 
 #if !defined(MODULE_CRC_DISABLED)
 //_____ I N C L U D E S _______________________________________________________

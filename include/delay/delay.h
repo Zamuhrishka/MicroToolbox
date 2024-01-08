@@ -1,8 +1,14 @@
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        Time delay functions.
+ * \brief        This module provides basic timing functions for creating precise microsecond and
+ *               millisecond delays in embedded systems. It is essential for timing control in various
+ *               hardware interfacing and control applications. The functions `delay_us` and `delay_ms`
+ *               offer microsecond and millisecond resolution respectively, suitable for scenarios
+ *               where specific timing is critical. Note that these functions are blocking, meaning
+ *               they halt the execution of the program for the specified duration of time.
  */
+
 
 #pragma once
 

@@ -1,8 +1,16 @@
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        Compiler abstraction layer
+ * \brief        This module defines a collection of macros to enhance code readability and
+ *               control in C programming, especially for embedded systems. It includes macros
+ *               for compiler-specific attributes such as inline expansion, deprecation warnings,
+ *               optimization hints for branch prediction, and function usage checks.
+ *               Additionally, it provides macros for aligning data structures and placing
+ *               objects in specific sections of memory. This module helps in writing more
+ *               efficient and maintainable code by abstracting compiler-specific directives
+ *               and making them available across different compilers.
  */
+
 
 #pragma once
 

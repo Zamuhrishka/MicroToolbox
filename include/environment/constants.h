@@ -1,7 +1,9 @@
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        Common constants
+ * \brief        This file is expected to define various constants that might be used across the project.
+ *               These constants could range from numeric values, buffer sizes, or specific flags essential for
+ *               the system's operation.
  */
 
 #pragma once

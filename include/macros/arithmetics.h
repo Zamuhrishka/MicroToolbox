@@ -1,7 +1,8 @@
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        Macros for arithmetics operation.
+ * \brief        This file contains arithmetic-related macros, offering utilities for mathematical operations,
+ *               optimizations, or shorthand functions for complex arithmetic tasks.
  */
 
 #pragma once

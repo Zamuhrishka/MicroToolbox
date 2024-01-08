@@ -1,9 +1,15 @@
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        This file contains the prototypes functions which use for
- *               work with different byte endian order.
+ * \brief        This module provides functions for handling and converting byte order (endianness)
+ *               in data for embedded systems. It supports functions to determine the byte order of
+ *               the target system, as well as to swap byte order for different data types including
+ *               16-bit, 32-bit, and 64-bit numbers. Additionally, the module includes utilities for
+ *               storing and loading values in both little-endian and big-endian formats. This is
+ *               crucial in embedded systems where data interoperability between different architectures
+ *               requires correct interpretation of byte order for accurate data processing and communication.
  */
+
 
 #pragma once
 

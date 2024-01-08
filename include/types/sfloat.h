@@ -1,7 +1,8 @@
 /**
  * \file
  * \author       Kosma Moczek <kosma@cloudyourcar.com>
- * \brief
+ * \brief        This file contains definitions or structures to a specific floating-point representation, for more
+ *               efficient storage or computation in embedded systems.
  */
 
 #pragma once

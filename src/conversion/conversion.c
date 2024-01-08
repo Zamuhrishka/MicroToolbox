@@ -3,8 +3,13 @@
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        This file contains the prototypes functions which use for
- *               conversion different data type to each other.
+ * \brief        This module provides a comprehensive suite of functions for data type conversions
+ *               in embedded systems. It includes functions for converting between different
+ *               numerical representations like hexadecimal, BCD, and binary, as well as utilities
+ *               for converting network data types such as MAC and IP addresses. The module aims to
+ *               facilitate data manipulation and interoperability in embedded applications where
+ *               data often needs to be converted between various formats for communication, storage,
+ *               and processing purposes.
  */
 
 #if !defined(MODULE_CONVERSION_DISABLED)

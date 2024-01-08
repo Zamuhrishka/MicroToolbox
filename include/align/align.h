@@ -1,7 +1,11 @@
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        PUT DESCRIPTION HERE
+ * \brief        This module provides utilities for memory alignment in C. It includes macros for aligning variables,
+ *               structures, and memory addresses to ensure optimal memory access and performance. The module supports
+ *               both static and dynamic alignment and includes inline functions for checking and adjusting alignment.
+ *               It is designed to be compiler-independent, making it suitable for various embedded systems and firmware
+ *               development projects.
  */
 
 #pragma once

@@ -1,7 +1,9 @@
 /**
  * \file
  * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
- * \brief        This file contains macros for bits manipulations.
+ * \brief        this file provides a comprehensive set of macros for bit manipulation. These include operations like
+ *               setting, clearing, toggling, testing individual bits, creating bit masks, and functions for bit
+ *               mirroring in various data types (e.g., uint8_t, uint16_t, uint32_t).
  */
 
 #pragma once
