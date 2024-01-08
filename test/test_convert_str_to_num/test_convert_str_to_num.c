@@ -1,6 +1,6 @@
 /**
 * \file         test_convert_str_to_num.c
-* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+* \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
 * \brief        This file contains unit tests for convert string to number functions,
 *               from @conversion.c file
 */

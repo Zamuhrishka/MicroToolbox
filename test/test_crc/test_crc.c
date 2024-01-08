@@ -1,6 +1,6 @@
 /**
 * \file         test_crc.c
-* \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+* \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
 * \brief        Unit tests for crc8/16/32 functions from crc.c file
 */
 //_____ I N C L U D E S _______________________________________________________

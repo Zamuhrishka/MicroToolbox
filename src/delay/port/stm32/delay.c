@@ -1,6 +1,6 @@
 /**
  * \file         delay.c
- * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+ * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
  * \brief        Time delay functions for STM32 microcontrollers.
  */
 

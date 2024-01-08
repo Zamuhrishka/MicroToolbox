@@ -1,8 +1,7 @@
 /**
  * \file
- * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
- * \brief        This file contains the prototypes functions and macros which
- *               used for data align.
+ * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
+ * \brief        PUT DESCRIPTION HERE
  */
 
 #pragma once

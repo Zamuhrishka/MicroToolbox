@@ -1,6 +1,6 @@
 /**
  * \file
- * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
+ * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
  * \brief        Common constants
  */
 
