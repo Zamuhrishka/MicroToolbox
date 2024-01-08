@@ -5,6 +5,7 @@
  *               work with different byte endian types.
  */
 
+#if !defined(MODULE_ENDIAN_DISABLED)
 //_____ I N C L U D E S _______________________________________________________
 #include "byte_order.h"
 //_____ C O N F I G S  ________________________________________________________
@@ -157,3 +158,5 @@ uint32_t byte_order_array_to_u32_be(const void *array)
     const uint8_t *p = array;
     return p[0] << 24 | p[1] << 16 | p[2] << 8 | p[3];
 }
+
+#endif //#if !defined(MODULE_ENDIAN_DISABLED)

@@ -6,6 +6,7 @@
 
 #pragma once
 
+#if !defined(MODULE_MACRO_BITS_DISABLED)
 //_____ I N C L U D E S _______________________________________________________
 #include <stdint.h>
 
@@ -109,7 +110,6 @@
 #define CLSB(x) ((x) & ((x)-1))
 
 //_____ V A R I A B L E S _____________________________________________________
-
 //_____ P U B L I C  F U N C T I O N S_________________________________________
 /* C++ detection */
 #ifdef __cplusplus
@@ -172,3 +172,4 @@ static __inline__ uint32_t bits_mirror_u32(uint32_t word)
 }
 #endif
 
+#endif //#if !defined(MODULE_MACRO_BITS_DISABLED)

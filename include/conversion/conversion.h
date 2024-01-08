@@ -7,6 +7,7 @@
 
 #pragma once
 
+#if !defined(MODULE_CONVERSION_DISABLED)
 //_____ I N C L U D E S _______________________________________________________
 #include <stdbool.h>
 #include <stddef.h>
@@ -320,3 +321,5 @@ bin32_t convert_u32_to_bin32(uint32_t num, endian_e endian);
 #ifdef __cplusplus
 }
 #endif
+
+#endif //#if defined(MODULE_CONVERSION_DISABLED)

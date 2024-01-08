@@ -3,6 +3,8 @@
  * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
  * \brief        This file contains functions for calculate crc8/16/32.
  */
+
+#if !defined(MODULE_CRC_DISABLED)
 //_____ I N C L U D E S _______________________________________________________
 #include <stdbool.h>
 #include <stdint.h>
@@ -245,3 +247,5 @@ uint_least32_t crc32_table(const uint8_t *buf, size_t len)
     return crc ^ 0xFFFFFFFF;
 }
 #endif
+
+#endif //#if !defined(MODULE_CRC_DISABLED)

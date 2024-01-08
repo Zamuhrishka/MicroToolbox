@@ -6,6 +6,7 @@
 
 #pragma once
 
+#if !defined(MODULE_MACRO_GUARD_DISABLED)
 //_____ I N C L U D E S _______________________________________________________
 #include "misc.h"
 //_____ C O N F I G S  ________________________________________________________
@@ -102,3 +103,4 @@
 //_____ V A R I A B L E S _____________________________________________________
 
 //_____ P U B L I C  F U N C T I O N S_________________________________________
+#endif //#if !defined(MODULE_MACRO_GUARD_DISABLED)

@@ -7,6 +7,7 @@
 
 #pragma once
 
+#if !defined(MODULE_ALIGN_DISABLED)
 //_____ I N C L U D E S _______________________________________________________
 #include <stdbool.h>
 #include <stddef.h>
@@ -128,7 +129,7 @@ extern "C" {
  *
  *  \return         true - if addr is align.
  */
-static __inline__ bool is_align(uintptr_t addr, size_t align)
+static bool __inline__ is_align(uintptr_t addr, size_t align)
 {
     return (((uintptr_t)(addr)) % (align) == 0);
 }
@@ -162,3 +163,5 @@ static __inline__ uintptr_t align_up(uintptr_t addr, size_t align)
 #ifdef __cplusplus
 }
 #endif
+
+#endif //#if !defined(MODULE_ALIGN_DISABLED)

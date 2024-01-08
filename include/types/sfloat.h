@@ -6,6 +6,7 @@
 
 #pragma once
 
+#if !defined(MODULE_SFLOAT_DISABLED)
 //_____ I N C L U D E S _______________________________________________________
 #include <math.h>
 #include <stdbool.h>
@@ -127,3 +128,4 @@ static inline sfloat_t float_to_sfloat(float fnum)
 }
 #endif
 
+#endif //#if !defined(MODULE_SFLOAT_DISABLED)

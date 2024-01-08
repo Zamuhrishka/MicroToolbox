@@ -6,6 +6,7 @@
 
 #pragma once
 
+#if !defined(MODULE_CRC_DISABLED)
 //_____ I N C L U D E S _______________________________________________________
 #include <stdbool.h>
 #include <stdint.h>
@@ -124,3 +125,5 @@ uint_least32_t crc32_table(const uint8_t *buf, size_t len);
 #ifdef __cplusplus
 }
 #endif
+
+#endif //#if defined(MODULE_CRC_DISABLED)

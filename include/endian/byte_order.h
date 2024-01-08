@@ -7,6 +7,8 @@
 
 #pragma once
 
+#if !defined(MODULE_ENDIAN_DISABLED)
+
 //_____ I N C L U D E S _______________________________________________________
 #include <stdint.h>
 
@@ -137,3 +139,4 @@ uint32_t byte_order_array_to_u32_be(const void *array);
 }
 #endif
 
+#endif //#if !defined(MODULE_ENDIAN_DISABLED)

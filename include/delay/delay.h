@@ -6,10 +6,10 @@
 
 #pragma once
 
+#if !defined(PIO_UNIT_TESTING) && !defined(MODULE_DELAY_DISABLED)
 //_____ I N C L U D E S _______________________________________________________
 #include <stdbool.h>
 #include <stdint.h>
-
 //_____ C O N F I G S  ________________________________________________________
 //_____ D E F I N I T I O N S _________________________________________________
 //_____ M A C R O S ___________________________________________________________
@@ -46,3 +46,5 @@ void delay_ms(uint32_t ms);
 #ifdef __cplusplus
 }
 #endif
+
+#endif //!defined(PIO_UNIT_TESTING) && !defined(MODULE_DELAY_ENABLE)

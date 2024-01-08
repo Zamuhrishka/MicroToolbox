@@ -6,6 +6,8 @@
  * \brief        This file contains the prototypes functions which use for
  *               conversion different data type to each other.
  */
+
+#if !defined(MODULE_CONVERSION_DISABLED)
 //_____ I N C L U D E S _______________________________________________________
 #include "conversion.h"
 
@@ -896,3 +898,4 @@ bin32_t convert_u32_to_bin32(uint32_t num, endian_e endian)
 
     return bin;
 }
+#endif //#if !defined(MODULE_CONVERSION_DISABLED)
