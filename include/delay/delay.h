@@ -15,6 +15,11 @@
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
+/* C++ detection */
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * \brief       This function used to create `us` time delay.
  *
@@ -36,3 +41,8 @@ void delay_us(uint32_t us);
  * \return       none.
  */
 void delay_ms(uint32_t ms);
+
+/* C++ detection */
+#ifdef __cplusplus
+}
+#endif

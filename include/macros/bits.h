@@ -111,6 +111,11 @@
 //_____ V A R I A B L E S _____________________________________________________
 
 //_____ P U B L I C  F U N C T I O N S_________________________________________
+/* C++ detection */
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** \brief      Function to reverse the individual bits in a `uint8_t` - i.e. bit 7
  *              is moved to bit 0, bit 6 to bit 1, etc.
  *
@@ -161,3 +166,9 @@ static __inline__ uint32_t bits_mirror_u32(uint32_t word)
 
     return word;
 }
+
+/* C++ detection */
+#ifdef __cplusplus
+}
+#endif
+

@@ -16,6 +16,12 @@
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
+/* C++ detection */
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 /**
  * \brief           Define target byte endian order.
  *
@@ -125,3 +131,9 @@ uint16_t byte_order_array_to_u16_be(const void *array);
  * \return          `32-bit` value extracted from input array.
  */
 uint32_t byte_order_array_to_u32_be(const void *array);
+
+/* C++ detection */
+#ifdef __cplusplus
+}
+#endif
+

@@ -18,6 +18,11 @@
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
+/* C++ detection */
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * \brief       This function convert hex char to digit.
  *
@@ -309,3 +314,9 @@ bin16_t convert_u16_to_bin16(uint16_t num, endian_e endian);
  * @return `bin32_t`
  */
 bin32_t convert_u32_to_bin32(uint32_t num, endian_e endian);
+
+
+/* C++ detection */
+#ifdef __cplusplus
+}
+#endif

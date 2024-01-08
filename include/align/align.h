@@ -116,6 +116,11 @@
 
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
+/* C++ detection */
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** \brief          Checking whether the addr is aligned to a given number of bytes?
  *
  *  \param[in]      addr: checked addr
@@ -151,3 +156,9 @@ static __inline__ uintptr_t align_up(uintptr_t addr, size_t align)
 {
     return ((addr & (align - 1)) ? (align_down(addr, align) + align) : addr);
 }
+
+
+/* C++ detection */
+#ifdef __cplusplus
+}
+#endif

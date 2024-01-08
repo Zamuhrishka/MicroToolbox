@@ -22,6 +22,11 @@ typedef struct
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
+/* C++ detection */
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * \brief   Rescale a fixed-point value to a different scale. Rounds towards zero.
  *
@@ -116,3 +121,9 @@ static inline sfloat_t float_to_sfloat(float fnum)
 
     return sf;
 }
+
+/* C++ detection */
+#ifdef __cplusplus
+}
+#endif
+

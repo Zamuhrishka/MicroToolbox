@@ -16,6 +16,11 @@
 //_____ M A C R O S ___________________________________________________________
 //_____ V A R I A B L E S _____________________________________________________
 //_____ P U B L I C  F U N C T I O N S_________________________________________
+/* C++ detection */
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * \brief       This function calculate checksum CRC-8-Dallas/Maxim.
  *  - Used polynomial: `x^8 + x^5 + x^4 + 1` (0x31).
@@ -112,4 +117,10 @@ uint_least32_t crc32(const uint8_t *buf, size_t len);
  * \return      calculated crc32 value.
  **/
 uint_least32_t crc32_table(const uint8_t *buf, size_t len);
+#endif
+
+
+/* C++ detection */
+#ifdef __cplusplus
+}
 #endif
