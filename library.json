@@ -17,5 +17,25 @@
     ],
     "license": "MIT",
     "frameworks": "*",
-    "platforms": "*"
+    "platforms": "*",
+    "build": {
+      "flags": [
+        "-Iinclude/align",
+        "-Iinclude/conversion",
+        "-Iinclude/crc",
+        "-Iinclude/endian",
+        "-Iinclude/environment",
+        "-Iinclude/macros",
+        "-Iinclude/types",
+        "-DMODULE_DELAY_DISABLED",
+        "-DCRC8_TABLE",
+        "-DCRC16_TABLE",
+        "-DCRC32_TABLE"
+      ],
+      "includeDir": ".",
+      "srcDir": ".",
+      "export": {
+        "exclude": ["src/delay", "include/delay", "tools", "src/description.h", "project.yml"]
+      }
+    }
   }
