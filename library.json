@@ -1,6 +1,6 @@
 {
     "name": "MicroToolbox",
-    "version": "1.0.1",
+    "version": "1.0.8",
     "description": "Sets of various small helper functions useful when developing firmware.",
     "keywords": "c, bitset, firmware, delay, convert, bits, guard, macros, ip, alignment, crc, bcd, endian, tool",
     "repository":
