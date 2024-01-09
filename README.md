@@ -29,7 +29,7 @@ numerical representations like hexadecimal, BCD, and binary, as well as utilitie
 facilitate data manipulation and interoperability in embedded applications where data often needs to be converted between various formats for communication, storage,
 and processing purposes.
 
-[Examples](examples\Conversion\example_conversion.c)
+[Examples](examples/Conversion/example_conversion.c)
 
 ### [CRC](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/crc)
 
@@ -37,7 +37,7 @@ This module is dedicated to calculating CRC (Cyclic Redundancy Check) values for
 standards including CRC-8-Dallas/Maxim, CRC-16-CCITT, and CRC-32-IEEE 802.3, catering to different data checking requirements. The module provides both
 direct calculation and table-based methods for CRC computation, ensuring flexibility and efficiency in data validation processes.
 
-[Examples](examples\Crc\example_crc.c)
+[Examples](examples/Crc/example_crc.c)
 
 ### [Delay](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/delay)
 
@@ -52,7 +52,7 @@ the target system, as well as to swap byte order for different data types includ
 storing and loading values in both little-endian and big-endian formats. This is crucial in embedded systems where data interoperability between different architectures
 requires correct interpretation of byte order for accurate data processing and communication.
 
-[Examples](examples\Endian\example_endian.c)
+[Examples](examples/Endian/example_endian.c)
 
 ### [Environment](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/environment)
 
@@ -75,7 +75,7 @@ This file defines constants that depend on the host environment. For example, it
 This module contains a collection of macros designed for compile-time assertions and structural validations in C. It includes macros for static assertions, guarding the size of structures, ensuring structure sizes are multiples of a specified value, and verifying the offset of structure members. These tools are crucial for ensuring data structure consistency
 and memory layout expectations, especially in embedded systems programming where such guarantees are critical for reliable operation. Additionally, it provides a macro for validating the number of entries in an enumeration relative to a maximum count, further enhancing data integrity checks.
 
-[Examples](examples\Guard\example_guard.c)
+[Examples](examples/Guard/example_guard.c)
 
 ### [Macros](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/macros)
 
@@ -101,7 +101,7 @@ This module provides a foundation of custom data types tailored for specific req
 
 This file contains definitions or structures to a specific floating-point representation, for more efficient storage or computation in embedded systems.
 
-[Examples](examples\Sfloat\example_sfloat.c)
+[Examples](examples/Sfloat/example_sfloat.c)
 
 #### [Types](https://github.com/Zamuhrishka/FWToolbox/tree/develop/src/types/types.h)
 
