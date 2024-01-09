@@ -6,7 +6,7 @@
 # MicroToolbox: Small-Scale Aids for Firmware Crafting
 
 <!-- ![alt text](docs/pics/LOGO.png "Firmware Toolbox") -->
-<img src="docs/pics/LOGO.png" width="200" height="200">
+<img src="https://raw.githubusercontent.com/Zamuhrishka/MicroToolbox/move-to-platformio/docs/pics/LOGO.png" width="200" height="200">
 
 Sets of various small helper functions useful when developing firmware.
 
