@@ -1,0 +1,21 @@
+{
+    "name": "MicroToolbox",
+    "version": "1.0.0",
+    "description": "Sets of various small helper functions useful when developing firmware.",
+    "keywords": "c, bitset, firmware, delay, convert, bits, guard, macros, ip, alignment, crc, bcd, endian, tool",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/Zamuhrishka/MicroToolbox"
+    },
+    "authors":
+    [
+      {
+        "name": "Aliaksandr Kavalchuk",
+        "email": "aliaksander.kavalchuk@gmail.com"
+      }
+    ],
+    "license": "MIT",
+    "frameworks": "*",
+    "platforms": "*"
+  }
