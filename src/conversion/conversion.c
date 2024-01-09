@@ -827,11 +827,11 @@ void convert_i32_to_str(char *str, int32_t dig)
 }
 
 /**
- * This function used to map a value from one range to another.
+ * This function used to mapping a value from one range to another.
  *
  * Public function defined in conversion.h
  */
-int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)
+int32_t mapping(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max)
 {
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }

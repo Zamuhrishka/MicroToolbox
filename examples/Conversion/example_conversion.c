@@ -42,7 +42,7 @@ int main() {
 
   /* Maps a value from one range to another, useful in scenarios like sensor data conversion. */
   int32_t sensorValue = 512; // Range 0-1023
-  int32_t percentage = map(sensorValue, 0, 1023, 0, 100);
+  int32_t percentage = mapping(sensorValue, 0, 1023, 0, 100);
 
   /* Convert integer types to their binary representations, considering endianess. */
   uint8_t num = 0x12;

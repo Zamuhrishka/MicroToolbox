@@ -1,7 +1,7 @@
 /**
 * \file         test_map.c
 * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
-* \brief        This file contains unit tests for map() function
+* \brief        This file contains unit tests for mapping() function
 *               from @conversion.c file
 */
 //_____ I N C L U D E S _______________________________________________________
@@ -29,7 +29,7 @@ void tearDown(void) {
 }
 
 /**
- * @brief Unit test for checking map() function with positive arguments
+ * @brief Unit test for checking mapping() function with positive arguments
  */
 void test_MapPositive(void)
 {
@@ -43,13 +43,13 @@ void test_MapPositive(void)
 
     for (size_t i = 0; i < sizeof(input)/sizeof(int32_t); i++)
     {
-        int32_t output = map(input[i], 0, 1023, 0, 255);
+        int32_t output = mapping(input[i], 0, 1023, 0, 255);
         TEST_ASSERT_EQUAL_INT(output, expected[i]);
     }
 }
 
 /**
- * @brief Unit test for checking map() function with negative arguments
+ * @brief Unit test for checking mapping() function with negative arguments
  */
 void test_MapNegative(void)
 {
@@ -63,7 +63,7 @@ void test_MapNegative(void)
 
     for (size_t i = 0; i < sizeof(input)/sizeof(int32_t); i++)
     {
-        int32_t output = map(input[i], 0, 1023, 0, 255);
+        int32_t output = mapping(input[i], 0, 1023, 0, 255);
         TEST_ASSERT_EQUAL_INT(output, expected[i]);
     }
 }

@@ -282,7 +282,7 @@ void convert_u32_to_str(char *str, uint32_t dig);
 void convert_i32_to_str(char *str, int32_t dig);
 
 /**
- * \brief       This function used to map a value from one range to another.
+ * \brief       This function used to mapping a value from one range to another.
  *
  * \param[out]  x: variable which need to transform.
  * \param[in]   in_min: min value of input range.
@@ -292,7 +292,7 @@ void convert_i32_to_str(char *str, int32_t dig);
  *
  * \return      transformed variable.
  **/
-int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max);
+int32_t mapping(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max);
 
 /**
  * @brief Convert `uint8_t` number into \ref `bin8_t` type.
