@@ -1,9 +1,17 @@
 /**
  * \file         delay.c
- * \author       Kovalchuk Alexander (aliaksander.kavalchuk@gmail.com)
- * \brief        Time delay functions for STM32 microcontrollers.
+ * \author       Kavalchuk Aliaksandr (aliaksander.kavalchuk@gmail.com)
+ * \brief        Time delay functions for STM32 microcontrollers. This module provides
+ *               precise microsecond and millisecond delay functionalities using the DWT (Data Watchpoint
+ *               and Trace) unit present in STM32 microcontrollers. It involves direct manipulation
+ *               of system timers to achieve accurate timing delays. Essential for tasks where precise
+ *               timing is crucial, these delay functions rely on the system clock frequency (SYS_CLOCK),
+ *               which must be correctly defined for accurate delay intervals. The module initializes,
+ *               manages, and disables the DWT cycle counter as needed to provide time delays.
  */
 
+
+#if !defined(PIO_UNIT_TESTING) && !defined(MODULE_DELAY_DISABLED)
 //_____ I N C L U D E S _______________________________________________________
 #include "delay.h"
 
@@ -108,3 +116,5 @@ void delay_ms(uint32_t ms)
 
     DWT_DisableCycleCounter();
 }
+
+#endif //#if !defined(PIO_UNIT_TESTING) && !defined(MODULE_DELAY_DISABLED)
